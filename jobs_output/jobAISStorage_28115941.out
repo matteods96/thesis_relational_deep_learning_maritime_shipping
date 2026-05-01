@@ -1,0 +1,1834 @@
+Requirement already satisfied: pip in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (26.0.1)
+Requirement already satisfied: duckdb in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (1.5.0)
+Requirement already satisfied: requests in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (2.32.5)
+Requirement already satisfied: charset_normalizer<4,>=2 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from requests) (3.4.6)
+Requirement already satisfied: idna<4,>=2.5 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from requests) (3.11)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from requests) (2.6.3)
+Requirement already satisfied: certifi>=2017.4.17 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from requests) (2026.2.25)
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-01.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-01.zip
+  Creating DuckDB table + Parquet for 2025-01-01...
+Finished 2025-01-01 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-02.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-02.zip
+  Creating DuckDB table + Parquet for 2025-01-02...
+Finished 2025-01-02 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-03.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-03.zip
+  Creating DuckDB table + Parquet for 2025-01-03...
+Finished 2025-01-03 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-04.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-04.zip
+  Creating DuckDB table + Parquet for 2025-01-04...
+Finished 2025-01-04 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-05.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-05.zip
+  Creating DuckDB table + Parquet for 2025-01-05...
+Finished 2025-01-05 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-06.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-06.zip
+  Creating DuckDB table + Parquet for 2025-01-06...
+Finished 2025-01-06 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-07.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-07.zip
+  Creating DuckDB table + Parquet for 2025-01-07...
+Finished 2025-01-07 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-08.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-08.zip
+  Creating DuckDB table + Parquet for 2025-01-08...
+Finished 2025-01-08 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-09.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-09.zip
+  Creating DuckDB table + Parquet for 2025-01-09...
+Finished 2025-01-09 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-10.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-10.zip
+  Creating DuckDB table + Parquet for 2025-01-10...
+Finished 2025-01-10 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-11.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-11.zip
+  Creating DuckDB table + Parquet for 2025-01-11...
+Finished 2025-01-11 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-12.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-12.zip
+  Creating DuckDB table + Parquet for 2025-01-12...
+Finished 2025-01-12 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-13.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-13.zip
+  Creating DuckDB table + Parquet for 2025-01-13...
+Finished 2025-01-13 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-14.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-14.zip
+  Creating DuckDB table + Parquet for 2025-01-14...
+Finished 2025-01-14 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-15.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-15.zip
+  Creating DuckDB table + Parquet for 2025-01-15...
+Finished 2025-01-15 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-16.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-16.zip
+  Creating DuckDB table + Parquet for 2025-01-16...
+Finished 2025-01-16 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-17.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-17.zip
+  Creating DuckDB table + Parquet for 2025-01-17...
+Finished 2025-01-17 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-18.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-18.zip
+  Creating DuckDB table + Parquet for 2025-01-18...
+Finished 2025-01-18 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-19.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-19.zip
+  Creating DuckDB table + Parquet for 2025-01-19...
+Finished 2025-01-19 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-20.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-20.zip
+  Creating DuckDB table + Parquet for 2025-01-20...
+Finished 2025-01-20 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-21.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-21.zip
+  Creating DuckDB table + Parquet for 2025-01-21...
+Finished 2025-01-21 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-22.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-22.zip
+  Creating DuckDB table + Parquet for 2025-01-22...
+Finished 2025-01-22 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-23.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-23.zip
+  Creating DuckDB table + Parquet for 2025-01-23...
+Finished 2025-01-23 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-24.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-24.zip
+  Creating DuckDB table + Parquet for 2025-01-24...
+Finished 2025-01-24 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-25.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-25.zip
+  Creating DuckDB table + Parquet for 2025-01-25...
+Finished 2025-01-25 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-26.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-26.zip
+  Creating DuckDB table + Parquet for 2025-01-26...
+Finished 2025-01-26 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-27.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-27.zip
+  Creating DuckDB table + Parquet for 2025-01-27...
+Finished 2025-01-27 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-28.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-28.zip
+  Creating DuckDB table + Parquet for 2025-01-28...
+Finished 2025-01-28 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-29.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-29.zip
+  Creating DuckDB table + Parquet for 2025-01-29...
+Finished 2025-01-29 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-30.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-30.zip
+  Creating DuckDB table + Parquet for 2025-01-30...
+Finished 2025-01-30 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-01-31.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-01-31.zip
+  Creating DuckDB table + Parquet for 2025-01-31...
+Finished 2025-01-31 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-01.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-01.zip
+  Creating DuckDB table + Parquet for 2025-02-01...
+Finished 2025-02-01 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-02.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-02.zip
+  Creating DuckDB table + Parquet for 2025-02-02...
+Finished 2025-02-02 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-03.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-03.zip
+  Creating DuckDB table + Parquet for 2025-02-03...
+Finished 2025-02-03 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-04.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-04.zip
+  Creating DuckDB table + Parquet for 2025-02-04...
+Finished 2025-02-04 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-05.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-05.zip
+  Creating DuckDB table + Parquet for 2025-02-05...
+Finished 2025-02-05 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-06.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-06.zip
+  Creating DuckDB table + Parquet for 2025-02-06...
+Finished 2025-02-06 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-07.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-07.zip
+  Creating DuckDB table + Parquet for 2025-02-07...
+Finished 2025-02-07 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-08.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-08.zip
+  Creating DuckDB table + Parquet for 2025-02-08...
+Finished 2025-02-08 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-09.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-09.zip
+  Creating DuckDB table + Parquet for 2025-02-09...
+Finished 2025-02-09 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-10.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-10.zip
+  Creating DuckDB table + Parquet for 2025-02-10...
+Finished 2025-02-10 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-11.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-11.zip
+  Creating DuckDB table + Parquet for 2025-02-11...
+Finished 2025-02-11 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-12.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-12.zip
+  Creating DuckDB table + Parquet for 2025-02-12...
+Finished 2025-02-12 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-13.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-13.zip
+  Creating DuckDB table + Parquet for 2025-02-13...
+Finished 2025-02-13 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-14.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-14.zip
+  Creating DuckDB table + Parquet for 2025-02-14...
+Finished 2025-02-14 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-15.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-15.zip
+  Creating DuckDB table + Parquet for 2025-02-15...
+Finished 2025-02-15 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-16.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-16.zip
+  Creating DuckDB table + Parquet for 2025-02-16...
+Finished 2025-02-16 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-17.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-17.zip
+  Creating DuckDB table + Parquet for 2025-02-17...
+Finished 2025-02-17 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-18.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-18.zip
+  Creating DuckDB table + Parquet for 2025-02-18...
+Finished 2025-02-18 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-19.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-19.zip
+  Creating DuckDB table + Parquet for 2025-02-19...
+Finished 2025-02-19 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-20.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-20.zip
+  Creating DuckDB table + Parquet for 2025-02-20...
+Finished 2025-02-20 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-21.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-21.zip
+  Creating DuckDB table + Parquet for 2025-02-21...
+Finished 2025-02-21 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-22.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-22.zip
+  Creating DuckDB table + Parquet for 2025-02-22...
+Finished 2025-02-22 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-23.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-23.zip
+  Creating DuckDB table + Parquet for 2025-02-23...
+Finished 2025-02-23 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-24.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-24.zip
+  Creating DuckDB table + Parquet for 2025-02-24...
+Finished 2025-02-24 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-25.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-25.zip
+  Creating DuckDB table + Parquet for 2025-02-25...
+Finished 2025-02-25 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/2025/aisdk-2025-02-26.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-26.zip
+  Creating DuckDB table + Parquet for 2025-02-26...
+Finished 2025-02-26 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-02-27.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-27.zip
+  Creating DuckDB table + Parquet for 2025-02-27...
+Finished 2025-02-27 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-02-28.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-02-28.zip
+  Creating DuckDB table + Parquet for 2025-02-28...
+Finished 2025-02-28 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-01.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-01.zip
+  Creating DuckDB table + Parquet for 2025-03-01...
+Finished 2025-03-01 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-02.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-02.zip
+  Creating DuckDB table + Parquet for 2025-03-02...
+Finished 2025-03-02 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-03.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-03.zip
+  Creating DuckDB table + Parquet for 2025-03-03...
+Finished 2025-03-03 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-04.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-04.zip
+  Creating DuckDB table + Parquet for 2025-03-04...
+Finished 2025-03-04 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-05.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-05.zip
+  Creating DuckDB table + Parquet for 2025-03-05...
+Finished 2025-03-05 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-06.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-06.zip
+  Creating DuckDB table + Parquet for 2025-03-06...
+Finished 2025-03-06 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-07.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-07.zip
+  Creating DuckDB table + Parquet for 2025-03-07...
+Finished 2025-03-07 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-08.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-08.zip
+  Creating DuckDB table + Parquet for 2025-03-08...
+Finished 2025-03-08 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-09.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-09.zip
+  Creating DuckDB table + Parquet for 2025-03-09...
+Finished 2025-03-09 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-10.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-10.zip
+  Creating DuckDB table + Parquet for 2025-03-10...
+Finished 2025-03-10 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-11.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-11.zip
+  Creating DuckDB table + Parquet for 2025-03-11...
+Finished 2025-03-11 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-12.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-12.zip
+  Creating DuckDB table + Parquet for 2025-03-12...
+Finished 2025-03-12 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-13.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-13.zip
+  Creating DuckDB table + Parquet for 2025-03-13...
+Finished 2025-03-13 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-14.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-14.zip
+  Creating DuckDB table + Parquet for 2025-03-14...
+Finished 2025-03-14 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-15.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-15.zip
+  Creating DuckDB table + Parquet for 2025-03-15...
+Finished 2025-03-15 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-16.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-16.zip
+  Creating DuckDB table + Parquet for 2025-03-16...
+Finished 2025-03-16 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-17.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-17.zip
+  Creating DuckDB table + Parquet for 2025-03-17...
+Finished 2025-03-17 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-18.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-18.zip
+  Creating DuckDB table + Parquet for 2025-03-18...
+Finished 2025-03-18 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-19.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-19.zip
+  Creating DuckDB table + Parquet for 2025-03-19...
+Finished 2025-03-19 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-20.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-20.zip
+  Creating DuckDB table + Parquet for 2025-03-20...
+Finished 2025-03-20 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-21.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-21.zip
+  Creating DuckDB table + Parquet for 2025-03-21...
+Finished 2025-03-21 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-22.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-22.zip
+  Creating DuckDB table + Parquet for 2025-03-22...
+Finished 2025-03-22 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-23.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-23.zip
+  Creating DuckDB table + Parquet for 2025-03-23...
+Finished 2025-03-23 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-24.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-24.zip
+  Creating DuckDB table + Parquet for 2025-03-24...
+Finished 2025-03-24 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-25.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-25.zip
+  Creating DuckDB table + Parquet for 2025-03-25...
+Finished 2025-03-25 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-26.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-26.zip
+  Creating DuckDB table + Parquet for 2025-03-26...
+Finished 2025-03-26 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-27.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-27.zip
+  Creating DuckDB table + Parquet for 2025-03-27...
+Finished 2025-03-27 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-28.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-28.zip
+  Creating DuckDB table + Parquet for 2025-03-28...
+Finished 2025-03-28 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-29.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-29.zip
+  Creating DuckDB table + Parquet for 2025-03-29...
+Finished 2025-03-29 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-30.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-30.zip
+  Creating DuckDB table + Parquet for 2025-03-30...
+Finished 2025-03-30 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-03-31.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-03-31.zip
+  Creating DuckDB table + Parquet for 2025-03-31...
+Finished 2025-03-31 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-01.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-01.zip
+  Creating DuckDB table + Parquet for 2025-04-01...
+Finished 2025-04-01 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-02.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-02.zip
+  Creating DuckDB table + Parquet for 2025-04-02...
+Finished 2025-04-02 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-03.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-03.zip
+  Creating DuckDB table + Parquet for 2025-04-03...
+Finished 2025-04-03 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-04.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-04.zip
+  Creating DuckDB table + Parquet for 2025-04-04...
+Finished 2025-04-04 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-05.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-05.zip
+  Creating DuckDB table + Parquet for 2025-04-05...
+Finished 2025-04-05 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-06.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-06.zip
+  Creating DuckDB table + Parquet for 2025-04-06...
+Finished 2025-04-06 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-07.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-07.zip
+  Creating DuckDB table + Parquet for 2025-04-07...
+Finished 2025-04-07 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-08.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-08.zip
+  Creating DuckDB table + Parquet for 2025-04-08...
+Finished 2025-04-08 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-09.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-09.zip
+  Creating DuckDB table + Parquet for 2025-04-09...
+Finished 2025-04-09 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-10.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-10.zip
+  Creating DuckDB table + Parquet for 2025-04-10...
+Finished 2025-04-10 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-11.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-11.zip
+  Creating DuckDB table + Parquet for 2025-04-11...
+Finished 2025-04-11 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-12.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-12.zip
+  Creating DuckDB table + Parquet for 2025-04-12...
+Finished 2025-04-12 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-13.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-13.zip
+  Creating DuckDB table + Parquet for 2025-04-13...
+Finished 2025-04-13 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-14.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-14.zip
+  Creating DuckDB table + Parquet for 2025-04-14...
+Finished 2025-04-14 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-15.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-15.zip
+  Creating DuckDB table + Parquet for 2025-04-15...
+Finished 2025-04-15 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-16.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-16.zip
+  Creating DuckDB table + Parquet for 2025-04-16...
+Finished 2025-04-16 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-17.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-17.zip
+  Creating DuckDB table + Parquet for 2025-04-17...
+Finished 2025-04-17 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-18.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-18.zip
+  Creating DuckDB table + Parquet for 2025-04-18...
+Finished 2025-04-18 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-19.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-19.zip
+  Creating DuckDB table + Parquet for 2025-04-19...
+Finished 2025-04-19 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-20.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-20.zip
+  Creating DuckDB table + Parquet for 2025-04-20...
+Finished 2025-04-20 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-21.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-21.zip
+  Creating DuckDB table + Parquet for 2025-04-21...
+Finished 2025-04-21 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-22.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-22.zip
+  Creating DuckDB table + Parquet for 2025-04-22...
+Finished 2025-04-22 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-23.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-23.zip
+  Creating DuckDB table + Parquet for 2025-04-23...
+Finished 2025-04-23 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-24.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-24.zip
+  Creating DuckDB table + Parquet for 2025-04-24...
+Finished 2025-04-24 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-25.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-25.zip
+  Creating DuckDB table + Parquet for 2025-04-25...
+Finished 2025-04-25 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-26.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-26.zip
+  Creating DuckDB table + Parquet for 2025-04-26...
+Finished 2025-04-26 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-27.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-27.zip
+  Creating DuckDB table + Parquet for 2025-04-27...
+Finished 2025-04-27 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-28.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-28.zip
+  Creating DuckDB table + Parquet for 2025-04-28...
+Finished 2025-04-28 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-29.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-29.zip
+  Creating DuckDB table + Parquet for 2025-04-29...
+Finished 2025-04-29 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-04-30.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-04-30.zip
+  Creating DuckDB table + Parquet for 2025-04-30...
+Finished 2025-04-30 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-01.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-01.zip
+  Creating DuckDB table + Parquet for 2025-05-01...
+Finished 2025-05-01 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-02.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-02.zip
+  Creating DuckDB table + Parquet for 2025-05-02...
+Finished 2025-05-02 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-03.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-03.zip
+  Creating DuckDB table + Parquet for 2025-05-03...
+Finished 2025-05-03 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-04.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-04.zip
+  Creating DuckDB table + Parquet for 2025-05-04...
+Finished 2025-05-04 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-05.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-05.zip
+  Creating DuckDB table + Parquet for 2025-05-05...
+Finished 2025-05-05 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-06.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-06.zip
+  Creating DuckDB table + Parquet for 2025-05-06...
+Finished 2025-05-06 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-07.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-07.zip
+  Creating DuckDB table + Parquet for 2025-05-07...
+Finished 2025-05-07 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-08.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-08.zip
+  Creating DuckDB table + Parquet for 2025-05-08...
+Finished 2025-05-08 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-09.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-09.zip
+  Creating DuckDB table + Parquet for 2025-05-09...
+Finished 2025-05-09 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-10.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-10.zip
+  Creating DuckDB table + Parquet for 2025-05-10...
+Finished 2025-05-10 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-11.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-11.zip
+  Creating DuckDB table + Parquet for 2025-05-11...
+Finished 2025-05-11 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-12.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-12.zip
+  Creating DuckDB table + Parquet for 2025-05-12...
+Finished 2025-05-12 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-13.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-13.zip
+  Creating DuckDB table + Parquet for 2025-05-13...
+Finished 2025-05-13 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-14.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-14.zip
+  Creating DuckDB table + Parquet for 2025-05-14...
+Finished 2025-05-14 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-15.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-15.zip
+  Creating DuckDB table + Parquet for 2025-05-15...
+Finished 2025-05-15 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-16.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-16.zip
+  Creating DuckDB table + Parquet for 2025-05-16...
+Finished 2025-05-16 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-17.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-17.zip
+  Creating DuckDB table + Parquet for 2025-05-17...
+Finished 2025-05-17 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-18.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-18.zip
+  Creating DuckDB table + Parquet for 2025-05-18...
+Finished 2025-05-18 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-19.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-19.zip
+  Creating DuckDB table + Parquet for 2025-05-19...
+Finished 2025-05-19 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-20.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-20.zip
+  Creating DuckDB table + Parquet for 2025-05-20...
+Finished 2025-05-20 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-21.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-21.zip
+  Creating DuckDB table + Parquet for 2025-05-21...
+Finished 2025-05-21 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-22.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-22.zip
+  Creating DuckDB table + Parquet for 2025-05-22...
+Finished 2025-05-22 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-23.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-23.zip
+  Creating DuckDB table + Parquet for 2025-05-23...
+Finished 2025-05-23 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-24.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-24.zip
+  Creating DuckDB table + Parquet for 2025-05-24...
+Finished 2025-05-24 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-25.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-25.zip
+  Creating DuckDB table + Parquet for 2025-05-25...
+Finished 2025-05-25 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-26.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-26.zip
+  Creating DuckDB table + Parquet for 2025-05-26...
+Finished 2025-05-26 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-27.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-27.zip
+  Creating DuckDB table + Parquet for 2025-05-27...
+Finished 2025-05-27 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-28.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-28.zip
+  Creating DuckDB table + Parquet for 2025-05-28...
+Finished 2025-05-28 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-29.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-29.zip
+  Creating DuckDB table + Parquet for 2025-05-29...
+Finished 2025-05-29 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-30.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-30.zip
+  Creating DuckDB table + Parquet for 2025-05-30...
+Finished 2025-05-30 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-05-31.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-05-31.zip
+  Creating DuckDB table + Parquet for 2025-05-31...
+Finished 2025-05-31 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-01.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-01.zip
+  Creating DuckDB table + Parquet for 2025-06-01...
+Finished 2025-06-01 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-02.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-02.zip
+  Creating DuckDB table + Parquet for 2025-06-02...
+Finished 2025-06-02 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-03.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-03.zip
+  Creating DuckDB table + Parquet for 2025-06-03...
+Finished 2025-06-03 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-04.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-04.zip
+  Creating DuckDB table + Parquet for 2025-06-04...
+Finished 2025-06-04 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-05.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-05.zip
+  Creating DuckDB table + Parquet for 2025-06-05...
+Finished 2025-06-05 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-06.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-06.zip
+  Creating DuckDB table + Parquet for 2025-06-06...
+Finished 2025-06-06 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-07.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-07.zip
+  Creating DuckDB table + Parquet for 2025-06-07...
+Finished 2025-06-07 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-08.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-08.zip
+  Creating DuckDB table + Parquet for 2025-06-08...
+Finished 2025-06-08 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-09.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-09.zip
+  Creating DuckDB table + Parquet for 2025-06-09...
+Finished 2025-06-09 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-10.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-10.zip
+  Creating DuckDB table + Parquet for 2025-06-10...
+Finished 2025-06-10 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-11.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-11.zip
+  Creating DuckDB table + Parquet for 2025-06-11...
+Finished 2025-06-11 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-12.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-12.zip
+  Creating DuckDB table + Parquet for 2025-06-12...
+Finished 2025-06-12 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-13.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-13.zip
+  Creating DuckDB table + Parquet for 2025-06-13...
+Finished 2025-06-13 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-14.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-14.zip
+  Creating DuckDB table + Parquet for 2025-06-14...
+Finished 2025-06-14 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-15.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-15.zip
+  Creating DuckDB table + Parquet for 2025-06-15...
+Finished 2025-06-15 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-16.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-16.zip
+  Creating DuckDB table + Parquet for 2025-06-16...
+Finished 2025-06-16 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-17.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-17.zip
+  Creating DuckDB table + Parquet for 2025-06-17...
+Finished 2025-06-17 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-18.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-18.zip
+  Creating DuckDB table + Parquet for 2025-06-18...
+Finished 2025-06-18 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-19.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-19.zip
+  Creating DuckDB table + Parquet for 2025-06-19...
+Finished 2025-06-19 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-20.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-20.zip
+  Creating DuckDB table + Parquet for 2025-06-20...
+Finished 2025-06-20 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-21.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-21.zip
+  Creating DuckDB table + Parquet for 2025-06-21...
+Finished 2025-06-21 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-22.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-22.zip
+  Creating DuckDB table + Parquet for 2025-06-22...
+Finished 2025-06-22 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-23.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-23.zip
+  Creating DuckDB table + Parquet for 2025-06-23...
+Finished 2025-06-23 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-24.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-24.zip
+  Creating DuckDB table + Parquet for 2025-06-24...
+Finished 2025-06-24 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-25.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-25.zip
+  Creating DuckDB table + Parquet for 2025-06-25...
+Finished 2025-06-25 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-26.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-26.zip
+  Creating DuckDB table + Parquet for 2025-06-26...
+Finished 2025-06-26 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-27.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-27.zip
+  Creating DuckDB table + Parquet for 2025-06-27...
+Finished 2025-06-27 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-28.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-28.zip
+  Creating DuckDB table + Parquet for 2025-06-28...
+Finished 2025-06-28 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-29.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-29.zip
+  Creating DuckDB table + Parquet for 2025-06-29...
+Finished 2025-06-29 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-06-30.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-06-30.zip
+  Creating DuckDB table + Parquet for 2025-06-30...
+Finished 2025-06-30 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-01.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-01.zip
+  Creating DuckDB table + Parquet for 2025-07-01...
+Finished 2025-07-01 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-02.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-02.zip
+  Creating DuckDB table + Parquet for 2025-07-02...
+Finished 2025-07-02 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-03.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-03.zip
+  Creating DuckDB table + Parquet for 2025-07-03...
+Finished 2025-07-03 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-04.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-04.zip
+  Creating DuckDB table + Parquet for 2025-07-04...
+Finished 2025-07-04 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-05.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-05.zip
+  Creating DuckDB table + Parquet for 2025-07-05...
+Finished 2025-07-05 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-06.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-06.zip
+  Creating DuckDB table + Parquet for 2025-07-06...
+Finished 2025-07-06 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-07.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-07.zip
+  Creating DuckDB table + Parquet for 2025-07-07...
+Finished 2025-07-07 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-08.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-08.zip
+  Creating DuckDB table + Parquet for 2025-07-08...
+Finished 2025-07-08 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-09.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-09.zip
+  Creating DuckDB table + Parquet for 2025-07-09...
+Finished 2025-07-09 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-10.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-10.zip
+  Creating DuckDB table + Parquet for 2025-07-10...
+Finished 2025-07-10 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-11.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-11.zip
+  Creating DuckDB table + Parquet for 2025-07-11...
+Finished 2025-07-11 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-12.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-12.zip
+  Creating DuckDB table + Parquet for 2025-07-12...
+Finished 2025-07-12 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-13.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-13.zip
+  Creating DuckDB table + Parquet for 2025-07-13...
+Finished 2025-07-13 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-14.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-14.zip
+  Creating DuckDB table + Parquet for 2025-07-14...
+Finished 2025-07-14 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-15.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-15.zip
+  Creating DuckDB table + Parquet for 2025-07-15...
+Finished 2025-07-15 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-16.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-16.zip
+  Creating DuckDB table + Parquet for 2025-07-16...
+Finished 2025-07-16 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-17.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-17.zip
+  Creating DuckDB table + Parquet for 2025-07-17...
+Finished 2025-07-17 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-18.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-18.zip
+  Creating DuckDB table + Parquet for 2025-07-18...
+Finished 2025-07-18 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-19.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-19.zip
+  Creating DuckDB table + Parquet for 2025-07-19...
+Finished 2025-07-19 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-20.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-20.zip
+  Creating DuckDB table + Parquet for 2025-07-20...
+Finished 2025-07-20 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-21.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-21.zip
+  Creating DuckDB table + Parquet for 2025-07-21...
+Finished 2025-07-21 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-22.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-22.zip
+  Creating DuckDB table + Parquet for 2025-07-22...
+Finished 2025-07-22 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-23.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-23.zip
+  Creating DuckDB table + Parquet for 2025-07-23...
+Finished 2025-07-23 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-24.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-24.zip
+  Creating DuckDB table + Parquet for 2025-07-24...
+Finished 2025-07-24 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-25.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-25.zip
+  Creating DuckDB table + Parquet for 2025-07-25...
+Finished 2025-07-25 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-26.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-26.zip
+  Creating DuckDB table + Parquet for 2025-07-26...
+Finished 2025-07-26 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-27.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-27.zip
+  Creating DuckDB table + Parquet for 2025-07-27...
+Finished 2025-07-27 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-28.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-28.zip
+  Creating DuckDB table + Parquet for 2025-07-28...
+Finished 2025-07-28 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-29.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-29.zip
+  Creating DuckDB table + Parquet for 2025-07-29...
+Finished 2025-07-29 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-30.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-30.zip
+  Creating DuckDB table + Parquet for 2025-07-30...
+Finished 2025-07-30 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-07-31.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-07-31.zip
+  Creating DuckDB table + Parquet for 2025-07-31...
+Finished 2025-07-31 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-01.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-01.zip
+  Creating DuckDB table + Parquet for 2025-08-01...
+Finished 2025-08-01 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-02.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-02.zip
+  Creating DuckDB table + Parquet for 2025-08-02...
+Finished 2025-08-02 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-03.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-03.zip
+  Creating DuckDB table + Parquet for 2025-08-03...
+Finished 2025-08-03 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-04.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-04.zip
+  Creating DuckDB table + Parquet for 2025-08-04...
+Finished 2025-08-04 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-05.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-05.zip
+  Creating DuckDB table + Parquet for 2025-08-05...
+Finished 2025-08-05 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-06.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-06.zip
+  Creating DuckDB table + Parquet for 2025-08-06...
+Finished 2025-08-06 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-07.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-07.zip
+  Creating DuckDB table + Parquet for 2025-08-07...
+Finished 2025-08-07 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-08.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-08.zip
+  Creating DuckDB table + Parquet for 2025-08-08...
+Finished 2025-08-08 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-09.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-09.zip
+  Creating DuckDB table + Parquet for 2025-08-09...
+Finished 2025-08-09 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-10.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-10.zip
+  Creating DuckDB table + Parquet for 2025-08-10...
+Finished 2025-08-10 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-11.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-11.zip
+  Creating DuckDB table + Parquet for 2025-08-11...
+Finished 2025-08-11 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-12.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-12.zip
+  Creating DuckDB table + Parquet for 2025-08-12...
+Finished 2025-08-12 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-13.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-13.zip
+  Creating DuckDB table + Parquet for 2025-08-13...
+Finished 2025-08-13 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-14.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-14.zip
+  Creating DuckDB table + Parquet for 2025-08-14...
+Finished 2025-08-14 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-15.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-15.zip
+  Creating DuckDB table + Parquet for 2025-08-15...
+Finished 2025-08-15 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-16.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-16.zip
+  Creating DuckDB table + Parquet for 2025-08-16...
+Finished 2025-08-16 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-17.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-17.zip
+  Creating DuckDB table + Parquet for 2025-08-17...
+Finished 2025-08-17 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-18.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-18.zip
+  Creating DuckDB table + Parquet for 2025-08-18...
+Finished 2025-08-18 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-19.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-19.zip
+  Creating DuckDB table + Parquet for 2025-08-19...
+Finished 2025-08-19 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-20.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-20.zip
+  Creating DuckDB table + Parquet for 2025-08-20...
+Finished 2025-08-20 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-21.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-21.zip
+  Creating DuckDB table + Parquet for 2025-08-21...
+Finished 2025-08-21 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-22.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-22.zip
+  Creating DuckDB table + Parquet for 2025-08-22...
+Finished 2025-08-22 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-23.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-23.zip
+  Creating DuckDB table + Parquet for 2025-08-23...
+Finished 2025-08-23 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-24.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-24.zip
+  Creating DuckDB table + Parquet for 2025-08-24...
+Finished 2025-08-24 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-25.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-25.zip
+  Creating DuckDB table + Parquet for 2025-08-25...
+Finished 2025-08-25 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-26.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-26.zip
+  Creating DuckDB table + Parquet for 2025-08-26...
+Finished 2025-08-26 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-27.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-27.zip
+  Creating DuckDB table + Parquet for 2025-08-27...
+Finished 2025-08-27 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-28.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-28.zip
+  Creating DuckDB table + Parquet for 2025-08-28...
+Finished 2025-08-28 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-29.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-29.zip
+  Creating DuckDB table + Parquet for 2025-08-29...
+Finished 2025-08-29 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-30.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-30.zip
+  Creating DuckDB table + Parquet for 2025-08-30...
+Finished 2025-08-30 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-08-31.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-08-31.zip
+  Creating DuckDB table + Parquet for 2025-08-31...
+Finished 2025-08-31 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-01.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-01.zip
+  Creating DuckDB table + Parquet for 2025-09-01...
+Finished 2025-09-01 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-02.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-02.zip
+  Creating DuckDB table + Parquet for 2025-09-02...
+Finished 2025-09-02 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-03.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-03.zip
+  Creating DuckDB table + Parquet for 2025-09-03...
+Finished 2025-09-03 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-04.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-04.zip
+  Creating DuckDB table + Parquet for 2025-09-04...
+Finished 2025-09-04 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-05.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-05.zip
+  Creating DuckDB table + Parquet for 2025-09-05...
+Finished 2025-09-05 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-06.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-06.zip
+  Creating DuckDB table + Parquet for 2025-09-06...
+Finished 2025-09-06 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-07.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-07.zip
+  Creating DuckDB table + Parquet for 2025-09-07...
+Finished 2025-09-07 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-08.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-08.zip
+  Creating DuckDB table + Parquet for 2025-09-08...
+Finished 2025-09-08 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-09.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-09.zip
+  Creating DuckDB table + Parquet for 2025-09-09...
+Finished 2025-09-09 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-10.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-10.zip
+  Creating DuckDB table + Parquet for 2025-09-10...
+Finished 2025-09-10 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-11.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-11.zip
+  Creating DuckDB table + Parquet for 2025-09-11...
+Finished 2025-09-11 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-12.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-12.zip
+  Creating DuckDB table + Parquet for 2025-09-12...
+Finished 2025-09-12 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-13.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-13.zip
+  Creating DuckDB table + Parquet for 2025-09-13...
+Finished 2025-09-13 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-14.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-14.zip
+  Creating DuckDB table + Parquet for 2025-09-14...
+Finished 2025-09-14 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-15.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-15.zip
+  Creating DuckDB table + Parquet for 2025-09-15...
+Finished 2025-09-15 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-16.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-16.zip
+  Creating DuckDB table + Parquet for 2025-09-16...
+Finished 2025-09-16 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-17.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-17.zip
+  Creating DuckDB table + Parquet for 2025-09-17...
+Finished 2025-09-17 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-18.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-18.zip
+  Creating DuckDB table + Parquet for 2025-09-18...
+Finished 2025-09-18 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-19.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-19.zip
+  Creating DuckDB table + Parquet for 2025-09-19...
+Finished 2025-09-19 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-20.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-20.zip
+  Creating DuckDB table + Parquet for 2025-09-20...
+Finished 2025-09-20 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-21.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-21.zip
+  Creating DuckDB table + Parquet for 2025-09-21...
+Finished 2025-09-21 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-22.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-22.zip
+  Creating DuckDB table + Parquet for 2025-09-22...
+Finished 2025-09-22 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-23.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-23.zip
+  Creating DuckDB table + Parquet for 2025-09-23...
+Finished 2025-09-23 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-24.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-24.zip
+  Creating DuckDB table + Parquet for 2025-09-24...
+Finished 2025-09-24 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-25.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-25.zip
+  Creating DuckDB table + Parquet for 2025-09-25...
+Finished 2025-09-25 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-26.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-26.zip
+  Creating DuckDB table + Parquet for 2025-09-26...
+Finished 2025-09-26 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-27.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-27.zip
+  Creating DuckDB table + Parquet for 2025-09-27...
+Finished 2025-09-27 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-28.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-28.zip
+  Creating DuckDB table + Parquet for 2025-09-28...
+Finished 2025-09-28 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-29.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-29.zip
+  Creating DuckDB table + Parquet for 2025-09-29...
+Finished 2025-09-29 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-09-30.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-09-30.zip
+  Creating DuckDB table + Parquet for 2025-09-30...
+Finished 2025-09-30 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-01.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-01.zip
+  Creating DuckDB table + Parquet for 2025-10-01...
+Finished 2025-10-01 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-02.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-02.zip
+  Creating DuckDB table + Parquet for 2025-10-02...
+Finished 2025-10-02 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-03.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-03.zip
+  Creating DuckDB table + Parquet for 2025-10-03...
+Finished 2025-10-03 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-04.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-04.zip
+  Creating DuckDB table + Parquet for 2025-10-04...
+Finished 2025-10-04 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-05.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-05.zip
+  Creating DuckDB table + Parquet for 2025-10-05...
+Finished 2025-10-05 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-06.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-06.zip
+  Creating DuckDB table + Parquet for 2025-10-06...
+Finished 2025-10-06 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-07.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-07.zip
+  Creating DuckDB table + Parquet for 2025-10-07...
+Finished 2025-10-07 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-08.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-08.zip
+  Creating DuckDB table + Parquet for 2025-10-08...
+Finished 2025-10-08 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-09.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-09.zip
+  Creating DuckDB table + Parquet for 2025-10-09...
+Finished 2025-10-09 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-10.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-10.zip
+  Creating DuckDB table + Parquet for 2025-10-10...
+Finished 2025-10-10 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-11.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-11.zip
+  Creating DuckDB table + Parquet for 2025-10-11...
+Finished 2025-10-11 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-12.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-12.zip
+  Creating DuckDB table + Parquet for 2025-10-12...
+Finished 2025-10-12 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-13.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-13.zip
+  Creating DuckDB table + Parquet for 2025-10-13...
+Finished 2025-10-13 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-14.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-14.zip
+  Creating DuckDB table + Parquet for 2025-10-14...
+Finished 2025-10-14 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-15.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-15.zip
+  Creating DuckDB table + Parquet for 2025-10-15...
+Finished 2025-10-15 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-16.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-16.zip
+  Creating DuckDB table + Parquet for 2025-10-16...
+Finished 2025-10-16 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-17.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-17.zip
+  Creating DuckDB table + Parquet for 2025-10-17...
+Finished 2025-10-17 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-18.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-18.zip
+  Creating DuckDB table + Parquet for 2025-10-18...
+Finished 2025-10-18 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-19.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-19.zip
+  Creating DuckDB table + Parquet for 2025-10-19...
+Finished 2025-10-19 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-20.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-20.zip
+  Creating DuckDB table + Parquet for 2025-10-20...
+Finished 2025-10-20 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-21.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-21.zip
+  Creating DuckDB table + Parquet for 2025-10-21...
+Finished 2025-10-21 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-22.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-22.zip
+  Creating DuckDB table + Parquet for 2025-10-22...
+Finished 2025-10-22 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-23.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-23.zip
+  Creating DuckDB table + Parquet for 2025-10-23...
+Finished 2025-10-23 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-24.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-24.zip
+  Creating DuckDB table + Parquet for 2025-10-24...
+Finished 2025-10-24 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-25.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-25.zip
+  Creating DuckDB table + Parquet for 2025-10-25...
+Finished 2025-10-25 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-26.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-26.zip
+  Creating DuckDB table + Parquet for 2025-10-26...
+Finished 2025-10-26 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-27.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-27.zip
+  Creating DuckDB table + Parquet for 2025-10-27...
+Finished 2025-10-27 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-28.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-28.zip
+  Creating DuckDB table + Parquet for 2025-10-28...
+Finished 2025-10-28 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-29.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-29.zip
+  Creating DuckDB table + Parquet for 2025-10-29...
+Finished 2025-10-29 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-30.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-30.zip
+  Creating DuckDB table + Parquet for 2025-10-30...
+Finished 2025-10-30 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-10-31.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-10-31.zip
+  Creating DuckDB table + Parquet for 2025-10-31...
+Finished 2025-10-31 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-01.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-01.zip
+  Creating DuckDB table + Parquet for 2025-11-01...
+Finished 2025-11-01 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-02.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-02.zip
+  Creating DuckDB table + Parquet for 2025-11-02...
+Finished 2025-11-02 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-03.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-03.zip
+  Creating DuckDB table + Parquet for 2025-11-03...
+Finished 2025-11-03 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-04.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-04.zip
+  Creating DuckDB table + Parquet for 2025-11-04...
+Finished 2025-11-04 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-05.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-05.zip
+  Creating DuckDB table + Parquet for 2025-11-05...
+Finished 2025-11-05 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-06.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-06.zip
+  Creating DuckDB table + Parquet for 2025-11-06...
+Finished 2025-11-06 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-07.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-07.zip
+  Creating DuckDB table + Parquet for 2025-11-07...
+Finished 2025-11-07 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-08.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-08.zip
+  Creating DuckDB table + Parquet for 2025-11-08...
+Finished 2025-11-08 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-09.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-09.zip
+  Creating DuckDB table + Parquet for 2025-11-09...
+Finished 2025-11-09 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-10.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-10.zip
+  Creating DuckDB table + Parquet for 2025-11-10...
+Finished 2025-11-10 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-11.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-11.zip
+  Creating DuckDB table + Parquet for 2025-11-11...
+Finished 2025-11-11 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-12.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-12.zip
+  Creating DuckDB table + Parquet for 2025-11-12...
+Finished 2025-11-12 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-13.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-13.zip
+  Creating DuckDB table + Parquet for 2025-11-13...
+Finished 2025-11-13 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-14.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-14.zip
+  Creating DuckDB table + Parquet for 2025-11-14...
+Finished 2025-11-14 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-15.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-15.zip
+  Creating DuckDB table + Parquet for 2025-11-15...
+Finished 2025-11-15 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-16.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-16.zip
+  Creating DuckDB table + Parquet for 2025-11-16...
+Finished 2025-11-16 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-17.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-17.zip
+  Creating DuckDB table + Parquet for 2025-11-17...
+Finished 2025-11-17 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-18.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-18.zip
+  Creating DuckDB table + Parquet for 2025-11-18...
+Finished 2025-11-18 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-19.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-19.zip
+  Creating DuckDB table + Parquet for 2025-11-19...
+Finished 2025-11-19 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-20.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-20.zip
+  Creating DuckDB table + Parquet for 2025-11-20...
+Finished 2025-11-20 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-21.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-21.zip
+  Creating DuckDB table + Parquet for 2025-11-21...
+Finished 2025-11-21 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-22.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-22.zip
+  Creating DuckDB table + Parquet for 2025-11-22...
+Finished 2025-11-22 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-23.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-23.zip
+  Creating DuckDB table + Parquet for 2025-11-23...
+Finished 2025-11-23 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-24.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-24.zip
+  Creating DuckDB table + Parquet for 2025-11-24...
+Finished 2025-11-24 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-25.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-25.zip
+  Creating DuckDB table + Parquet for 2025-11-25...
+Finished 2025-11-25 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-26.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-26.zip
+  Creating DuckDB table + Parquet for 2025-11-26...
+Finished 2025-11-26 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-27.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-27.zip
+  Creating DuckDB table + Parquet for 2025-11-27...
+Finished 2025-11-27 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-28.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-28.zip
+  Creating DuckDB table + Parquet for 2025-11-28...
+Finished 2025-11-28 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-29.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-29.zip
+  Creating DuckDB table + Parquet for 2025-11-29...
+Finished 2025-11-29 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-11-30.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-11-30.zip
+  Creating DuckDB table + Parquet for 2025-11-30...
+Finished 2025-11-30 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-01.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-01.zip
+  Creating DuckDB table + Parquet for 2025-12-01...
+Finished 2025-12-01 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-02.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-02.zip
+  Creating DuckDB table + Parquet for 2025-12-02...
+Finished 2025-12-02 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-03.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-03.zip
+  Creating DuckDB table + Parquet for 2025-12-03...
+Finished 2025-12-03 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-04.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-04.zip
+  Creating DuckDB table + Parquet for 2025-12-04...
+Finished 2025-12-04 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-05.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-05.zip
+  Creating DuckDB table + Parquet for 2025-12-05...
+Finished 2025-12-05 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-06.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-06.zip
+  Creating DuckDB table + Parquet for 2025-12-06...
+Finished 2025-12-06 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-07.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-07.zip
+  Creating DuckDB table + Parquet for 2025-12-07...
+Finished 2025-12-07 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-08.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-08.zip
+  Creating DuckDB table + Parquet for 2025-12-08...
+Finished 2025-12-08 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-09.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-09.zip
+  Creating DuckDB table + Parquet for 2025-12-09...
+Finished 2025-12-09 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-10.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-10.zip
+  Creating DuckDB table + Parquet for 2025-12-10...
+Finished 2025-12-10 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-11.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-11.zip
+  Creating DuckDB table + Parquet for 2025-12-11...
+Finished 2025-12-11 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-12.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-12.zip
+  Creating DuckDB table + Parquet for 2025-12-12...
+Finished 2025-12-12 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-13.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-13.zip
+  Creating DuckDB table + Parquet for 2025-12-13...
+Finished 2025-12-13 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-14.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-14.zip
+  Creating DuckDB table + Parquet for 2025-12-14...
+Finished 2025-12-14 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-15.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-15.zip
+  Creating DuckDB table + Parquet for 2025-12-15...
+Finished 2025-12-15 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-16.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-16.zip
+  Creating DuckDB table + Parquet for 2025-12-16...
+Finished 2025-12-16 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-17.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-17.zip
+  Creating DuckDB table + Parquet for 2025-12-17...
+Finished 2025-12-17 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-18.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-18.zip
+  Creating DuckDB table + Parquet for 2025-12-18...
+Finished 2025-12-18 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-19.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-19.zip
+  Creating DuckDB table + Parquet for 2025-12-19...
+Finished 2025-12-19 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-20.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-20.zip
+  Creating DuckDB table + Parquet for 2025-12-20...
+Finished 2025-12-20 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-21.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-21.zip
+  Creating DuckDB table + Parquet for 2025-12-21...
+Finished 2025-12-21 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-22.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-22.zip
+  Creating DuckDB table + Parquet for 2025-12-22...
+Finished 2025-12-22 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-23.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-23.zip
+  Creating DuckDB table + Parquet for 2025-12-23...
+Finished 2025-12-23 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-24.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-24.zip
+  Creating DuckDB table + Parquet for 2025-12-24...
+Finished 2025-12-24 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-25.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-25.zip
+  Creating DuckDB table + Parquet for 2025-12-25...
+Finished 2025-12-25 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-26.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-26.zip
+  Creating DuckDB table + Parquet for 2025-12-26...
+Finished 2025-12-26 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-27.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-27.zip
+  Creating DuckDB table + Parquet for 2025-12-27...
+Finished 2025-12-27 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-28.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-28.zip
+  Creating DuckDB table + Parquet for 2025-12-28...
+Finished 2025-12-28 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-29.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-29.zip
+  Creating DuckDB table + Parquet for 2025-12-29...
+Finished 2025-12-29 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-30.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-30.zip
+  Creating DuckDB table + Parquet for 2025-12-30...
+Finished 2025-12-30 — DuckDB + Parquet stored locally.
+
+Downloading ZIP: http://aisdata.ais.dk/aisdk-2025-12-31.zip
+  Saved ZIP to: tmp_csv/aisdk-2025-12-31.zip
+  Creating DuckDB table + Parquet for 2025-12-31...
+Finished 2025-12-31 — DuckDB + Parquet stored locally.
+
+All AIS files processed successfully.
