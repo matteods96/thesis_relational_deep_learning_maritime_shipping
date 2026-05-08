@@ -1,6 +1,6 @@
 #!/bin/sh
 #BSUB -q gpua100
-#BSUB -J jobMaritimeShippingAISdbRelbenchTrainingStaticHyperSearch
+#BSUB -J jobMaritimeShippingAISdbRelbenchTrainingStaticModelParametersSearch
 #BSUB -n 4
 ##BSUB -gpu "num=1:mode=exclusive_process"
 #BSUB -gpu "num=1"
@@ -11,8 +11,8 @@
 #BSUB -u s242947@dtu.dk
 #BSUB -B
 #BSUB -N
-#BSUB -o jobMaritimeShippingAISDKRelbenchTrainingStaticHyperSearch_%J.out
-#BSUB -e jobMaritimeShippingAISDKRelbenchTrainingStaticHyperSearch_%J.err
+#BSUB -o jobMaritimeShippingAISDKRelbenchTrainingStaticModelParametersSearch_%J.out
+#BSUB -e jobMaritimeShippingAISDKRelbenchTrainingStaticModelParametersSearch_%J.err
 
 nvidia-smi
 
