@@ -1,0 +1,556 @@
+Sun May 10 14:12:22 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 595.58.03              Driver Version: 595.58.03      CUDA Version: 13.2     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100 80GB PCIe          On  |   00000000:65:00.0 Off |                    0 |
+| N/A   33C    P0             43W /  300W |       0MiB /  81920MiB |      0%   E. Process |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+MaritimeShippingAISDataset()
+The shape  of the vessel table is (2099, 5)
+The first 5 rows of the vessel table are:
+        mmsi      imo callsign           shipname shiptype
+0  352002531  9976070  HOA2932        GREEN RAUMA    Cargo
+1  211839040  9120102    DGDZ2           PAULIN-B    Cargo
+2  255806386  9717668    CQEH7  EDWINE OLDENDORFF    Cargo
+3  248744000  9823364  9HA4792            YSALINE    Cargo
+4  636017570  9235610    D5LP3         MSC VERA F    Cargo
+The shape  of the vessel details table is (59267228, 7)
+The first 5 rows of the vessel details table are:
+          vessel_details_id       mmsi  ... to_port  to_starboard
+0  205011000_20250105110222  205011000  ...       6             6
+1  205011000_20250105110224  205011000  ...       6             6
+2  205011000_20250105110234  205011000  ...       6             6
+3  205011000_20250105110303  205011000  ...       6             6
+4  205011000_20250105110313  205011000  ...       6             6
+
+[5 rows x 7 columns]
+The shape  of the voyage table is (59323470, 9)
+The first 5 rows of the voyage table are:
+                  voyage_id       mmsi           timestamp  ...  day hour  minute
+0  205011000_20250105110222  205011000 2025-01-05 11:02:22  ...    5   21       0
+1  205011000_20250105110224  205011000 2025-01-05 11:02:24  ...    5   21       0
+2  205011000_20250105110234  205011000 2025-01-05 11:02:34  ...    5   21       0
+3  205011000_20250105110303  205011000 2025-01-05 11:03:03  ...    5   21       0
+4  205011000_20250105110313  205011000 2025-01-05 11:03:13  ...    5   21       0
+
+[5 rows x 9 columns]
+The shape  of the position table is (59326068, 10)
+The first 5 rows of the position table are:
+                position_id       mmsi  ... course heading
+0  205011000_20250105110222  205011000  ...     69      67
+1  205011000_20250105110224  205011000  ...     66      66
+2  205011000_20250105110234  205011000  ...     65      67
+3  205011000_20250105110303  205011000  ...     67      67
+4  205011000_20250105110313  205011000  ...     66      67
+
+[5 rows x 10 columns]
+The shape  of the port table is (4603, 6)
+The first 5 rows of the port table are:
+   port_id  ...                                            polygon
+0        1  ...  POLYGON((14.36551956036558 40.62293319691949,1...
+1        2  ...  POLYGON((-74.21789190130377 40.6195602995403,-...
+2        3  ...  POLYGON((113.6094220882453 22.919427035693488,...
+3        4  ...  POLYGON((120.1972949838888 23.8274792640885,12...
+4        5  ...  POLYGON((124.71211466585837 8.529538655332956,...
+
+[5 rows x 6 columns]
+Country name:  French Guiana
+Country name:  Nicaragua
+Country name:  Congo
+Country name:  Dominica
+Country name:  Saint Pierre and Miquelon
+Country name:  Solomon Islands
+Country name:  Saint Kitts and Nevis
+Country name:  Guam
+Country name:  Svalbard and Jan Mayen
+Country name:  Slovakia
+Country name:  Côte d'Ivoire
+Country name:  Belarus
+Country name:  Seychelles
+Country name:  Panama
+Country name:  Greece
+Country name:  Aruba
+Country name:  Slovenia
+Country name:  Palau
+Country name:  Nigeria
+Country name:  Spain
+Country name:  Angola
+Country name:  Oman
+Country name:  Liberia
+Country name:  Antarctica
+Country name:  Martinique
+Country name:  Comoros
+Country name:  Dominican Republic
+Country name:  Central African Republic
+Country name:  Yemen
+Country name:  Antigua and Barbuda
+Country name:  Syrian Arab Republic (the)
+Country name:  Maldives
+Country name:  Somalia
+Country name:  Equatorial Guinea
+Country name:  Ireland
+Country name:  Curaçao
+Country name:  Nauru
+Country name:  Venezuela (Bolivarian Republic of)
+Country name:  France
+Country name:  Myanmar
+Country name:  Czechia
+Country name:  United Kingdom
+Country name:  Taiwan (Province of China)
+Country name:  Cape Verde
+Country name:  Türkiye
+Country name:  Germany
+Country name:  nan
+Country name:  Guinea
+Country name:  Anguilla
+Country name:  Viet Nam
+Country name:  United Arab Emirates (the)
+Country name:  Belgium
+Country name:  Israel
+Country name:  Northern Mariana Islands (the)
+Country name:  Bahamas
+Country name:  Togo
+Country name:  Finland
+Country name:  French Polynesia
+Country name:  Trinidad and Tobago
+Country name:  Ethiopia
+Country name:  South Africa
+Country name:  El Salvador
+Country name:  Iraq
+Country name:  Montserrat
+Country name:  Sudan (the)
+Country name:  Austria
+Country name:  Fiji
+Country name:  Brazil
+Country name:  Mexico
+Country name:  Gabon
+Country name:  New Zealand
+Country name:  United States of America (the)
+Country name:  Guinea-Bissau
+Country name:  Mauritania
+Country name:  Suriname
+Country name:  Croatia
+Country name:  Western Sahara
+Country name:  Kazakhstan
+Country name:  Cayman Islands
+Country name:  Ghana
+Country name:  Tokelau
+Country name:  Denmark
+Country name:  Guatemala
+Country name:  Mayotte
+Country name:  Cuba
+Country name:  Sweden
+Country name:  United States Minor Outlying Islands
+Country name:  Cyprus
+Country name:  New Caledonia
+Country name:  Brunei Darussalam
+Country name:  Christmas Island
+Country name:  Djibouti
+Country name:  Mauritius
+Country name:  Japan
+Country name:  Singapore
+Country name:  Madagascar
+Country name:  Montenegro
+Country name:  Kiribati
+Country name:  Jordan
+Country name:  Lebanon
+Country name:  Turks and Caicos Islands (the)
+Country name:  Poland
+Country name:  Bermuda
+Country name:  Grenada
+Country name:  Lithuania
+Country name:  Argentina
+Country name:  Georgia
+Country name:  Saint Vincent and the Grenadines
+Country name:  Papua New Guinea
+Country name:  Guadeloupe
+Country name:  Cambodia
+Country name:  Egypt
+Country name:  Hong Kong 
+Country name:  Virgin Islands (U.S.)
+Country name:  Iceland
+Country name:  Barbados
+Country name:  Turkmenistan
+Country name:  Ecuador
+Country name:  Portugal
+Country name:  Bahrain
+Country name:  Niue
+Country name:  Ukraine
+Country name:  Canada
+Country name:  Faroe Islands
+Country name:  Romania
+Country name:  Kuwait
+Country name:  Australia
+Country name:  Virgin Islands (British)
+Country name:  Greenland
+Country name:  Sierra Leone
+Country name:  Tuvalu
+Country name:  China
+Country name:  Bosnia and Herzegovina
+Country name:  Eritrea
+Country name:  Puerto Rico
+Country name:  Morocco
+Country name:  Gambia
+Country name:  Marshall Islands (the)
+Country name:  Senegal
+Country name:  Azerbaijan
+Country name:  Bangladesh
+Country name:  Réunion
+Country name:  India
+Country name:  Libya
+Country name:  Mozambique
+Country name:  Pakistan
+Country name:  Saint Lucia
+Country name:  Algeria
+Country name:  Paraguay
+Country name:  Thailand
+Country name:  Uruguay
+Country name:  Gibraltar
+Country name:  Sao Tome and Principe
+Country name:  Tonga
+Country name:  Niger
+Country name:  South Georgia and the South Sandwich Islands
+Country name:  Samoa
+Country name:  Latvia
+Country name:  Benin
+Country name:  Guyana
+Country name:  Norway
+Country name:  Switzerland
+Country name:  Honduras
+Country name:  Hungary
+Country name:  Costa Rica
+Country name:  Kenya
+Country name:  Sri Lanka
+Country name:  Philippines (the)
+Country name:  Tunisia
+Country name:  Bulgaria
+Country name:  Netherlands
+Country name:  Cameroon
+Country name:  Timor-Leste
+Country name:  Indonesia
+Country name:  Albania
+Country name:  Malta
+Country name:  Malaysia
+Country name:  Italy
+Country name:  Saudi Arabia
+Country name:  Haiti
+Country name:  Chile
+Country name:  Sint Maarten (Dutch Part)
+Country name:  Jamaica
+Country name:  Qatar
+Country name:  Belize
+Country name:  Colombia
+Country name:  Falkland Islands (Malvinas)
+Country name:  Peru
+Country name:  Estonia
+Country name:  Monaco
+Country name:  Vanuatu
+Country name:  Macao
+Country name:  American Samoa
+Country name:  Russian Federation (the)
+
+vessel table - Column : Type : Na
+--------------------------------------------------
+mmsi : int32 : 0
+imo : Int32 : 3
+callsign : str : 0
+shipname : str : 0
+shiptype : str : 0
+
+vessel_details table - Column : Type : Na
+--------------------------------------------------
+vessel_details_id : str : 0
+mmsi : int32 : 0
+timestamp : datetime64[s] : 0
+to_bow : Int32 : 207944
+to_stern : Int32 : 158611
+to_port : Int32 : 391103
+to_starboard : Int32 : 100526
+
+voyage table - Column : Type : Na
+--------------------------------------------------
+voyage_id : str : 0
+mmsi : int32 : 0
+timestamp : datetime64[s] : 0
+draught : int32 : 0
+destination : str : 0
+month : Int32 : 54674
+day : Int32 : 54674
+hour : Int32 : 54674
+minute : Int32 : 54674
+
+position table - Column : Type : Na
+--------------------------------------------------
+position_id : str : 0
+mmsi : int32 : 0
+timestamp : datetime64[s] : 0
+status : str : 0
+turn : Int32 : 4405032
+speed : Int32 : 6555
+lon : int32 : 0
+lat : int32 : 0
+course : Int32 : 58254
+heading : Int32 : 117997
+
+port table - Column : Type : Na
+--------------------------------------------------
+port_id : int32 : 0
+port_code : str : 0
+port_name : str : 0
+country_code : str : 0
+country_name : str : 60
+polygon : str : 0
+Task created: ShipTypeNthPositionTask(dataset=MaritimeShippingAISDataset())
+Task registered
+Loading Database object from /zhome/64/c/213928/.cache/relbench/rel-custom-maritime_shipping_ais/db...
+Done in 40.72 seconds.
+Loading Database object from /zhome/64/c/213928/.cache/relbench/rel-custom-maritime_shipping_ais/db...
+Done in 16.85 seconds.
+Loading Database object from /zhome/64/c/213928/.cache/relbench/rel-custom-maritime_shipping_ais/db...
+Done in 15.72 seconds.
+
+Note: This is a special node property task that requires removing columns ['shiptype'] from the input data to avoid leakage.
+=== Column type proposal ===
+ports
+  port_id: numerical
+  port_code: numerical
+  port_name: text_embedded
+  country_code: text_embedded
+  country_name: text_embedded
+  polygon: text_embedded
+vessels_details
+  vessel_details_id: numerical
+  mmsi: numerical
+  timestamp: timestamp
+  to_bow: numerical
+  to_stern: numerical
+  to_port: numerical
+  to_starboard: numerical
+vessels
+  mmsi: numerical
+  imo: numerical
+  callsign: text_embedded
+  shipname: text_embedded
+  shiptype: categorical
+voyages
+  voyage_id: numerical
+  mmsi: numerical
+  timestamp: timestamp
+  draught: numerical
+  destination: numerical
+  month: numerical
+  day: categorical
+  hour: categorical
+  minute: numerical
+positions
+  position_id: numerical
+  mmsi: numerical
+  timestamp: timestamp
+  status: text_embedded
+  turn: numerical
+  speed: numerical
+  lon: numerical
+  lat: numerical
+  course: numerical
+  heading: numerical
+Cleaning text-embedded columns...
+Cleaning ports.port_name
+Cleaning ports.country_code
+Cleaning ports.country_name
+Cleaning ports.polygon
+Cleaning vessels.callsign
+Cleaning vessels.shipname
+Cleaning positions.status
+Finished cleaning text columns.
+Table: vessels_details, column: timestamp, dtype: datetime64[s]
+Table: voyages, column: timestamp, dtype: datetime64[s]
+Table: positions, column: timestamp, dtype: datetime64[s]
+Building or Loading Train Graph and Train Col Stats
+Normalizing timestamps inside train/val/test tables...
+train.nth_time dtype -> datetime64[s]
+val.nth_time dtype -> datetime64[s]
+test.nth_time dtype -> datetime64[s]
+Training Hyperparameters:
+
+Epochs: 150
+Learning Rate: 0.0005
+Step Size: 1000
+Gamma: 0.9
+Batch Size: 64
+
+Model Parameters:
+Num Neighbours: [32, 32]
+Channels: 128
+Layers: 2
+Weight Decay: 0.01
+
+Epoch 001 | Train Loss: 0.5456 | Val Loss: 0.5653 | Test Loss: 0.5965 | Val Metric (roc_auc): 0.5868
+Epoch 002 | Train Loss: 0.5218 | Val Loss: 0.5618 | Test Loss: 0.5803 | Val Metric (roc_auc): 0.6308
+Epoch 003 | Train Loss: 0.4397 | Val Loss: 0.5859 | Test Loss: 0.6363 | Val Metric (roc_auc): 0.6536
+Epoch 004 | Train Loss: 0.3888 | Val Loss: 0.6018 | Test Loss: 0.6128 | Val Metric (roc_auc): 0.6662
+Epoch 005 | Train Loss: 0.3661 | Val Loss: 0.6272 | Test Loss: 0.6975 | Val Metric (roc_auc): 0.6903
+Epoch 006 | Train Loss: 0.3130 | Val Loss: 0.6866 | Test Loss: 0.6773 | Val Metric (roc_auc): 0.6647
+Epoch 007 | Train Loss: 0.2687 | Val Loss: 0.6509 | Test Loss: 0.6999 | Val Metric (roc_auc): 0.7119
+Epoch 008 | Train Loss: 0.2808 | Val Loss: 0.6466 | Test Loss: 0.6357 | Val Metric (roc_auc): 0.6856
+Epoch 009 | Train Loss: 0.2498 | Val Loss: 0.7010 | Test Loss: 0.6236 | Val Metric (roc_auc): 0.6472
+Epoch 010 | Train Loss: 0.2563 | Val Loss: 0.6805 | Test Loss: 0.6781 | Val Metric (roc_auc): 0.6362
+Epoch 011 | Train Loss: 0.2439 | Val Loss: 0.7782 | Test Loss: 0.8667 | Val Metric (roc_auc): 0.6356
+Epoch 012 | Train Loss: 0.2804 | Val Loss: 0.7225 | Test Loss: 0.7920 | Val Metric (roc_auc): 0.6125
+Epoch 013 | Train Loss: 0.2875 | Val Loss: 0.7572 | Test Loss: 0.7876 | Val Metric (roc_auc): 0.6477
+Epoch 014 | Train Loss: 0.2666 | Val Loss: 0.6516 | Test Loss: 0.7173 | Val Metric (roc_auc): 0.6764
+Epoch 015 | Train Loss: 0.1820 | Val Loss: 0.6883 | Test Loss: 0.7227 | Val Metric (roc_auc): 0.6785
+Epoch 016 | Train Loss: 0.1364 | Val Loss: 0.7825 | Test Loss: 0.7814 | Val Metric (roc_auc): 0.6485
+Epoch 017 | Train Loss: 0.1026 | Val Loss: 0.8726 | Test Loss: 0.8576 | Val Metric (roc_auc): 0.6596
+Epoch 018 | Train Loss: 0.0912 | Val Loss: 0.8433 | Test Loss: 0.8797 | Val Metric (roc_auc): 0.6686
+Epoch 019 | Train Loss: 0.1256 | Val Loss: 0.8303 | Test Loss: 0.8503 | Val Metric (roc_auc): 0.6677
+Epoch 020 | Train Loss: 0.0954 | Val Loss: 0.9133 | Test Loss: 0.8744 | Val Metric (roc_auc): 0.6695
+Epoch 021 | Train Loss: 0.0971 | Val Loss: 0.8962 | Test Loss: 0.9322 | Val Metric (roc_auc): 0.6529
+Epoch 022 | Train Loss: 0.1100 | Val Loss: 0.9137 | Test Loss: 0.9579 | Val Metric (roc_auc): 0.6444
+Epoch 023 | Train Loss: 0.1140 | Val Loss: 0.9021 | Test Loss: 0.8692 | Val Metric (roc_auc): 0.6523
+Epoch 024 | Train Loss: 0.1414 | Val Loss: 0.8636 | Test Loss: 0.9247 | Val Metric (roc_auc): 0.6634
+Epoch 025 | Train Loss: 0.1324 | Val Loss: 0.9151 | Test Loss: 0.9551 | Val Metric (roc_auc): 0.6809
+Epoch 026 | Train Loss: 0.1104 | Val Loss: 0.9363 | Test Loss: 0.9350 | Val Metric (roc_auc): 0.6541
+Epoch 027 | Train Loss: 0.1056 | Val Loss: 0.9272 | Test Loss: 0.8759 | Val Metric (roc_auc): 0.6609
+Epoch 028 | Train Loss: 0.0751 | Val Loss: 0.9624 | Test Loss: 0.9713 | Val Metric (roc_auc): 0.6557
+Epoch 029 | Train Loss: 0.0636 | Val Loss: 1.0214 | Test Loss: 1.0052 | Val Metric (roc_auc): 0.6630
+Epoch 030 | Train Loss: 0.0807 | Val Loss: 1.0353 | Test Loss: 1.0452 | Val Metric (roc_auc): 0.6701
+Epoch 031 | Train Loss: 0.0584 | Val Loss: 1.0728 | Test Loss: 1.0350 | Val Metric (roc_auc): 0.6652
+Epoch 032 | Train Loss: 0.0504 | Val Loss: 1.0714 | Test Loss: 1.0445 | Val Metric (roc_auc): 0.6795
+Epoch 033 | Train Loss: 0.0418 | Val Loss: 1.0305 | Test Loss: 1.0386 | Val Metric (roc_auc): 0.7108
+Epoch 034 | Train Loss: 0.0266 | Val Loss: 1.0991 | Test Loss: 1.0429 | Val Metric (roc_auc): 0.7025
+Epoch 035 | Train Loss: 0.0203 | Val Loss: 1.1630 | Test Loss: 1.1633 | Val Metric (roc_auc): 0.7061
+Epoch 036 | Train Loss: 0.0188 | Val Loss: 1.2403 | Test Loss: 1.1333 | Val Metric (roc_auc): 0.6850
+Epoch 037 | Train Loss: 0.0467 | Val Loss: 1.2357 | Test Loss: 1.2192 | Val Metric (roc_auc): 0.7028
+Epoch 038 | Train Loss: 0.0887 | Val Loss: 1.0249 | Test Loss: 1.0213 | Val Metric (roc_auc): 0.6849
+Epoch 039 | Train Loss: 0.0541 | Val Loss: 1.1371 | Test Loss: 1.2489 | Val Metric (roc_auc): 0.6948
+Epoch 040 | Train Loss: 0.0499 | Val Loss: 1.1073 | Test Loss: 1.0957 | Val Metric (roc_auc): 0.6851
+Epoch 041 | Train Loss: 0.0302 | Val Loss: 1.1334 | Test Loss: 1.1484 | Val Metric (roc_auc): 0.7007
+Epoch 042 | Train Loss: 0.0220 | Val Loss: 1.2801 | Test Loss: 1.1860 | Val Metric (roc_auc): 0.6908
+Epoch 043 | Train Loss: 0.0186 | Val Loss: 1.2689 | Test Loss: 1.1589 | Val Metric (roc_auc): 0.6951
+Epoch 044 | Train Loss: 0.0142 | Val Loss: 1.2543 | Test Loss: 1.2082 | Val Metric (roc_auc): 0.6931
+Epoch 045 | Train Loss: 0.0169 | Val Loss: 1.3007 | Test Loss: 1.2078 | Val Metric (roc_auc): 0.6799
+Epoch 046 | Train Loss: 0.0326 | Val Loss: 1.2644 | Test Loss: 1.1668 | Val Metric (roc_auc): 0.7017
+Epoch 047 | Train Loss: 0.0131 | Val Loss: 1.3221 | Test Loss: 1.3094 | Val Metric (roc_auc): 0.7002
+Epoch 048 | Train Loss: 0.0113 | Val Loss: 1.3888 | Test Loss: 1.3410 | Val Metric (roc_auc): 0.7078
+Epoch 049 | Train Loss: 0.0125 | Val Loss: 1.3227 | Test Loss: 1.2224 | Val Metric (roc_auc): 0.6967
+Epoch 050 | Train Loss: 0.0210 | Val Loss: 1.4006 | Test Loss: 1.2621 | Val Metric (roc_auc): 0.6648
+Epoch 051 | Train Loss: 0.0483 | Val Loss: 1.3490 | Test Loss: 1.2113 | Val Metric (roc_auc): 0.6981
+Epoch 052 | Train Loss: 0.0378 | Val Loss: 1.1673 | Test Loss: 1.1849 | Val Metric (roc_auc): 0.7072
+Epoch 053 | Train Loss: 0.0171 | Val Loss: 1.2319 | Test Loss: 1.2310 | Val Metric (roc_auc): 0.6940
+Epoch 054 | Train Loss: 0.0066 | Val Loss: 1.3385 | Test Loss: 1.3035 | Val Metric (roc_auc): 0.7038
+Epoch 055 | Train Loss: 0.0057 | Val Loss: 1.3669 | Test Loss: 1.3014 | Val Metric (roc_auc): 0.6918
+Epoch 056 | Train Loss: 0.0087 | Val Loss: 1.4270 | Test Loss: 1.4596 | Val Metric (roc_auc): 0.7194
+Epoch 057 | Train Loss: 0.0476 | Val Loss: 1.2833 | Test Loss: 1.3290 | Val Metric (roc_auc): 0.7131
+Epoch 058 | Train Loss: 0.0350 | Val Loss: 1.1390 | Test Loss: 1.1754 | Val Metric (roc_auc): 0.7221
+Epoch 059 | Train Loss: 0.0211 | Val Loss: 1.2851 | Test Loss: 1.3910 | Val Metric (roc_auc): 0.7169
+Epoch 060 | Train Loss: 0.0260 | Val Loss: 1.2520 | Test Loss: 1.2703 | Val Metric (roc_auc): 0.7116
+Epoch 061 | Train Loss: 0.0091 | Val Loss: 1.3530 | Test Loss: 1.3746 | Val Metric (roc_auc): 0.7130
+Epoch 062 | Train Loss: 0.0175 | Val Loss: 1.3362 | Test Loss: 1.3257 | Val Metric (roc_auc): 0.6834
+Epoch 063 | Train Loss: 0.0277 | Val Loss: 1.3458 | Test Loss: 1.3045 | Val Metric (roc_auc): 0.7215
+Epoch 064 | Train Loss: 0.0212 | Val Loss: 1.4085 | Test Loss: 1.2840 | Val Metric (roc_auc): 0.7095
+Epoch 065 | Train Loss: 0.0281 | Val Loss: 1.2366 | Test Loss: 1.2184 | Val Metric (roc_auc): 0.7233
+Epoch 066 | Train Loss: 0.0266 | Val Loss: 1.2864 | Test Loss: 1.2489 | Val Metric (roc_auc): 0.7168
+Epoch 067 | Train Loss: 0.0349 | Val Loss: 1.3129 | Test Loss: 1.2705 | Val Metric (roc_auc): 0.7236
+Epoch 068 | Train Loss: 0.0254 | Val Loss: 1.3767 | Test Loss: 1.3816 | Val Metric (roc_auc): 0.7088
+Epoch 069 | Train Loss: 0.0270 | Val Loss: 1.2248 | Test Loss: 1.2201 | Val Metric (roc_auc): 0.7241
+Epoch 070 | Train Loss: 0.0086 | Val Loss: 1.2561 | Test Loss: 1.3555 | Val Metric (roc_auc): 0.7380
+Epoch 071 | Train Loss: 0.0043 | Val Loss: 1.3779 | Test Loss: 1.3671 | Val Metric (roc_auc): 0.7338
+Epoch 072 | Train Loss: 0.0069 | Val Loss: 1.4054 | Test Loss: 1.4019 | Val Metric (roc_auc): 0.7262
+Epoch 073 | Train Loss: 0.0022 | Val Loss: 1.4540 | Test Loss: 1.3857 | Val Metric (roc_auc): 0.7228
+Epoch 074 | Train Loss: 0.0021 | Val Loss: 1.4827 | Test Loss: 1.4003 | Val Metric (roc_auc): 0.7170
+Epoch 075 | Train Loss: 0.0025 | Val Loss: 1.5043 | Test Loss: 1.4527 | Val Metric (roc_auc): 0.7120
+Epoch 076 | Train Loss: 0.0021 | Val Loss: 1.4739 | Test Loss: 1.4926 | Val Metric (roc_auc): 0.7110
+Epoch 077 | Train Loss: 0.0136 | Val Loss: 1.4035 | Test Loss: 1.5052 | Val Metric (roc_auc): 0.7061
+Epoch 078 | Train Loss: 0.0154 | Val Loss: 1.5560 | Test Loss: 1.5513 | Val Metric (roc_auc): 0.7274
+Epoch 079 | Train Loss: 0.0166 | Val Loss: 1.4846 | Test Loss: 1.4533 | Val Metric (roc_auc): 0.7102
+Epoch 080 | Train Loss: 0.0053 | Val Loss: 1.5109 | Test Loss: 1.5272 | Val Metric (roc_auc): 0.6991
+Epoch 081 | Train Loss: 0.0161 | Val Loss: 1.3459 | Test Loss: 1.4367 | Val Metric (roc_auc): 0.7459
+Epoch 082 | Train Loss: 0.0058 | Val Loss: 1.3720 | Test Loss: 1.3893 | Val Metric (roc_auc): 0.7359
+Epoch 083 | Train Loss: 0.0100 | Val Loss: 1.4046 | Test Loss: 1.4226 | Val Metric (roc_auc): 0.7483
+Epoch 084 | Train Loss: 0.0113 | Val Loss: 1.3924 | Test Loss: 1.3712 | Val Metric (roc_auc): 0.7450
+Epoch 085 | Train Loss: 0.0099 | Val Loss: 1.5028 | Test Loss: 1.3993 | Val Metric (roc_auc): 0.7329
+Epoch 086 | Train Loss: 0.0364 | Val Loss: 1.4016 | Test Loss: 1.3654 | Val Metric (roc_auc): 0.7352
+Epoch 087 | Train Loss: 0.0453 | Val Loss: 1.3446 | Test Loss: 1.3282 | Val Metric (roc_auc): 0.7197
+Epoch 088 | Train Loss: 0.0269 | Val Loss: 1.4878 | Test Loss: 1.3985 | Val Metric (roc_auc): 0.6857
+Epoch 089 | Train Loss: 0.0296 | Val Loss: 1.2088 | Test Loss: 1.2731 | Val Metric (roc_auc): 0.7104
+Epoch 090 | Train Loss: 0.0112 | Val Loss: 1.4080 | Test Loss: 1.4208 | Val Metric (roc_auc): 0.7075
+Epoch 091 | Train Loss: 0.0058 | Val Loss: 1.4662 | Test Loss: 1.4399 | Val Metric (roc_auc): 0.7067
+Epoch 092 | Train Loss: 0.0039 | Val Loss: 1.4606 | Test Loss: 1.4810 | Val Metric (roc_auc): 0.7020
+Epoch 093 | Train Loss: 0.0020 | Val Loss: 1.5091 | Test Loss: 1.4905 | Val Metric (roc_auc): 0.7015
+Epoch 094 | Train Loss: 0.0066 | Val Loss: 1.4802 | Test Loss: 1.4250 | Val Metric (roc_auc): 0.7004
+Epoch 095 | Train Loss: 0.0015 | Val Loss: 1.4994 | Test Loss: 1.4544 | Val Metric (roc_auc): 0.7001
+Epoch 096 | Train Loss: 0.0075 | Val Loss: 1.5417 | Test Loss: 1.5027 | Val Metric (roc_auc): 0.6825
+Epoch 097 | Train Loss: 0.0071 | Val Loss: 1.5652 | Test Loss: 1.5710 | Val Metric (roc_auc): 0.6928
+Epoch 098 | Train Loss: 0.0117 | Val Loss: 1.5142 | Test Loss: 1.5627 | Val Metric (roc_auc): 0.7002
+Epoch 099 | Train Loss: 0.0030 | Val Loss: 1.5620 | Test Loss: 1.4476 | Val Metric (roc_auc): 0.7174
+Epoch 100 | Train Loss: 0.0012 | Val Loss: 1.5987 | Test Loss: 1.4655 | Val Metric (roc_auc): 0.7161
+Epoch 101 | Train Loss: 0.0010 | Val Loss: 1.6164 | Test Loss: 1.4987 | Val Metric (roc_auc): 0.7131
+Epoch 102 | Train Loss: 0.0011 | Val Loss: 1.6234 | Test Loss: 1.5149 | Val Metric (roc_auc): 0.7091
+Epoch 103 | Train Loss: 0.0035 | Val Loss: 1.5760 | Test Loss: 1.6354 | Val Metric (roc_auc): 0.6891
+Epoch 104 | Train Loss: 0.0341 | Val Loss: 1.5611 | Test Loss: 1.4778 | Val Metric (roc_auc): 0.7176
+Epoch 105 | Train Loss: 0.0199 | Val Loss: 1.3733 | Test Loss: 1.5420 | Val Metric (roc_auc): 0.7442
+Epoch 106 | Train Loss: 0.0143 | Val Loss: 1.3049 | Test Loss: 1.4460 | Val Metric (roc_auc): 0.7508
+Epoch 107 | Train Loss: 0.0089 | Val Loss: 1.4236 | Test Loss: 1.5034 | Val Metric (roc_auc): 0.7431
+Epoch 108 | Train Loss: 0.0198 | Val Loss: 1.4040 | Test Loss: 1.5260 | Val Metric (roc_auc): 0.7453
+Epoch 109 | Train Loss: 0.0107 | Val Loss: 1.3861 | Test Loss: 1.3862 | Val Metric (roc_auc): 0.7489
+Epoch 110 | Train Loss: 0.0029 | Val Loss: 1.4306 | Test Loss: 1.4586 | Val Metric (roc_auc): 0.7518
+Epoch 111 | Train Loss: 0.0013 | Val Loss: 1.4985 | Test Loss: 1.5469 | Val Metric (roc_auc): 0.7495
+Epoch 112 | Train Loss: 0.0013 | Val Loss: 1.5454 | Test Loss: 1.6287 | Val Metric (roc_auc): 0.7444
+Epoch 113 | Train Loss: 0.0028 | Val Loss: 1.5602 | Test Loss: 1.5828 | Val Metric (roc_auc): 0.7416
+Epoch 114 | Train Loss: 0.0008 | Val Loss: 1.5803 | Test Loss: 1.5986 | Val Metric (roc_auc): 0.7398
+Epoch 115 | Train Loss: 0.0021 | Val Loss: 1.5673 | Test Loss: 1.7042 | Val Metric (roc_auc): 0.7459
+Epoch 116 | Train Loss: 0.0008 | Val Loss: 1.5981 | Test Loss: 1.7563 | Val Metric (roc_auc): 0.7298
+Epoch 117 | Train Loss: 0.0070 | Val Loss: 1.6135 | Test Loss: 1.7866 | Val Metric (roc_auc): 0.7380
+Epoch 118 | Train Loss: 0.0124 | Val Loss: 1.6669 | Test Loss: 1.8216 | Val Metric (roc_auc): 0.7106
+Epoch 119 | Train Loss: 0.0076 | Val Loss: 1.5176 | Test Loss: 1.6232 | Val Metric (roc_auc): 0.7346
+Epoch 120 | Train Loss: 0.0043 | Val Loss: 1.5956 | Test Loss: 1.6540 | Val Metric (roc_auc): 0.7426
+Epoch 121 | Train Loss: 0.0011 | Val Loss: 1.6740 | Test Loss: 1.6716 | Val Metric (roc_auc): 0.7321
+Epoch 122 | Train Loss: 0.0014 | Val Loss: 1.7007 | Test Loss: 1.7034 | Val Metric (roc_auc): 0.7270
+Epoch 123 | Train Loss: 0.0007 | Val Loss: 1.7058 | Test Loss: 1.7543 | Val Metric (roc_auc): 0.7263
+Epoch 124 | Train Loss: 0.0011 | Val Loss: 1.6795 | Test Loss: 1.7989 | Val Metric (roc_auc): 0.7252
+Epoch 125 | Train Loss: 0.0035 | Val Loss: 1.6910 | Test Loss: 1.6815 | Val Metric (roc_auc): 0.7049
+Epoch 126 | Train Loss: 0.0094 | Val Loss: 1.6319 | Test Loss: 1.7131 | Val Metric (roc_auc): 0.7363
+Epoch 127 | Train Loss: 0.0081 | Val Loss: 1.6076 | Test Loss: 1.7071 | Val Metric (roc_auc): 0.7386
+Epoch 128 | Train Loss: 0.0014 | Val Loss: 1.6349 | Test Loss: 1.7784 | Val Metric (roc_auc): 0.7401
+Epoch 129 | Train Loss: 0.0013 | Val Loss: 1.6490 | Test Loss: 1.8130 | Val Metric (roc_auc): 0.7291
+Epoch 130 | Train Loss: 0.0007 | Val Loss: 1.6668 | Test Loss: 1.8300 | Val Metric (roc_auc): 0.7262
+Epoch 131 | Train Loss: 0.0007 | Val Loss: 1.6808 | Test Loss: 1.8421 | Val Metric (roc_auc): 0.7201
+Epoch 132 | Train Loss: 0.0026 | Val Loss: 1.6353 | Test Loss: 1.8231 | Val Metric (roc_auc): 0.7266
+Epoch 133 | Train Loss: 0.0013 | Val Loss: 1.5968 | Test Loss: 1.7806 | Val Metric (roc_auc): 0.7272
+Epoch 134 | Train Loss: 0.0021 | Val Loss: 1.6180 | Test Loss: 1.7345 | Val Metric (roc_auc): 0.7114
+Epoch 135 | Train Loss: 0.0112 | Val Loss: 1.6257 | Test Loss: 1.7550 | Val Metric (roc_auc): 0.7147
+Epoch 136 | Train Loss: 0.0461 | Val Loss: 1.6065 | Test Loss: 1.6931 | Val Metric (roc_auc): 0.7034
+Epoch 137 | Train Loss: 0.0564 | Val Loss: 1.3646 | Test Loss: 1.4706 | Val Metric (roc_auc): 0.6658
+Epoch 138 | Train Loss: 0.0383 | Val Loss: 1.4585 | Test Loss: 1.4169 | Val Metric (roc_auc): 0.6661
+Epoch 139 | Train Loss: 0.0280 | Val Loss: 1.4372 | Test Loss: 1.3408 | Val Metric (roc_auc): 0.6996
+Epoch 140 | Train Loss: 0.0175 | Val Loss: 1.3170 | Test Loss: 1.2835 | Val Metric (roc_auc): 0.7211
+Epoch 141 | Train Loss: 0.0113 | Val Loss: 1.5103 | Test Loss: 1.4241 | Val Metric (roc_auc): 0.7160
+Epoch 142 | Train Loss: 0.0092 | Val Loss: 1.5618 | Test Loss: 1.4422 | Val Metric (roc_auc): 0.7100
+Epoch 143 | Train Loss: 0.0027 | Val Loss: 1.5708 | Test Loss: 1.4278 | Val Metric (roc_auc): 0.7092
+Epoch 144 | Train Loss: 0.0024 | Val Loss: 1.6109 | Test Loss: 1.4474 | Val Metric (roc_auc): 0.7107
+Epoch 145 | Train Loss: 0.0017 | Val Loss: 1.6753 | Test Loss: 1.4899 | Val Metric (roc_auc): 0.7112
+Epoch 146 | Train Loss: 0.0050 | Val Loss: 1.6407 | Test Loss: 1.5530 | Val Metric (roc_auc): 0.7316
+Epoch 147 | Train Loss: 0.0035 | Val Loss: 1.7145 | Test Loss: 1.6544 | Val Metric (roc_auc): 0.7234
+Epoch 148 | Train Loss: 0.0032 | Val Loss: 1.7311 | Test Loss: 1.6790 | Val Metric (roc_auc): 0.7174
+Epoch 149 | Train Loss: 0.0108 | Val Loss: 1.6586 | Test Loss: 1.4987 | Val Metric (roc_auc): 0.7209
+Epoch 150 | Train Loss: 0.0113 | Val Loss: 1.6686 | Test Loss: 1.5643 | Val Metric (roc_auc): 0.7122
+Best Val metrics: {'average_precision': np.float64(0.5170327460434293), 'accuracy': 0.7418546365914787, 'f1': 0.44324324324324327, 'roc_auc': np.float64(0.7517660262758302)}
+Best test metrics: {'average_precision': np.float64(0.5853414318756622), 'accuracy': 0.7306273062730627, 'f1': 0.496551724137931, 'roc_auc': np.float64(0.7364847046413502)}
+Saved test targets to ship type prediction/heterogenuos graph_sage_tuned_with_ablation/test_targets.csv
+Saved test predictions to ship type prediction/heterogenuos graph_sage_tuned_with_ablation/test_predictions.csv
+Saved learning curves
+Saved ROC-AUC curves to ship type prediction/heterogenuos graph_sage_tuned_with_ablation/roc_auc_curves.png
+Prediction of the heterogenuos graph sage tuned with ablation
