@@ -1,0 +1,691 @@
+MaritimeShippingAISDataset()
+The shape  of the vessel table is (2099, 5)
+The first 5 rows of the vessel table are:
+        mmsi      imo callsign           shipname shiptype
+0  352002531  9976070  HOA2932        GREEN RAUMA    Cargo
+1  211839040  9120102    DGDZ2           PAULIN-B    Cargo
+2  255806386  9717668    CQEH7  EDWINE OLDENDORFF    Cargo
+3  248744000  9823364  9HA4792            YSALINE    Cargo
+4  636017570  9235610    D5LP3         MSC VERA F    Cargo
+The shape  of the vessel details table is (59267228, 7)
+The first 5 rows of the vessel details table are:
+          vessel_details_id       mmsi  ... to_port  to_starboard
+0  205011000_20250105110222  205011000  ...       6             6
+1  205011000_20250105110224  205011000  ...       6             6
+2  205011000_20250105110234  205011000  ...       6             6
+3  205011000_20250105110303  205011000  ...       6             6
+4  205011000_20250105110313  205011000  ...       6             6
+
+[5 rows x 7 columns]
+The shape  of the voyage table is (59323470, 9)
+The first 5 rows of the voyage table are:
+                  voyage_id       mmsi           timestamp  ...  day hour  minute
+0  205011000_20250105110222  205011000 2025-01-05 11:02:22  ...    5   21       0
+1  205011000_20250105110224  205011000 2025-01-05 11:02:24  ...    5   21       0
+2  205011000_20250105110234  205011000 2025-01-05 11:02:34  ...    5   21       0
+3  205011000_20250105110303  205011000 2025-01-05 11:03:03  ...    5   21       0
+4  205011000_20250105110313  205011000 2025-01-05 11:03:13  ...    5   21       0
+
+[5 rows x 9 columns]
+The shape  of the position table is (59326068, 10)
+The first 5 rows of the position table are:
+                position_id       mmsi  ... course heading
+0  205011000_20250105110222  205011000  ...     69      67
+1  205011000_20250105110224  205011000  ...     66      66
+2  205011000_20250105110234  205011000  ...     65      67
+3  205011000_20250105110303  205011000  ...     67      67
+4  205011000_20250105110313  205011000  ...     66      67
+
+[5 rows x 10 columns]
+The shape  of the port table is (4603, 6)
+The first 5 rows of the port table are:
+   port_id  ...                                            polygon
+0        1  ...  POLYGON((14.36551956036558 40.62293319691949,1...
+1        2  ...  POLYGON((-74.21789190130377 40.6195602995403,-...
+2        3  ...  POLYGON((113.6094220882453 22.919427035693488,...
+3        4  ...  POLYGON((120.1972949838888 23.8274792640885,12...
+4        5  ...  POLYGON((124.71211466585837 8.529538655332956,...
+
+[5 rows x 6 columns]
+Country name:  Cuba
+Country name:  Tuvalu
+Country name:  Japan
+Country name:  Cape Verde
+Country name:  Taiwan (Province of China)
+Country name:  Poland
+Country name:  Ukraine
+Country name:  Chile
+Country name:  Djibouti
+Country name:  Liberia
+Country name:  Lebanon
+Country name:  Antigua and Barbuda
+Country name:  Martinique
+Country name:  Cyprus
+Country name:  Nigeria
+Country name:  Puerto Rico
+Country name:  Svalbard and Jan Mayen
+Country name:  Western Sahara
+Country name:  Barbados
+Country name:  Belize
+Country name:  Aruba
+Country name:  Brunei Darussalam
+Country name:  Yemen
+Country name:  Peru
+Country name:  Saint Vincent and the Grenadines
+Country name:  Bermuda
+Country name:  Cayman Islands
+Country name:  Norway
+Country name:  France
+Country name:  Equatorial Guinea
+Country name:  United Kingdom
+Country name:  Mauritania
+Country name:  Romania
+Country name:  Australia
+Country name:  Israel
+Country name:  Latvia
+Country name:  Albania
+Country name:  Germany
+Country name:  Thailand
+Country name:  Central African Republic
+Country name:  Northern Mariana Islands (the)
+Country name:  Tokelau
+Country name:  Benin
+Country name:  Saint Pierre and Miquelon
+Country name:  Venezuela (Bolivarian Republic of)
+Country name:  French Guiana
+Country name:  Solomon Islands
+Country name:  Malta
+Country name:  Indonesia
+Country name:  Tonga
+Country name:  Haiti
+Country name:  Spain
+Country name:  Sri Lanka
+Country name:  Austria
+Country name:  Seychelles
+Country name:  Kuwait
+Country name:  Iceland
+Country name:  Honduras
+Country name:  Singapore
+Country name:  Dominica
+Country name:  Hungary
+Country name:  Antarctica
+Country name:  Falkland Islands (Malvinas)
+Country name:  Gibraltar
+Country name:  Panama
+Country name:  Montenegro
+Country name:  Portugal
+Country name:  Samoa
+Country name:  Christmas Island
+Country name:  Sudan (the)
+Country name:  French Polynesia
+Country name:  United States Minor Outlying Islands
+Country name:  Lithuania
+Country name:  Iraq
+Country name:  Suriname
+Country name:  Guyana
+Country name:  Anguilla
+Country name:  Guatemala
+Country name:  Fiji
+Country name:  Kiribati
+Country name:  Grenada
+Country name:  Syrian Arab Republic (the)
+Country name:  Egypt
+Country name:  Uruguay
+Country name:  Palau
+Country name:  Gambia
+Country name:  Hong Kong 
+Country name:  Guadeloupe
+Country name:  Estonia
+Country name:  Bosnia and Herzegovina
+Country name:  Sierra Leone
+Country name:  Bangladesh
+Country name:  Virgin Islands (U.S.)
+Country name:  Virgin Islands (British)
+Country name:  Algeria
+Country name:  Russian Federation (the)
+Country name:  Bulgaria
+Country name:  Trinidad and Tobago
+Country name:  Bahamas
+Country name:  United States of America (the)
+Country name:  Cameroon
+Country name:  Costa Rica
+Country name:  Ecuador
+Country name:  Saint Kitts and Nevis
+Country name:  Senegal
+Country name:  South Africa
+Country name:  Nicaragua
+Country name:  Mauritius
+Country name:  Niger
+Country name:  Paraguay
+Country name:  Türkiye
+Country name:  Tunisia
+Country name:  Dominican Republic
+Country name:  Belarus
+Country name:  Timor-Leste
+Country name:  Netherlands
+Country name:  Montserrat
+Country name:  Niue
+Country name:  Ireland
+Country name:  India
+Country name:  Comoros
+Country name:  Philippines (the)
+Country name:  Côte d'Ivoire
+Country name:  Finland
+Country name:  Angola
+Country name:  Guam
+Country name:  Kazakhstan
+Country name:  El Salvador
+Country name:  Canada
+Country name:  Greenland
+Country name:  Monaco
+Country name:  Switzerland
+Country name:  Eritrea
+Country name:  Czechia
+Country name:  Sweden
+Country name:  United Arab Emirates (the)
+Country name:  Kenya
+Country name:  Colombia
+Country name:  Italy
+Country name:  Jordan
+Country name:  Saudi Arabia
+Country name:  Nauru
+Country name:  Belgium
+Country name:  New Zealand
+Country name:  New Caledonia
+Country name:  Guinea-Bissau
+Country name:  Georgia
+Country name:  Gabon
+Country name:  Mayotte
+Country name:  Azerbaijan
+Country name:  Morocco
+Country name:  Qatar
+Country name:  Jamaica
+Country name:  Turkmenistan
+Country name:  Togo
+Country name:  Oman
+Country name:  Pakistan
+Country name:  Myanmar
+Country name:  Cambodia
+Country name:  Madagascar
+Country name:  China
+Country name:  American Samoa
+Country name:  Malaysia
+Country name:  Mexico
+Country name:  Papua New Guinea
+Country name:  Ethiopia
+Country name:  Maldives
+Country name:  nan
+Country name:  Congo
+Country name:  Slovakia
+Country name:  Sao Tome and Principe
+Country name:  Bahrain
+Country name:  Marshall Islands (the)
+Country name:  Guinea
+Country name:  Slovenia
+Country name:  Viet Nam
+Country name:  Sint Maarten (Dutch Part)
+Country name:  Greece
+Country name:  Mozambique
+Country name:  Curaçao
+Country name:  Réunion
+Country name:  Argentina
+Country name:  South Georgia and the South Sandwich Islands
+Country name:  Somalia
+Country name:  Saint Lucia
+Country name:  Denmark
+Country name:  Croatia
+Country name:  Libya
+Country name:  Faroe Islands
+Country name:  Ghana
+Country name:  Turks and Caicos Islands (the)
+Country name:  Vanuatu
+Country name:  Brazil
+Country name:  Macao
+
+vessel table - Column : Type : Na
+--------------------------------------------------
+mmsi : int32 : 0
+imo : Int32 : 3
+callsign : str : 0
+shipname : str : 0
+shiptype : str : 0
+
+vessel_details table - Column : Type : Na
+--------------------------------------------------
+vessel_details_id : str : 0
+mmsi : int32 : 0
+timestamp : datetime64[s] : 0
+to_bow : Int32 : 207944
+to_stern : Int32 : 158611
+to_port : Int32 : 391103
+to_starboard : Int32 : 100526
+
+voyage table - Column : Type : Na
+--------------------------------------------------
+voyage_id : str : 0
+mmsi : int32 : 0
+timestamp : datetime64[s] : 0
+draught : int32 : 0
+destination : str : 0
+month : Int32 : 54674
+day : Int32 : 54674
+hour : Int32 : 54674
+minute : Int32 : 54674
+
+position table - Column : Type : Na
+--------------------------------------------------
+position_id : str : 0
+mmsi : int32 : 0
+timestamp : datetime64[s] : 0
+status : str : 0
+turn : Int32 : 4405032
+speed : Int32 : 6555
+lon : int32 : 0
+lat : int32 : 0
+course : Int32 : 58254
+heading : Int32 : 117997
+
+port table - Column : Type : Na
+--------------------------------------------------
+port_id : int32 : 0
+port_code : str : 0
+port_name : str : 0
+country_code : str : 0
+country_name : str : 60
+polygon : str : 0
+Dataset loaded: MaritimeShippingAISDataset()
+The shape  of the vessel table is (2099, 5)
+The first 5 rows of the vessel table are:
+        mmsi      imo callsign           shipname shiptype
+0  352002531  9976070  HOA2932        GREEN RAUMA    Cargo
+1  211839040  9120102    DGDZ2           PAULIN-B    Cargo
+2  255806386  9717668    CQEH7  EDWINE OLDENDORFF    Cargo
+3  248744000  9823364  9HA4792            YSALINE    Cargo
+4  636017570  9235610    D5LP3         MSC VERA F    Cargo
+The shape  of the vessel details table is (59267228, 7)
+The first 5 rows of the vessel details table are:
+          vessel_details_id       mmsi  ... to_port  to_starboard
+0  205011000_20250105110222  205011000  ...       6             6
+1  205011000_20250105110224  205011000  ...       6             6
+2  205011000_20250105110234  205011000  ...       6             6
+3  205011000_20250105110303  205011000  ...       6             6
+4  205011000_20250105110313  205011000  ...       6             6
+
+[5 rows x 7 columns]
+The shape  of the voyage table is (59323470, 9)
+The first 5 rows of the voyage table are:
+                  voyage_id       mmsi           timestamp  ...  day hour  minute
+0  205011000_20250105110222  205011000 2025-01-05 11:02:22  ...    5   21       0
+1  205011000_20250105110224  205011000 2025-01-05 11:02:24  ...    5   21       0
+2  205011000_20250105110234  205011000 2025-01-05 11:02:34  ...    5   21       0
+3  205011000_20250105110303  205011000 2025-01-05 11:03:03  ...    5   21       0
+4  205011000_20250105110313  205011000 2025-01-05 11:03:13  ...    5   21       0
+
+[5 rows x 9 columns]
+The shape  of the position table is (59326068, 10)
+The first 5 rows of the position table are:
+                position_id       mmsi  ... course heading
+0  205011000_20250105110222  205011000  ...     69      67
+1  205011000_20250105110224  205011000  ...     66      66
+2  205011000_20250105110234  205011000  ...     65      67
+3  205011000_20250105110303  205011000  ...     67      67
+4  205011000_20250105110313  205011000  ...     66      67
+
+[5 rows x 10 columns]
+The shape  of the port table is (4603, 6)
+The first 5 rows of the port table are:
+   port_id  ...                                            polygon
+0        1  ...  POLYGON((14.36551956036558 40.62293319691949,1...
+1        2  ...  POLYGON((-74.21789190130377 40.6195602995403,-...
+2        3  ...  POLYGON((113.6094220882453 22.919427035693488,...
+3        4  ...  POLYGON((120.1972949838888 23.8274792640885,12...
+4        5  ...  POLYGON((124.71211466585837 8.529538655332956,...
+
+[5 rows x 6 columns]
+Country name:  Cuba
+Country name:  Tuvalu
+Country name:  Japan
+Country name:  Cape Verde
+Country name:  Taiwan (Province of China)
+Country name:  Poland
+Country name:  Ukraine
+Country name:  Chile
+Country name:  Djibouti
+Country name:  Liberia
+Country name:  Lebanon
+Country name:  Antigua and Barbuda
+Country name:  Martinique
+Country name:  Cyprus
+Country name:  Nigeria
+Country name:  Puerto Rico
+Country name:  Svalbard and Jan Mayen
+Country name:  Western Sahara
+Country name:  Barbados
+Country name:  Belize
+Country name:  Aruba
+Country name:  Brunei Darussalam
+Country name:  Yemen
+Country name:  Peru
+Country name:  Saint Vincent and the Grenadines
+Country name:  Bermuda
+Country name:  Cayman Islands
+Country name:  Norway
+Country name:  France
+Country name:  Equatorial Guinea
+Country name:  United Kingdom
+Country name:  Mauritania
+Country name:  Romania
+Country name:  Australia
+Country name:  Israel
+Country name:  Latvia
+Country name:  Albania
+Country name:  Germany
+Country name:  Thailand
+Country name:  Central African Republic
+Country name:  Northern Mariana Islands (the)
+Country name:  Tokelau
+Country name:  Benin
+Country name:  Saint Pierre and Miquelon
+Country name:  Venezuela (Bolivarian Republic of)
+Country name:  French Guiana
+Country name:  Solomon Islands
+Country name:  Malta
+Country name:  Indonesia
+Country name:  Tonga
+Country name:  Haiti
+Country name:  Spain
+Country name:  Sri Lanka
+Country name:  Austria
+Country name:  Seychelles
+Country name:  Kuwait
+Country name:  Iceland
+Country name:  Honduras
+Country name:  Singapore
+Country name:  Dominica
+Country name:  Hungary
+Country name:  Antarctica
+Country name:  Falkland Islands (Malvinas)
+Country name:  Gibraltar
+Country name:  Panama
+Country name:  Montenegro
+Country name:  Portugal
+Country name:  Samoa
+Country name:  Christmas Island
+Country name:  Sudan (the)
+Country name:  French Polynesia
+Country name:  United States Minor Outlying Islands
+Country name:  Lithuania
+Country name:  Iraq
+Country name:  Suriname
+Country name:  Guyana
+Country name:  Anguilla
+Country name:  Guatemala
+Country name:  Fiji
+Country name:  Kiribati
+Country name:  Grenada
+Country name:  Syrian Arab Republic (the)
+Country name:  Egypt
+Country name:  Uruguay
+Country name:  Palau
+Country name:  Gambia
+Country name:  Hong Kong 
+Country name:  Guadeloupe
+Country name:  Estonia
+Country name:  Bosnia and Herzegovina
+Country name:  Sierra Leone
+Country name:  Bangladesh
+Country name:  Virgin Islands (U.S.)
+Country name:  Virgin Islands (British)
+Country name:  Algeria
+Country name:  Russian Federation (the)
+Country name:  Bulgaria
+Country name:  Trinidad and Tobago
+Country name:  Bahamas
+Country name:  United States of America (the)
+Country name:  Cameroon
+Country name:  Costa Rica
+Country name:  Ecuador
+Country name:  Saint Kitts and Nevis
+Country name:  Senegal
+Country name:  South Africa
+Country name:  Nicaragua
+Country name:  Mauritius
+Country name:  Niger
+Country name:  Paraguay
+Country name:  Türkiye
+Country name:  Tunisia
+Country name:  Dominican Republic
+Country name:  Belarus
+Country name:  Timor-Leste
+Country name:  Netherlands
+Country name:  Montserrat
+Country name:  Niue
+Country name:  Ireland
+Country name:  India
+Country name:  Comoros
+Country name:  Philippines (the)
+Country name:  Côte d'Ivoire
+Country name:  Finland
+Country name:  Angola
+Country name:  Guam
+Country name:  Kazakhstan
+Country name:  El Salvador
+Country name:  Canada
+Country name:  Greenland
+Country name:  Monaco
+Country name:  Switzerland
+Country name:  Eritrea
+Country name:  Czechia
+Country name:  Sweden
+Country name:  United Arab Emirates (the)
+Country name:  Kenya
+Country name:  Colombia
+Country name:  Italy
+Country name:  Jordan
+Country name:  Saudi Arabia
+Country name:  Nauru
+Country name:  Belgium
+Country name:  New Zealand
+Country name:  New Caledonia
+Country name:  Guinea-Bissau
+Country name:  Georgia
+Country name:  Gabon
+Country name:  Mayotte
+Country name:  Azerbaijan
+Country name:  Morocco
+Country name:  Qatar
+Country name:  Jamaica
+Country name:  Turkmenistan
+Country name:  Togo
+Country name:  Oman
+Country name:  Pakistan
+Country name:  Myanmar
+Country name:  Cambodia
+Country name:  Madagascar
+Country name:  China
+Country name:  American Samoa
+Country name:  Malaysia
+Country name:  Mexico
+Country name:  Papua New Guinea
+Country name:  Ethiopia
+Country name:  Maldives
+Country name:  nan
+Country name:  Congo
+Country name:  Slovakia
+Country name:  Sao Tome and Principe
+Country name:  Bahrain
+Country name:  Marshall Islands (the)
+Country name:  Guinea
+Country name:  Slovenia
+Country name:  Viet Nam
+Country name:  Sint Maarten (Dutch Part)
+Country name:  Greece
+Country name:  Mozambique
+Country name:  Curaçao
+Country name:  Réunion
+Country name:  Argentina
+Country name:  South Georgia and the South Sandwich Islands
+Country name:  Somalia
+Country name:  Saint Lucia
+Country name:  Denmark
+Country name:  Croatia
+Country name:  Libya
+Country name:  Faroe Islands
+Country name:  Ghana
+Country name:  Turks and Caicos Islands (the)
+Country name:  Vanuatu
+Country name:  Brazil
+Country name:  Macao
+
+vessel table - Column : Type : Na
+--------------------------------------------------
+mmsi : int32 : 0
+imo : Int32 : 3
+callsign : str : 0
+shipname : str : 0
+shiptype : str : 0
+
+vessel_details table - Column : Type : Na
+--------------------------------------------------
+vessel_details_id : str : 0
+mmsi : int32 : 0
+timestamp : datetime64[s] : 0
+to_bow : Int32 : 207944
+to_stern : Int32 : 158611
+to_port : Int32 : 391103
+to_starboard : Int32 : 100526
+
+voyage table - Column : Type : Na
+--------------------------------------------------
+voyage_id : str : 0
+mmsi : int32 : 0
+timestamp : datetime64[s] : 0
+draught : int32 : 0
+destination : str : 0
+month : Int32 : 54674
+day : Int32 : 54674
+hour : Int32 : 54674
+minute : Int32 : 54674
+
+position table - Column : Type : Na
+--------------------------------------------------
+position_id : str : 0
+mmsi : int32 : 0
+timestamp : datetime64[s] : 0
+status : str : 0
+turn : Int32 : 4405032
+speed : Int32 : 6555
+lon : int32 : 0
+lat : int32 : 0
+course : Int32 : 58254
+heading : Int32 : 117997
+
+port table - Column : Type : Na
+--------------------------------------------------
+port_id : int32 : 0
+port_code : str : 0
+port_name : str : 0
+country_code : str : 0
+country_name : str : 60
+polygon : str : 0
+Task created: ShipTypeNthPositionTask(dataset=MaritimeShippingAISDataset())
+Columns to be removed as features
+mmsi
+imo
+callsign
+shipname
+shiptype
+vessel_details_id
+mmsi
+timestamp
+to_bow
+to_stern
+to_port
+to_starboard
+position_id
+mmsi
+timestamp
+status
+turn
+speed
+lon
+lat
+course
+heading
+port_id
+port_code
+port_name
+country_code
+country_name
+polygon
+Task registered
+Training table:
+Making task table for train split from scratch...
+Loading Database object from /zhome/64/c/213928/.cache/relbench/rel-custom-maritime_shipping_ais/db...
+Done in 45.88 seconds.
+Loading Database object from /zhome/64/c/213928/.cache/relbench/rel-custom-maritime_shipping_ais/db...
+Done in 30.76 seconds.
+Done in 123.94 seconds.
+Table(df=
+      mmsi            nth_time  shiptype
+0      190 2025-01-01 00:27:44         0
+1      274 2025-01-01 00:30:47         1
+2      199 2025-01-01 00:30:51         0
+3      241 2025-01-01 00:33:15         0
+4      288 2025-01-01 00:33:34         0
+...    ...                 ...       ...
+1235   487 2025-01-24 20:51:50         0
+1236  1565 2025-01-24 21:37:22         0
+1237   804 2025-01-24 22:40:08         0
+1238   544 2025-01-24 23:10:49         0
+1239   805 2025-01-24 23:11:09         0
+
+[1240 rows x 3 columns],
+  fkey_col_to_pkey_table={'mmsi': 'vessels'},
+  pkey_col=mmsi,
+  time_col=nth_time)
+Validation table:
+Making task table for val split from scratch...
+Done in 7.86 seconds.
+Table(df=
+     mmsi            nth_time  shiptype
+0     546 2025-01-25 00:06:44         1
+1    1288 2025-01-25 00:23:38         0
+2    1289 2025-01-25 00:47:04         0
+3     803 2025-01-25 02:53:27         0
+4     547 2025-01-25 04:06:58         0
+..    ...                 ...       ...
+394   863 2025-02-13 17:31:40         0
+395  1243 2025-02-13 18:45:01         1
+396  1690 2025-02-13 21:30:53         0
+397  1177 2025-02-13 23:20:21         0
+398  1635 2025-02-13 23:55:28         0
+
+[399 rows x 3 columns],
+  fkey_col_to_pkey_table={'mmsi': 'vessels'},
+  pkey_col=mmsi,
+  time_col=nth_time)
+Testing table:
+Making task table for test split from scratch...
+Loading Database object from /zhome/64/c/213928/.cache/relbench/rel-custom-maritime_shipping_ais/db...
+Done in 31.36 seconds.
+Done in 44.72 seconds.
+Table(df=
+               nth_time  mmsi
+0   2025-02-14 02:02:40  1689
+1   2025-02-14 02:14:14   615
+2   2025-02-14 04:15:14  1399
+3   2025-02-14 04:46:24    37
+4   2025-02-14 05:03:38    41
+..                  ...   ...
+266 2025-03-01 20:07:02  2096
+267 2025-03-01 21:08:57    55
+268 2025-03-01 21:57:02   567
+269 2025-03-01 22:55:59  2097
+270 2025-03-01 23:03:24  1742
+
+[271 rows x 2 columns],
+  fkey_col_to_pkey_table={'mmsi': 'vessels'},
+  pkey_col=mmsi,
+  time_col=nth_time)
+Task uploaded successfully
