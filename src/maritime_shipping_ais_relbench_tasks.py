@@ -59,6 +59,8 @@ class ShipTypeNthPositionTask(EntityTask):
     # This list specifies which features to remove from the INPUT graph to the task.
     # This should be the target feature, or any features that directly map to the target feature.
     remove_feats=['shiptype']
+    allowed_features={'to_bow','to_stern','to_port','to_starboard'}
+
 
     #Flag this is a special types of time-indipendent node property task
     time_independent_node_task=True
@@ -177,12 +179,48 @@ if __name__ == "__main__":
 
     ais_dataset = get_dataset("rel-custom-maritime_shipping_ais", download=False)
     print("Dataset loaded:", ais_dataset)
+    ais_db = ais_dataset.make_db()
+
+    # compute remove columns dynamically
+    allowed = {'to_bow', 'to_stern', 'to_port', 'to_starboard'}
+    vessel_cols = ais_db.table_dict['vessels'].df.columns
+    vessels_details_cols = ais_db.table_dict['vessels_details'].df.columns
+    positions_cols = ais_db.table_dict['positions'].df.columns
+    voyages_cols = ais_db.table_dict['voyages'].df.columns
+    ports_cols = ais_db.table_dict['ports'].df.columns
+    
+    
+
+
 
     task = ShipTypeNthPositionTask(
         ais_dataset,
         cache_dir="./cache/ship_type_np_task"
     )
+
     print("Task created:", task)
+    #Remove all vessel columns except the 4 geometry features
+    remove_vessel = [col for col in vessel_cols if col not in allowed]
+
+    #Remove ALL features from other tables
+    remove_vessel_details = list(vessels_details_cols)
+    remove_positions      = list(positions_cols)
+    remove_voyages      = list(voyages_cols)
+
+    remove_ports          = list(ports_cols)
+
+    # Combine everything
+    task.remove_columns = (
+        remove_vessel
+        + remove_vessel_details
+        + remove_positions
+        + remove_ports
+    )
+    #task.remove_columns = [col for col in vessel_cols if col not in allowed]
+
+    print('Columns to be removed as features')
+    for col in task.remove_columns:
+        print(col)
 
     register_task("rel-custom-maritime_shipping_ais", "ship_type_np_task", ShipTypeNthPositionTask)
     print('Task registered')
@@ -190,6 +228,15 @@ if __name__ == "__main__":
     print("Training table:")
     train_table = task.get_table("train")
     print(train_table)
+
+    print("Validation table:")
+    val_table = task.get_table("val")
+    print(val_table)
+
+    print("Testing table:")
+    test_table = task.get_table("test")
+    print(test_table)
+
 
     print("Task uploaded successfully")
 
