@@ -3,6 +3,7 @@ import pandas as pd
 import duckdb
 import matplotlib.pyplot as plt
 import os
+from datetime import timedelta
 
 
 def load_nth_dimension_features(n):
@@ -55,12 +56,13 @@ def load_nth_dimension_features(n):
     df = df.dropna()
 
     # keep only Cargo and Tanker
-    df = df[df["shiptype"].isin(["Cargo", "Tanker"])]
+   # df = df[df["shiptype"].isin(["Cargo", "Tanker"])] no need as the db only contains Cargo and Tankers
 
     # encode: Cargo = 1, Tanker = 0
     df["shiptype"] = (df["shiptype"] == "Cargo").astype(int)
 
     df["nth_timestamp"] = pd.to_datetime(df["nth_timestamp"])
+    print(f"Shape of the full data in our experiments is {df.shape[0]/1_000_000} million rows")
 
     return df
 
@@ -81,13 +83,47 @@ df = load_nth_dimension_features(n=500)
 print('Earliest date',df["nth_timestamp"].min())
 print('Latest date',df["nth_timestamp"].max())
 
+val_timestamp="2025-01-25"
+test_timestamp="2025-02-14"
 
 
 df_train, df_val, df_test = temporal_split(
     df,
-    val_timestamp="2025-02-15",
-    test_timestamp="2025-03-01"
+    val_timestamp,
+    test_timestamp
 )
+
+print(
+    "Training period:    ",
+    df["nth_timestamp"].min().date(),
+    " - ",
+    (pd.to_datetime(val_timestamp) - timedelta(days=1)).date()
+)
+
+print(
+    "Validation period:  ",
+    pd.to_datetime(val_timestamp).date(),
+    " - ",
+    (pd.to_datetime(test_timestamp) - timedelta(days=1)).date()
+)
+
+print(
+    "Test period:        ",
+    pd.to_datetime(test_timestamp).date(),
+    " - ",
+    df["nth_timestamp"].max().date()
+)
+
+
+
+num_ships_train=len(set(df_train['mmsi']))
+num_ships_val=len(set(df_val['mmsi']))
+num_ships_test=len(set(df_test['mmsi']))
+
+print(f'Distinct ships for training: {num_ships_train}')
+print(f'Distinct shipsfor validation: {num_ships_val}')
+print(f'Distinct ships type for testing: {num_ships_test}')
+
 
 geom_train = pd.DataFrame({
     "length": df_train["to_bow"] + df_train["to_stern"],
@@ -176,3 +212,100 @@ save_path = os.path.join(
 
 plt.savefig(save_path, dpi=300)
 plt.close()
+
+
+#Creating Histograms length and width 
+
+# integer‑aligned bins for discrete ship dimensions lenghts and width
+length_bins = range(
+    int(df["to_bow"].min() + df["to_stern"].min()),
+    int(df["to_bow"].max() + df["to_stern"].max()) + 2
+)
+
+width_bins = range(
+    int(df["to_port"].min() + df["to_starboard"].min()),
+    int(df["to_port"].max() + df["to_starboard"].max()) + 2
+)
+
+fig2, axes2 = plt.subplots(2, 3, figsize=(18, 10))
+fig2.suptitle("Histograms of Length and Width — Cargo vs Tanker", fontsize=16)
+
+#  histograms for ship's length
+axes2[0, 0].hist(geom_train["length"], bins=length_bins, color="darkorange", alpha=0.7)
+axes2[0, 0].set_title(f"Train Length (n={len(geom_train)})")
+axes2[0, 0].set_xlabel("length")
+axes2[0, 0].set_ylabel("count")
+
+axes2[0, 1].hist(geom_val["length"], bins=length_bins, color="darkorange", alpha=0.7)
+axes2[0, 1].set_title(f"Validation Length (n={len(geom_val)})")
+axes2[0, 1].set_xlabel("length")
+axes2[0, 1].set_ylabel("count")
+
+axes2[0, 2].hist(geom_test["length"], bins=length_bins, color="darkorange", alpha=0.7)
+axes2[0, 2].set_title(f"Test Length (n={len(geom_test)})")
+axes2[0, 2].set_xlabel("length")
+axes2[0, 2].set_ylabel("count")
+
+# histograms for ships' width
+axes2[1, 0].hist(geom_train["width"], bins=width_bins, color="steelblue", alpha=0.7)
+axes2[1, 0].set_title(f"Train Width (n={len(geom_train)})")
+axes2[1, 0].set_xlabel("width")
+axes2[1, 0].set_ylabel("count")
+
+axes2[1, 1].hist(geom_val["width"], bins=width_bins, color="steelblue", alpha=0.7)
+axes2[1, 1].set_title(f"Validation Width (n={len(geom_val)})")
+axes2[1, 1].set_xlabel("width")
+axes2[1, 1].set_ylabel("count")
+
+axes2[1, 2].hist(geom_test["width"], bins=width_bins, color="steelblue", alpha=0.7)
+axes2[1, 2].set_title(f"Test Width (n={len(geom_test)})")
+axes2[1, 2].set_xlabel("width")
+axes2[1, 2].set_ylabel("count")
+
+plt.tight_layout()
+
+save_path_hist = os.path.join(
+    output_dir,
+    "histograms_length_width.png"
+)
+plt.savefig(save_path_hist, dpi=300)
+plt.close()
+
+
+#Creating  a single plot that only contains the data for cargo ships, but containing all the training, validation and test data for the Cargo ships.
+#  Using different colors for the three datasets.
+
+cargo_train = geom_train[geom_train["shiptype"] == 1]
+cargo_val   = geom_val[geom_val["shiptype"] == 1]
+cargo_test  = geom_test[geom_test["shiptype"] == 1]
+
+plt.figure(figsize=(10, 8))
+plt.title("Cargo Ships — Length vs Width ( Train / Val / Test)", fontsize=16)
+
+plt.scatter(
+    cargo_train["length"], cargo_train["width"],
+    s=8, alpha=0.5, color="darkorange", label="Train"
+)
+
+plt.scatter(
+    cargo_val["length"], cargo_val["width"],
+    s=8, alpha=0.5, color="green", label="Validation"
+)
+
+plt.scatter(
+    cargo_test["length"], cargo_test["width"],
+    s=12, alpha=0.8, color="steelblue", label="Test"
+)
+
+plt.xlabel("length")
+plt.ylabel("width")
+plt.grid(True)
+plt.legend(loc="upper left")
+
+save_path_single = os.path.join(
+    output_dir,
+    "cargo_only_train_val_test.png"
+)
+plt.savefig(save_path_single, dpi=300)
+plt.close()
+
