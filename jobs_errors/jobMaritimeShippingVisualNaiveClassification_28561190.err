@@ -1,0 +1,14 @@
+/zhome/64/c/213928/.lsbatch/1780240468.28561190.shell: line 17: nvidia-smi: command not found
+Loaded dependency [python3/3.11.13]: sqlite3/3.50.1
+Loaded dependency [python3/3.11.13]: gcc/14.3.0-binutils-2.44
+Loaded module: python3/3.11.13
+
+Loading python3/3.11.13
+  Loading requirement: sqlite3/3.50.1 gcc/14.3.0-binutils-2.44
+Loaded module: cuda/11.7
+No Nvidia-GPUs found in this machine, please use a GPU-node
+
+
+
+Loading cuda/11.7
+  ERROR: Module evaluation aborted

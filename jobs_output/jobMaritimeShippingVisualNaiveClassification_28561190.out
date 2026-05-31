@@ -1,0 +1,9 @@
+Shape of the full data in our experiments is 58.533342 million rows
+Earliest date 2025-01-01 00:27:44
+Latest date 2025-03-01 23:03:24
+Training period:     2025-01-01  -  2025-01-24
+Validation period:   2025-01-25  -  2025-02-13
+Test period:         2025-02-14  -  2025-03-01
+Distinct ships for training: 1229
+Distinct shipsfor validation: 394
+Distinct ships type for testing: 266
