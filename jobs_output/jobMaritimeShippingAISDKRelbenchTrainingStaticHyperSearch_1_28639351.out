@@ -1,0 +1,832 @@
+Fri Jun 12 23:19:38 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 595.71.05              Driver Version: 595.71.05      CUDA Version: 13.2     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          On  |   00000000:86:00.0 Off |                    0 |
+| N/A   32C    P0             32W /  250W |       0MiB /  40960MiB |      0%   E. Process |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+MaritimeShippingAISDataset()
+             name
+0         ais_raw
+1            port
+2        position
+3          vessel
+4  vessel_details
+5          voyage
+The shape  of the vessel table is (1280, 5)
+The first 5 rows of the vessel table are:
+        mmsi      imo callsign            shipname      shiptype
+0  211190000  9151539     DMLM  SCHLESWIG-HOLSTEIN         Other
+1  305733000  9534303    V2FN6           NIKLAS G.  Cargo/Tanker
+2  564368000  9393101    9VNH8      HAFNIA ZAMBESI  Cargo/Tanker
+3  255915769  9520572   CQ2227         FAIRPLAY-27         Other
+4  304688000  9123324    V2HF2          BF PHILIPP  Cargo/Tanker
+The shape  of the vessel details table is (18617379, 7)
+The first 5 rows of the vessel details table are:
+          vessel_details_id       mmsi  ... to_port  to_starboard
+0  205168000_20250411211538  205168000  ...      10             3
+1  205168000_20250411211627  205168000  ...      10             3
+2  205168000_20250411211648  205168000  ...      10             3
+3  205168000_20250411211827  205168000  ...      10             3
+4  205168000_20250411211928  205168000  ...      10             3
+
+[5 rows x 7 columns]
+The shape  of the voyage table is (18735862, 9)
+The first 5 rows of the voyage table are:
+                  voyage_id       mmsi           timestamp  ...  day hour  minute
+0  205168000_20250411211538  205168000 2025-04-11 21:15:38  ...   12   18       0
+1  205168000_20250411211627  205168000 2025-04-11 21:16:27  ...   12   18       0
+2  205168000_20250411211648  205168000 2025-04-11 21:16:48  ...   12   18       0
+3  205168000_20250411211827  205168000 2025-04-11 21:18:27  ...   12   18       0
+4  205168000_20250411211928  205168000 2025-04-11 21:19:28  ...   12   18       0
+
+[5 rows x 9 columns]
+The shape  of the position table is (18742902, 10)
+The first 5 rows of the position table are:
+                position_id       mmsi  ... course heading
+0  205168000_20250411211538  205168000  ...    141     140
+1  205168000_20250411211627  205168000  ...    131     130
+2  205168000_20250411211648  205168000  ...    131     131
+3  205168000_20250411211827  205168000  ...    121     119
+4  205168000_20250411211928  205168000  ...    117     115
+
+[5 rows x 10 columns]
+The shape  of the port table is (4603, 6)
+The first 5 rows of the port table are:
+   port_id  ...                                            polygon
+0        1  ...  POLYGON((14.36551956036558 40.62293319691949,1...
+1        2  ...  POLYGON((-74.21789190130377 40.6195602995403,-...
+2        3  ...  POLYGON((113.6094220882453 22.919427035693488,...
+3        4  ...  POLYGON((120.1972949838888 23.8274792640885,12...
+4        5  ...  POLYGON((124.71211466585837 8.529538655332956,...
+
+[5 rows x 6 columns]
+Country name:  Montenegro
+Country name:  Belgium
+Country name:  Eritrea
+Country name:  Sudan (the)
+Country name:  Hong Kong 
+Country name:  Monaco
+Country name:  Yemen
+Country name:  Gibraltar
+Country name:  Mayotte
+Country name:  Sweden
+Country name:  Guatemala
+Country name:  United Kingdom
+Country name:  Russian Federation (the)
+Country name:  Viet Nam
+Country name:  Equatorial Guinea
+Country name:  Samoa
+Country name:  Cambodia
+Country name:  Niue
+Country name:  United States of America (the)
+Country name:  Georgia
+Country name:  Mauritius
+Country name:  Grenada
+Country name:  Germany
+Country name:  Marshall Islands (the)
+Country name:  Nauru
+Country name:  Turks and Caicos Islands (the)
+Country name:  Nigeria
+Country name:  Venezuela (Bolivarian Republic of)
+Country name:  Tonga
+Country name:  Ethiopia
+Country name:  Poland
+Country name:  Guadeloupe
+Country name:  Malaysia
+Country name:  Netherlands
+Country name:  New Zealand
+Country name:  Mauritania
+Country name:  Albania
+Country name:  Guam
+Country name:  Puerto Rico
+Country name:  Haiti
+Country name:  Central African Republic
+Country name:  Cayman Islands
+Country name:  Jordan
+Country name:  Saint Pierre and Miquelon
+Country name:  Svalbard and Jan Mayen
+Country name:  Guyana
+Country name:  Ireland
+Country name:  Guinea
+Country name:  United States Minor Outlying Islands
+Country name:  South Africa
+Country name:  Morocco
+Country name:  Latvia
+Country name:  Aruba
+Country name:  Malta
+Country name:  Solomon Islands
+Country name:  Croatia
+Country name:  nan
+Country name:  Estonia
+Country name:  Cuba
+Country name:  Comoros
+Country name:  Spain
+Country name:  Kenya
+Country name:  Mozambique
+Country name:  France
+Country name:  Tuvalu
+Country name:  Antarctica
+Country name:  Papua New Guinea
+Country name:  Sao Tome and Principe
+Country name:  Tokelau
+Country name:  Maldives
+Country name:  Curaçao
+Country name:  Colombia
+Country name:  Angola
+Country name:  Liberia
+Country name:  Azerbaijan
+Country name:  Bangladesh
+Country name:  Bulgaria
+Country name:  Honduras
+Country name:  Peru
+Country name:  Jamaica
+Country name:  Timor-Leste
+Country name:  Madagascar
+Country name:  Philippines (the)
+Country name:  Libya
+Country name:  Christmas Island
+Country name:  Bahrain
+Country name:  Congo
+Country name:  Lithuania
+Country name:  Antigua and Barbuda
+Country name:  Anguilla
+Country name:  Benin
+Country name:  Sint Maarten (Dutch Part)
+Country name:  French Guiana
+Country name:  Pakistan
+Country name:  Bahamas
+Country name:  Somalia
+Country name:  Ukraine
+Country name:  Argentina
+Country name:  Romania
+Country name:  Greece
+Country name:  Dominican Republic
+Country name:  South Georgia and the South Sandwich Islands
+Country name:  Iceland
+Country name:  Virgin Islands (U.S.)
+Country name:  Gabon
+Country name:  Türkiye
+Country name:  Fiji
+Country name:  Gambia
+Country name:  Niger
+Country name:  Togo
+Country name:  Sierra Leone
+Country name:  Austria
+Country name:  Kazakhstan
+Country name:  Indonesia
+Country name:  Uruguay
+Country name:  Côte d'Ivoire
+Country name:  Australia
+Country name:  Djibouti
+Country name:  Saint Kitts and Nevis
+Country name:  Dominica
+Country name:  Kuwait
+Country name:  China
+Country name:  Saint Lucia
+Country name:  Western Sahara
+Country name:  Israel
+Country name:  Taiwan (Province of China)
+Country name:  Falkland Islands (Malvinas)
+Country name:  Norway
+Country name:  Qatar
+Country name:  Thailand
+Country name:  French Polynesia
+Country name:  Portugal
+Country name:  Senegal
+Country name:  Barbados
+Country name:  Algeria
+Country name:  Trinidad and Tobago
+Country name:  Chile
+Country name:  Mexico
+Country name:  Virgin Islands (British)
+Country name:  Northern Mariana Islands (the)
+Country name:  Belarus
+Country name:  Ghana
+Country name:  Turkmenistan
+Country name:  Martinique
+Country name:  Slovakia
+Country name:  Hungary
+Country name:  Finland
+Country name:  Brunei Darussalam
+Country name:  Palau
+Country name:  India
+Country name:  Cyprus
+Country name:  Italy
+Country name:  Réunion
+Country name:  Guinea-Bissau
+Country name:  Singapore
+Country name:  Czechia
+Country name:  Saint Vincent and the Grenadines
+Country name:  Faroe Islands
+Country name:  Bosnia and Herzegovina
+Country name:  Costa Rica
+Country name:  New Caledonia
+Country name:  Denmark
+Country name:  United Arab Emirates (the)
+Country name:  Paraguay
+Country name:  Sri Lanka
+Country name:  Vanuatu
+Country name:  Saudi Arabia
+Country name:  Nicaragua
+Country name:  Egypt
+Country name:  Tunisia
+Country name:  Kiribati
+Country name:  Montserrat
+Country name:  Cape Verde
+Country name:  Iraq
+Country name:  Greenland
+Country name:  American Samoa
+Country name:  El Salvador
+Country name:  Bermuda
+Country name:  Seychelles
+Country name:  Oman
+Country name:  Syrian Arab Republic (the)
+Country name:  Belize
+Country name:  Slovenia
+Country name:  Suriname
+Country name:  Panama
+Country name:  Myanmar
+Country name:  Switzerland
+Country name:  Ecuador
+Country name:  Macao
+Country name:  Brazil
+Country name:  Lebanon
+Country name:  Japan
+Country name:  Canada
+Country name:  Cameroon
+
+vessel table - Column : Type : Na
+--------------------------------------------------
+mmsi : int32 : 0
+imo : Int32 : 23
+callsign : str : 0
+shipname : str : 0
+shiptype : str : 0
+
+vessel_details table - Column : Type : Na
+--------------------------------------------------
+vessel_details_id : str : 0
+mmsi : int32 : 0
+timestamp : datetime64[s] : 0
+to_bow : Int32 : 43320
+to_stern : Int32 : 34853
+to_port : Int32 : 77205
+to_starboard : Int32 : 11574
+
+voyage table - Column : Type : Na
+--------------------------------------------------
+voyage_id : str : 0
+mmsi : int32 : 0
+timestamp : datetime64[s] : 0
+draught : int32 : 0
+destination : str : 0
+month : Int32 : 218125
+day : Int32 : 218125
+hour : Int32 : 218125
+minute : Int32 : 218125
+
+position table - Column : Type : Na
+--------------------------------------------------
+position_id : str : 0
+mmsi : int32 : 0
+timestamp : datetime64[s] : 0
+status : str : 0
+turn : Int32 : 1227583
+speed : Int32 : 135333
+lon : int32 : 0
+lat : int32 : 0
+course : Int32 : 170450
+heading : Int32 : 70824
+
+port table - Column : Type : Na
+--------------------------------------------------
+port_id : int32 : 0
+port_code : str : 0
+port_name : str : 0
+country_code : str : 0
+country_name : str : 60
+polygon : str : 0
+Task created: ShipTypeNthPositionTask(dataset=MaritimeShippingAISDataset())
+Task registered
+Loading Database object from /zhome/64/c/213928/.cache/relbench/rel-custom-maritime_shipping_ais/db...
+Done in 12.00 seconds.
+db min/max: 2025-04-07 00:00:00 2025-04-17 23:59:58
+max positions timestamp: 2025-04-17 23:59:58
+Val cutoff 2025-04-14 00:00:00
+Test cutoff 2025-04-18 00:00:00
+Loading Database object from /zhome/64/c/213928/.cache/relbench/rel-custom-maritime_shipping_ais/db...
+Done in 6.57 seconds.
+db min/max: 2025-04-07 00:00:00 2025-04-17 23:59:58
+max positions timestamp: 2025-04-17 23:59:58
+Val cutoff 2025-04-14 00:00:00
+Test cutoff 2025-04-18 00:00:00
+Loading Database object from /zhome/64/c/213928/.cache/relbench/rel-custom-maritime_shipping_ais/db...
+Done in 6.38 seconds.
+db min/max: 2025-04-07 00:00:00 2025-04-20 23:59:58
+max positions timestamp: 2025-04-20 23:59:58
+Val cutoff 2025-04-14 00:00:00
+Test cutoff 2025-04-18 00:00:00
+Training table
+Table(df=
+     mmsi            nth_time  shiptype
+0       5 2025-04-07 00:40:48         0
+1    1029 2025-04-07 00:43:10         1
+2     401 2025-04-07 00:49:34         1
+3    1027 2025-04-07 00:50:13         0
+4     795 2025-04-07 00:50:15         1
+..    ...                 ...       ...
+846   803 2025-04-13 22:36:39         0
+847  1269 2025-04-13 22:41:21         1
+848   607 2025-04-13 23:07:48         1
+849   617 2025-04-13 23:47:31         1
+850   442 2025-04-13 23:58:43         1
+
+[851 rows x 3 columns],
+  fkey_col_to_pkey_table={'mmsi': 'vessels'},
+  pkey_col=mmsi,
+  time_col=nth_time)
+Validation table
+Table(df=
+     mmsi            nth_time  shiptype
+0    1247 2025-04-14 00:11:08         1
+1     911 2025-04-14 00:43:15         1
+2     672 2025-04-14 00:54:22         1
+3    1091 2025-04-14 01:20:18         1
+4     591 2025-04-14 01:47:29         1
+..    ...                 ...       ...
+172   390 2025-04-17 18:45:56         1
+173  1259 2025-04-17 19:37:57         1
+174   839 2025-04-17 20:26:17         1
+175   213 2025-04-17 22:34:40         1
+176   292 2025-04-17 23:52:41         0
+
+[177 rows x 3 columns],
+  fkey_col_to_pkey_table={'mmsi': 'vessels'},
+  pkey_col=mmsi,
+  time_col=nth_time)
+Testing table
+Table(df=
+     mmsi            nth_time  shiptype
+0    1170 2025-04-18 00:38:28         1
+1     598 2025-04-18 02:25:38         1
+2    1261 2025-04-18 02:42:17         1
+3     514 2025-04-18 04:10:33         1
+4     125 2025-04-18 05:36:26         1
+..    ...                 ...       ...
+118  1107 2025-04-20 20:16:18         1
+119   138 2025-04-20 20:20:05         1
+120    64 2025-04-20 21:03:49         0
+121   685 2025-04-20 22:39:08         1
+122   686 2025-04-20 23:20:24         1
+
+[123 rows x 3 columns],
+  fkey_col_to_pkey_table={'mmsi': 'vessels'},
+  pkey_col=mmsi,
+  time_col=nth_time)
+target_col_table_name:  vessels
+target_col_name:  shiptype
+tasktype : binary_classification
+
+Working on task ship_type_np_task (binary_classification) for dataset rel-custom-maritime_shipping_ais...
+
+Note: This is a special node property task that requires removing columns ['shiptype', 'imo', 'callsign', 'shipname', 'status', 'turn', 'speed', 'lon', 'lat', 'course', 'heading', 'draught', 'month', 'day', 'hour', 'minute', 'port_id', 'port_name', 'country_code', 'country_name', 'polygon'] from the input data to avoid leakage.
+db min/max: 2025-04-07 00:00:00 2025-04-17 23:59:58
+max positions timestamp: 2025-04-17 23:59:58
+Val cutoff 2025-04-14 00:00:00
+Test cutoff 2025-04-18 00:00:00
+db min/max: 2025-04-07 00:00:00 2025-04-17 23:59:58
+max positions timestamp: 2025-04-17 23:59:58
+Val cutoff 2025-04-14 00:00:00
+Test cutoff 2025-04-18 00:00:00
+db min/max: 2025-04-07 00:00:00 2025-04-20 23:59:58
+max positions timestamp: 2025-04-20 23:59:58
+Val cutoff 2025-04-14 00:00:00
+Test cutoff 2025-04-18 00:00:00
+Training table
+Table(df=
+     mmsi            nth_time  shiptype
+0       5 2025-04-07 00:40:48         0
+1    1029 2025-04-07 00:43:10         1
+2     401 2025-04-07 00:49:34         1
+3    1027 2025-04-07 00:50:13         0
+4     795 2025-04-07 00:50:15         1
+..    ...                 ...       ...
+846   803 2025-04-13 22:36:39         0
+847  1269 2025-04-13 22:41:21         1
+848   607 2025-04-13 23:07:48         1
+849   617 2025-04-13 23:47:31         1
+850   442 2025-04-13 23:58:43         1
+
+[851 rows x 3 columns],
+  fkey_col_to_pkey_table={'mmsi': 'vessels'},
+  pkey_col=mmsi,
+  time_col=nth_time)
+Validation table
+Table(df=
+     mmsi            nth_time  shiptype
+0    1247 2025-04-14 00:11:08         1
+1     911 2025-04-14 00:43:15         1
+2     672 2025-04-14 00:54:22         1
+3    1091 2025-04-14 01:20:18         1
+4     591 2025-04-14 01:47:29         1
+..    ...                 ...       ...
+172   390 2025-04-17 18:45:56         1
+173  1259 2025-04-17 19:37:57         1
+174   839 2025-04-17 20:26:17         1
+175   213 2025-04-17 22:34:40         1
+176   292 2025-04-17 23:52:41         0
+
+[177 rows x 3 columns],
+  fkey_col_to_pkey_table={'mmsi': 'vessels'},
+  pkey_col=mmsi,
+  time_col=nth_time)
+Testing table
+Table(df=
+     mmsi            nth_time  shiptype
+0    1170 2025-04-18 00:38:28         1
+1     598 2025-04-18 02:25:38         1
+2    1261 2025-04-18 02:42:17         1
+3     514 2025-04-18 04:10:33         1
+4     125 2025-04-18 05:36:26         1
+..    ...                 ...       ...
+118  1107 2025-04-20 20:16:18         1
+119   138 2025-04-20 20:20:05         1
+120    64 2025-04-20 21:03:49         0
+121   685 2025-04-20 22:39:08         1
+122   686 2025-04-20 23:20:24         1
+
+[123 rows x 3 columns],
+  fkey_col_to_pkey_table={'mmsi': 'vessels'},
+  pkey_col=mmsi,
+  time_col=nth_time)
+
+
+Training table view:
+     mmsi            nth_time  shiptype
+0       5 2025-04-07 00:40:48         0
+1    1029 2025-04-07 00:43:10         1
+2     401 2025-04-07 00:49:34         1
+3    1027 2025-04-07 00:50:13         0
+4     795 2025-04-07 00:50:15         1
+..    ...                 ...       ...
+846   803 2025-04-13 22:36:39         0
+847  1269 2025-04-13 22:41:21         1
+848   607 2025-04-13 23:07:48         1
+849   617 2025-04-13 23:47:31         1
+850   442 2025-04-13 23:58:43         1
+
+[851 rows x 3 columns]
+
+Val table shape:
+(177, 3)
+
+Test table shape:
+     mmsi            nth_time  shiptype
+0    1170 2025-04-18 00:38:28         1
+1     598 2025-04-18 02:25:38         1
+2    1261 2025-04-18 02:42:17         1
+3     514 2025-04-18 04:10:33         1
+4     125 2025-04-18 05:36:26         1
+..    ...                 ...       ...
+118  1107 2025-04-20 20:16:18         1
+119   138 2025-04-20 20:20:05         1
+120    64 2025-04-20 21:03:49         0
+121   685 2025-04-20 22:39:08         1
+122   686 2025-04-20 23:20:24         1
+
+[123 rows x 3 columns]
+training target distribution (head 10)
+shiptype
+1    720
+0    131
+Name: count, dtype: int64
+val target distribution (head 10)
+shiptype
+1    159
+0     18
+Name: count, dtype: int64
+test target distribution (head 10)
+shiptype
+1    108
+0     15
+Name: count, dtype: int64
+unique labels train
+[0 1]
+unique labels val
+[1 0]
+unique labels test
+[1 0]
+device cuda
+Building or Loading Full Graph
+=== Column type proposal ===
+ports
+  port_id: numerical
+  port_code: numerical
+  port_name: text_embedded
+  country_code: text_embedded
+  country_name: text_embedded
+  polygon: text_embedded
+vessels_details
+  vessel_details_id: numerical
+  mmsi: numerical
+  timestamp: timestamp
+  to_bow: numerical
+  to_stern: numerical
+  to_port: numerical
+  to_starboard: numerical
+vessels
+  mmsi: numerical
+  imo: numerical
+  callsign: text_embedded
+  shipname: text_embedded
+  shiptype: categorical
+voyages
+  voyage_id: numerical
+  mmsi: numerical
+  timestamp: timestamp
+  draught: categorical
+  destination: numerical
+  month: numerical
+  day: numerical
+  hour: categorical
+  minute: numerical
+positions
+  position_id: numerical
+  mmsi: numerical
+  timestamp: timestamp
+  status: text_embedded
+  turn: numerical
+  speed: numerical
+  lon: numerical
+  lat: numerical
+  course: numerical
+  heading: numerical
+Cleaning text-embedded columns...
+Cleaning ports.port_name
+Cleaning ports.country_code
+Cleaning ports.country_name
+Cleaning ports.polygon
+Cleaning vessels.callsign
+Cleaning vessels.shipname
+Cleaning positions.status
+Finished cleaning text columns.
+Table: vessels_details, column: timestamp, dtype: datetime64[s]
+Table: voyages, column: timestamp, dtype: datetime64[s]
+Table: positions, column: timestamp, dtype: datetime64[s]
+Here above result text embedded
+{'ports': {'port_id': <stype.numerical: 'numerical'>, 'port_code': <stype.numerical: 'numerical'>, 'port_name': <stype.text_embedded: 'text_embedded'>, 'country_code': <stype.text_embedded: 'text_embedded'>, 'country_name': <stype.text_embedded: 'text_embedded'>, 'polygon': <stype.text_embedded: 'text_embedded'>}, 'vessels_details': {'vessel_details_id': <stype.numerical: 'numerical'>, 'mmsi': <stype.numerical: 'numerical'>, 'timestamp': <stype.timestamp: 'timestamp'>, 'to_bow': <stype.numerical: 'numerical'>, 'to_stern': <stype.numerical: 'numerical'>, 'to_port': <stype.numerical: 'numerical'>, 'to_starboard': <stype.numerical: 'numerical'>}, 'vessels': {'mmsi': <stype.numerical: 'numerical'>}, 'voyages': {'voyage_id': <stype.numerical: 'numerical'>, 'mmsi': <stype.numerical: 'numerical'>, 'timestamp': <stype.timestamp: 'timestamp'>, 'draught': <stype.categorical: 'categorical'>, 'destination': <stype.numerical: 'numerical'>, 'month': <stype.numerical: 'numerical'>, 'day': <stype.numerical: 'numerical'>, 'hour': <stype.categorical: 'categorical'>, 'minute': <stype.numerical: 'numerical'>}, 'positions': {'position_id': <stype.numerical: 'numerical'>, 'mmsi': <stype.numerical: 'numerical'>, 'timestamp': <stype.timestamp: 'timestamp'>, 'status': <stype.text_embedded: 'text_embedded'>, 'turn': <stype.numerical: 'numerical'>, 'speed': <stype.numerical: 'numerical'>, 'lon': <stype.numerical: 'numerical'>, 'lat': <stype.numerical: 'numerical'>, 'course': <stype.numerical: 'numerical'>, 'heading': <stype.numerical: 'numerical'>}}
+Building or Loading Train Graph and Train Col Stats
+Manual inspection of input graph (for table [vessels]):
+Remove columns required for this task: ['shiptype', 'imo', 'callsign', 'shipname', 'status', 'turn', 'speed', 'lon', 'lat', 'course', 'heading', 'draught', 'month', 'day', 'hour', 'minute', 'port_id', 'port_name', 'country_code', 'country_name', 'polygon']
+IF REMOVE COLUMNS IS REQUIRED FOR THIS TASK, THEN DOUBLE CHECK THAT THESE COLUMNS ARE NOT IN THE DATA BELOW!
+TensorFrame(
+  num_cols=1,
+  num_rows=1280,
+  numerical (1): ['__const__'],
+  has_target=False,
+  device='cpu',
+)
+Done
+Computing or Loading Train Column Stats
+Computing load train column stats done
+train_cols_stats dict {'ports': {'port_id': {<StatType.MEAN: 'MEAN'>: 2302.0, <StatType.STD: 'STD'>: 1328.7716131826417, <StatType.QUANTILES: 'QUANTILES'>: [1.0, 1151.5, 2302.0, 3452.5, 4603.0]}, 'port_name': {<StatType.EMB_DIM: 'EMB_DIM'>: 300}, 'country_code': {<StatType.EMB_DIM: 'EMB_DIM'>: 300}, 'country_name': {<StatType.EMB_DIM: 'EMB_DIM'>: 300}, 'polygon': {<StatType.EMB_DIM: 'EMB_DIM'>: 300}}, 'vessels_details': {'timestamp': {<StatType.YEAR_RANGE: 'YEAR_RANGE'>: [np.int32(2025), np.int32(2025)], <StatType.NEWEST_TIME: 'NEWEST_TIME'>: tensor([2025,    3,   13,    0,    0,    0,    0]), <StatType.OLDEST_TIME: 'OLDEST_TIME'>: tensor([2025,    3,    6,    0,    0,    0,    0]), <StatType.MEDIAN_TIME: 'MEDIAN_TIME'>: tensor([2025,    3,    9,    3,   13,   10,   52])}, 'to_bow': {<StatType.MEAN: 'MEAN'>: 95.36456130312261, <StatType.STD: 'STD'>: 55.61931292347429, <StatType.QUANTILES: 'QUANTILES'>: [1.0, 65.0, 86.0, 135.0, 280.0]}, 'to_stern': {<StatType.MEAN: 'MEAN'>: 38.100936423932644, <StatType.STD: 'STD'>: 50.560737739050786, <StatType.QUANTILES: 'QUANTILES'>: [2.0, 12.0, 18.0, 33.0, 335.0]}, 'to_port': {<StatType.MEAN: 'MEAN'>: 10.701087714151173, <StatType.STD: 'STD'>: 6.479276529432153, <StatType.QUANTILES: 'QUANTILES'>: [1.0, 6.0, 9.0, 14.0, 52.0]}, 'to_starboard': {<StatType.MEAN: 'MEAN'>: 10.262175772119226, <StatType.STD: 'STD'>: 6.307113339819165, <StatType.QUANTILES: 'QUANTILES'>: [1.0, 6.0, 9.0, 13.0, 51.0]}}, 'vessels': {'__const__': {<StatType.MEAN: 'MEAN'>: 1.0, <StatType.STD: 'STD'>: 0.0, <StatType.QUANTILES: 'QUANTILES'>: [1.0, 1.0, 1.0, 1.0, 1.0]}}, 'voyages': {'timestamp': {<StatType.YEAR_RANGE: 'YEAR_RANGE'>: [np.int32(2025), np.int32(2025)], <StatType.NEWEST_TIME: 'NEWEST_TIME'>: tensor([2025,    3,   13,    0,    0,    0,    0]), <StatType.OLDEST_TIME: 'OLDEST_TIME'>: tensor([2025,    3,    6,    0,    0,    0,    0]), <StatType.MEDIAN_TIME: 'MEDIAN_TIME'>: tensor([2025,    3,    9,    3,   13,   10,   50])}, 'draught': {<StatType.COUNT: 'COUNT'>: ([6, 5, 4, 7, 8, 3, 9, 10, 11, 2, 12, 13, 15, 14, 1, 26], [2257919, 1359655, 1268523, 1244616, 841946, 599756, 565975, 470067, 258287, 227660, 194371, 155021, 128688, 102588, 31834, 5])}, 'month': {<StatType.MEAN: 'MEAN'>: 4.09776480618057, <StatType.STD: 'STD'>: 0.9477840565731473, <StatType.QUANTILES: 'QUANTILES'>: [1.0, 4.0, 4.0, 4.0, 12.0]}, 'day': {<StatType.MEAN: 'MEAN'>: 11.712982996567638, <StatType.STD: 'STD'>: 4.556550083338384, <StatType.QUANTILES: 'QUANTILES'>: [1.0, 9.0, 11.0, 13.0, 31.0]}, 'hour': {<StatType.COUNT: 'COUNT'>: ([6, 8, 12, 4, 16, 5, 10, 7, 18, 9, 15, 20, 14, 22, 23, 13, 2, 11, 19, 1, 17, 21, 3, 0], [716339, 646184, 609310, 543745, 491285, 481483, 478474, 473153, 436116, 411591, 390987, 387217, 374623, 348715, 328859, 295069, 291934, 290815, 279485, 275535, 265522, 264791, 254775, 248352])}, 'minute': {<StatType.MEAN: 'MEAN'>: 3.814120902608093, <StatType.STD: 'STD'>: 10.296155682787681, <StatType.QUANTILES: 'QUANTILES'>: [0.0, 0.0, 0.0, 0.0, 59.0]}}, 'positions': {'timestamp': {<StatType.YEAR_RANGE: 'YEAR_RANGE'>: [np.int32(2025), np.int32(2025)], <StatType.NEWEST_TIME: 'NEWEST_TIME'>: tensor([2025,    3,   13,    0,    0,    0,    0]), <StatType.OLDEST_TIME: 'OLDEST_TIME'>: tensor([2025,    3,    6,    0,    0,    0,    0]), <StatType.MEDIAN_TIME: 'MEDIAN_TIME'>: tensor([2025,    3,    9,    3,   13,   10,   46])}, 'status': {<StatType.EMB_DIM: 'EMB_DIM'>: 300}, 'turn': {<StatType.MEAN: 'MEAN'>: 0.012236231750353262, <StatType.STD: 'STD'>: 3.1882150285610424, <StatType.QUANTILES: 'QUANTILES'>: [-709.0, 0.0, 0.0, 0.0, 709.0]}, 'speed': {<StatType.MEAN: 'MEAN'>: 9.979979769182787, <StatType.STD: 'STD'>: 5.076495454175447, <StatType.QUANTILES: 'QUANTILES'>: [0.0, 8.0, 10.0, 13.0, 102.0]}, 'lon': {<StatType.MEAN: 'MEAN'>: 11.074325059719593, <StatType.STD: 'STD'>: 2.564084993984072, <StatType.QUANTILES: 'QUANTILES'>: [-10.0, 10.0, 11.0, 13.0, 31.0]}, 'lat': {<StatType.MEAN: 'MEAN'>: 56.02561669057441, <StatType.STD: 'STD'>: 1.565536958276334, <StatType.QUANTILES: 'QUANTILES'>: [0.0, 55.0, 56.0, 57.0, 91.0]}, 'course': {<StatType.MEAN: 'MEAN'>: 172.64714397672526, <StatType.STD: 'STD'>: 103.12249562292041, <StatType.QUANTILES: 'QUANTILES'>: [0.0, 75.0, 178.0, 252.0, 360.0]}, 'heading': {<StatType.MEAN: 'MEAN'>: 174.1791404690261, <StatType.STD: 'STD'>: 103.30275710260072, <StatType.QUANTILES: 'QUANTILES'>: [0.0, 75.0, 180.0, 256.0, 359.0]}}}
+Normalizing timestamps inside train/val/test tables...
+train.nth_time dtype -> datetime64[s]
+val.nth_time dtype -> datetime64[s]
+test.nth_time dtype -> datetime64[s]
+Testing configuration: epochs=100,lr=0.0005,step=500,gamma=0.5,batch_size=64
+Validation score 0.860587002096436
+Testing configuration: epochs=100,lr=0.0005,step=500,gamma=0.5,batch_size=128
+Validation score 0.8647798742138365
+Testing configuration: epochs=100,lr=0.0005,step=500,gamma=0.5,batch_size=256
+Validation score 0.852900069881202
+Testing configuration: epochs=100,lr=0.0005,step=500,gamma=0.9,batch_size=64
+Validation score 0.8791055206149545
+Testing configuration: epochs=100,lr=0.0005,step=500,gamma=0.9,batch_size=128
+Validation score 0.8714185883997205
+Testing configuration: epochs=100,lr=0.0005,step=500,gamma=0.9,batch_size=256
+Validation score 0.8710691823899371
+Testing configuration: epochs=100,lr=0.0005,step=1000,gamma=0.5,batch_size=64
+Validation score 0.8756114605171209
+Testing configuration: epochs=100,lr=0.0005,step=1000,gamma=0.5,batch_size=128
+Validation score 0.8515024458420685
+Testing configuration: epochs=100,lr=0.0005,step=1000,gamma=0.5,batch_size=256
+Validation score 0.8749126484975542
+Testing configuration: epochs=100,lr=0.0005,step=1000,gamma=0.9,batch_size=64
+Validation score 0.8714185883997205
+Testing configuration: epochs=100,lr=0.0005,step=1000,gamma=0.9,batch_size=128
+Validation score 0.8920335429769393
+Testing configuration: epochs=100,lr=0.0005,step=1000,gamma=0.9,batch_size=256
+Validation score 0.8612858141160027
+Testing configuration: epochs=100,lr=5e-05,step=500,gamma=0.5,batch_size=64
+Validation score 0.8560447239692524
+Testing configuration: epochs=100,lr=5e-05,step=500,gamma=0.5,batch_size=128
+Validation score 0.8305380852550664
+Testing configuration: epochs=100,lr=5e-05,step=500,gamma=0.5,batch_size=256
+Validation score 0.8602375960866527
+Testing configuration: epochs=100,lr=5e-05,step=500,gamma=0.9,batch_size=64
+Validation score 0.8413696715583509
+Testing configuration: epochs=100,lr=5e-05,step=500,gamma=0.9,batch_size=128
+Validation score 0.8623340321453529
+Testing configuration: epochs=100,lr=5e-05,step=500,gamma=0.9,batch_size=256
+Validation score 0.864430468204053
+Testing configuration: epochs=100,lr=5e-05,step=1000,gamma=0.5,batch_size=64
+Validation score 0.8665269042627533
+Testing configuration: epochs=100,lr=5e-05,step=1000,gamma=0.5,batch_size=128
+Validation score 0.8476589797344514
+Testing configuration: epochs=100,lr=5e-05,step=1000,gamma=0.5,batch_size=256
+Validation score 0.8696715583508036
+Testing configuration: epochs=100,lr=5e-05,step=1000,gamma=0.9,batch_size=64
+Validation score 0.8612858141160028
+Testing configuration: epochs=100,lr=5e-05,step=1000,gamma=0.9,batch_size=128
+Validation score 0.8466107617051013
+Testing configuration: epochs=100,lr=5e-05,step=1000,gamma=0.9,batch_size=256
+Validation score 0.8525506638714185
+Testing configuration: epochs=100,lr=5e-06,step=500,gamma=0.5,batch_size=64
+Validation score 0.8043326345213139
+Testing configuration: epochs=100,lr=5e-06,step=500,gamma=0.5,batch_size=128
+Validation score 0.8434661076170511
+Testing configuration: epochs=100,lr=5e-06,step=500,gamma=0.5,batch_size=256
+Validation score 0.7994409503843467
+Testing configuration: epochs=100,lr=5e-06,step=500,gamma=0.9,batch_size=64
+Validation score 0.8305380852550664
+Testing configuration: epochs=100,lr=5e-06,step=500,gamma=0.9,batch_size=128
+Validation score 0.7907058001397624
+Testing configuration: epochs=100,lr=5e-06,step=500,gamma=0.9,batch_size=256
+Validation score 0.7914046121593292
+Testing configuration: epochs=100,lr=5e-06,step=1000,gamma=0.5,batch_size=64
+Validation score 0.8535988819007687
+Testing configuration: epochs=100,lr=5e-06,step=1000,gamma=0.5,batch_size=128
+Validation score 0.8232005590496158
+Testing configuration: epochs=100,lr=5e-06,step=1000,gamma=0.5,batch_size=256
+Validation score 0.8113207547169812
+Testing configuration: epochs=100,lr=5e-06,step=1000,gamma=0.9,batch_size=64
+Validation score 0.8371767994409505
+Testing configuration: epochs=100,lr=5e-06,step=1000,gamma=0.9,batch_size=128
+Validation score 0.8424178895877008
+Testing configuration: epochs=100,lr=5e-06,step=1000,gamma=0.9,batch_size=256
+Validation score 0.8085255066387143
+Testing configuration: epochs=150,lr=0.0005,step=500,gamma=0.5,batch_size=64
+Validation score 0.8354297693920335
+Testing configuration: epochs=150,lr=0.0005,step=500,gamma=0.5,batch_size=128
+Validation score 0.8686233403214536
+Testing configuration: epochs=150,lr=0.0005,step=500,gamma=0.5,batch_size=256
+Validation score 0.8570929419986023
+Testing configuration: epochs=150,lr=0.0005,step=500,gamma=0.9,batch_size=64
+Validation score 0.8560447239692521
+Testing configuration: epochs=150,lr=0.0005,step=500,gamma=0.9,batch_size=128
+Validation score 0.8515024458420685
+Testing configuration: epochs=150,lr=0.0005,step=500,gamma=0.9,batch_size=256
+Validation score 0.8619846261355696
+Testing configuration: epochs=150,lr=0.0005,step=1000,gamma=0.5,batch_size=64
+Validation score 0.8714185883997205
+Testing configuration: epochs=150,lr=0.0005,step=1000,gamma=0.5,batch_size=128
+Validation score 0.8742138364779874
+Testing configuration: epochs=150,lr=0.0005,step=1000,gamma=0.5,batch_size=256
+Validation score 0.8532494758909853
+Testing configuration: epochs=150,lr=0.0005,step=1000,gamma=0.9,batch_size=64
+Validation score 0.8441649196366177
+Testing configuration: epochs=150,lr=0.0005,step=1000,gamma=0.9,batch_size=128
+Validation score 0.8731656184486373
+Testing configuration: epochs=150,lr=0.0005,step=1000,gamma=0.9,batch_size=256
+Validation score 0.8364779874213836
+Testing configuration: epochs=150,lr=5e-05,step=500,gamma=0.5,batch_size=64
+Validation score 0.8651292802236199
+Testing configuration: epochs=150,lr=5e-05,step=500,gamma=0.5,batch_size=128
+Validation score 0.8717679944095038
+Testing configuration: epochs=150,lr=5e-05,step=500,gamma=0.5,batch_size=256
+Validation score 0.8577917540181692
+Testing configuration: epochs=150,lr=5e-05,step=500,gamma=0.9,batch_size=64
+Validation score 0.8703703703703703
+Testing configuration: epochs=150,lr=5e-05,step=500,gamma=0.9,batch_size=128
+Validation score 0.8413696715583507
+Testing configuration: epochs=150,lr=5e-05,step=500,gamma=0.9,batch_size=256
+Validation score 0.8651292802236199
+Testing configuration: epochs=150,lr=5e-05,step=1000,gamma=0.5,batch_size=64
+Validation score 0.8682739343116702
+Testing configuration: epochs=150,lr=5e-05,step=1000,gamma=0.5,batch_size=128
+Validation score 0.843466107617051
+Testing configuration: epochs=150,lr=5e-05,step=1000,gamma=0.5,batch_size=256
+Validation score 0.8326345213137666
+Testing configuration: epochs=150,lr=5e-05,step=1000,gamma=0.9,batch_size=64
+Validation score 0.863382250174703
+Testing configuration: epochs=150,lr=5e-05,step=1000,gamma=0.9,batch_size=128
+Validation score 0.8549965059399022
+Testing configuration: epochs=150,lr=5e-05,step=1000,gamma=0.9,batch_size=256
+Validation score 0.8497554157931516
+Testing configuration: epochs=150,lr=5e-06,step=500,gamma=0.5,batch_size=64
+Validation score 0.8598881900768693
+Testing configuration: epochs=150,lr=5e-06,step=500,gamma=0.5,batch_size=128
+Validation score 0.8459119496855346
+Testing configuration: epochs=150,lr=5e-06,step=500,gamma=0.5,batch_size=256
+Validation score 0.8389238294898671
+Testing configuration: epochs=150,lr=5e-06,step=500,gamma=0.9,batch_size=64
+Validation score 0.8644304682040531
+Testing configuration: epochs=150,lr=5e-06,step=500,gamma=0.9,batch_size=128
+Validation score 0.826345213137666
+Testing configuration: epochs=150,lr=5e-06,step=500,gamma=0.9,batch_size=256
+Validation score 0.8347309573724668
+Testing configuration: epochs=150,lr=5e-06,step=1000,gamma=0.5,batch_size=64
+Validation score 0.8232005590496158
+Testing configuration: epochs=150,lr=5e-06,step=1000,gamma=0.5,batch_size=128
+Validation score 0.8329839273235501
+Testing configuration: epochs=150,lr=5e-06,step=1000,gamma=0.5,batch_size=256
+Validation score 0.8211041229909154
+Testing configuration: epochs=150,lr=5e-06,step=1000,gamma=0.9,batch_size=64
+Validation score 0.8532494758909853
+Testing configuration: epochs=150,lr=5e-06,step=1000,gamma=0.9,batch_size=128
+Validation score 0.8392732354996505
+Testing configuration: epochs=150,lr=5e-06,step=1000,gamma=0.9,batch_size=256
+Validation score 0.7816212438853949
+Testing configuration: epochs=200,lr=0.0005,step=500,gamma=0.5,batch_size=64
+Validation score 0.8710691823899371
+Testing configuration: epochs=200,lr=0.0005,step=500,gamma=0.5,batch_size=128
+Validation score 0.8679245283018868
+Testing configuration: epochs=200,lr=0.0005,step=500,gamma=0.5,batch_size=256
+Validation score 0.8679245283018868
+Testing configuration: epochs=200,lr=0.0005,step=500,gamma=0.9,batch_size=64
+Validation score 0.86722571628232
+Testing configuration: epochs=200,lr=0.0005,step=500,gamma=0.9,batch_size=128
+Validation score 0.8315863032844165
+Testing configuration: epochs=200,lr=0.0005,step=500,gamma=0.9,batch_size=256
+Validation score 0.8682739343116701
+Testing configuration: epochs=200,lr=0.0005,step=1000,gamma=0.5,batch_size=64
+Validation score 0.8581411600279525
+Testing configuration: epochs=200,lr=0.0005,step=1000,gamma=0.5,batch_size=128
+Validation score 0.8476589797344515
+Testing configuration: epochs=200,lr=0.0005,step=1000,gamma=0.5,batch_size=256
+Validation score 0.8881900768693222
+Testing configuration: epochs=200,lr=0.0005,step=1000,gamma=0.9,batch_size=64
+Validation score 0.859538784067086
+Testing configuration: epochs=200,lr=0.0005,step=1000,gamma=0.9,batch_size=128
+Validation score 0.8626834381551364
+Testing configuration: epochs=200,lr=0.0005,step=1000,gamma=0.9,batch_size=256
+Validation score 0.8822501747030049
+Testing configuration: epochs=200,lr=5e-05,step=500,gamma=0.5,batch_size=64
+Validation score 0.8983228511530398
+Testing configuration: epochs=200,lr=5e-05,step=500,gamma=0.5,batch_size=128
+Validation score 0.8591893780573026
+Testing configuration: epochs=200,lr=5e-05,step=500,gamma=0.5,batch_size=256
+Validation score 0.8686233403214536
+Testing configuration: epochs=200,lr=5e-05,step=500,gamma=0.9,batch_size=64
+Validation score 0.8637316561844864
+Testing configuration: epochs=200,lr=5e-05,step=500,gamma=0.9,batch_size=128
+Validation score 0.8766596785464711
+Testing configuration: epochs=200,lr=5e-05,step=500,gamma=0.9,batch_size=256
+Validation score 0.8616352201257862
+Testing configuration: epochs=200,lr=5e-05,step=1000,gamma=0.5,batch_size=64
+Validation score 0.8742138364779874
+Testing configuration: epochs=200,lr=5e-05,step=1000,gamma=0.5,batch_size=128
+Validation score 0.8501048218029348
+Testing configuration: epochs=200,lr=5e-05,step=1000,gamma=0.5,batch_size=256
+Validation score 0.8721174004192871
+Testing configuration: epochs=200,lr=5e-05,step=1000,gamma=0.9,batch_size=64
+Validation score 0.8581411600279525
+Testing configuration: epochs=200,lr=5e-05,step=1000,gamma=0.9,batch_size=128
+Validation score 0.8630328441649197
+Testing configuration: epochs=200,lr=5e-05,step=1000,gamma=0.9,batch_size=256
+Validation score 0.8696715583508037
+Testing configuration: epochs=200,lr=5e-06,step=500,gamma=0.5,batch_size=64
+Validation score 0.8438155136268344
+Testing configuration: epochs=200,lr=5e-06,step=500,gamma=0.5,batch_size=128
+Validation score 0.8385744234800839
+Testing configuration: epochs=200,lr=5e-06,step=500,gamma=0.5,batch_size=256
+Validation score 0.8525506638714185
+Testing configuration: epochs=200,lr=5e-06,step=500,gamma=0.9,batch_size=64
+Validation score 0.8480083857442349
+Testing configuration: epochs=200,lr=5e-06,step=500,gamma=0.9,batch_size=128
+Validation score 0.8078266946191474
+Testing configuration: epochs=200,lr=5e-06,step=500,gamma=0.9,batch_size=256
+Validation score 0.819706498951782
+Testing configuration: epochs=200,lr=5e-06,step=1000,gamma=0.5,batch_size=64
+Validation score 0.8371767994409502
+Testing configuration: epochs=200,lr=5e-06,step=1000,gamma=0.5,batch_size=128
+Validation score 0.8298392732354997
+Testing configuration: epochs=200,lr=5e-06,step=1000,gamma=0.5,batch_size=256
+Validation score 0.825296995108316
+Testing configuration: epochs=200,lr=5e-06,step=1000,gamma=0.9,batch_size=64
+Validation score 0.8322851153039832
+Testing configuration: epochs=200,lr=5e-06,step=1000,gamma=0.9,batch_size=128
+Validation score 0.8469601677148847
+Testing configuration: epochs=200,lr=5e-06,step=1000,gamma=0.9,batch_size=256
+Validation score 0.8392732354996506
+Best hyperparameters values found
+{'n_epochs': 200, 'learning_rate': 5e-05, 'step_size': 500, 'gamma': 0.5, 'batch_size': 64}
+Best validation score 0.8983228511530398
+
+Writing best training parameters in txt file best_hyperparameters_1.txt
+Done writing dict into .txt file
