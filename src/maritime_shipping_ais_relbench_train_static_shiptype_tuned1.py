@@ -45,7 +45,7 @@ from maritime_shipping_ais_relbench_tasks import ShipTypeNthPositionTask
 
 #Loading model and training parameters
 
-with open("best_hyperparameters.txt", "r") as f:
+with open("best_hyperparameters_1.txt", "r") as f:
     best_params = json.load(f)
 
 TRAINING_CONFIG = {
