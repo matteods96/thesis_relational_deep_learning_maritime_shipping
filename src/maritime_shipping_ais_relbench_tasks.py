@@ -44,15 +44,18 @@ class ShipTypeNthPositionTask(EntityTask):
     entity_table='vessels' # node table
     time_col = "nth_time"   # The selected time for modelling. Here when the vessel first appears in a specific position
     target_col='shiptype' # target column shiptype
+    period_start = pd.Timestamp("2025-04-07")
+    period_end   = pd.Timestamp("2025-04-21")
+
 
     # dummy timedelta and num_eval_timestamps for BaseTask checks. Not used for windowing here
-    timedelta = pd.Timedelta(days=5)
+    timedelta = pd.Timedelta(days=1)
     num_eval_timestamps =1
 
     #Metrics and number of labels
     #metrics=[accuracy]
     metrics = [average_precision, accuracy, f1, roc_auc]
-    num_labels=2 #In the dataset there are 2 types of ship: Cargo and Tanker
+    num_labels=2 #In the dataset there are 2 types of ship: Cargo/Tanker and Other
 
 
     # Special attribute for static node property tasks. 
@@ -99,16 +102,22 @@ class ShipTypeNthPositionTask(EntityTask):
         con=duckdb.connect()
         con.register(self.interaction_table,db.table_dict[self.interaction_table].df)
         con.register(self.entity_table,db.table_dict[self.entity_table].df)
+        db_max_ts = db.max_timestamp
+        db_min_ts = db.min_timestamp
+        print("db min/max:", db_min_ts, db_max_ts)
+        positions_df = db.table_dict[self.interaction_table].df
+        max_pos_ts = positions_df[self.interaction_table_time_col].max()
+        print("max positions timestamp:", max_pos_ts)
 
 
-
+        #WHERE {self.interaction_table_time_col} >= '{self.period_start}' AND {self.interaction_table_time_col} <  '{self.period_end}')
         query = f"""
             WITH distinct_interactions AS (
                 SELECT DISTINCT
                     {self.entity_col},
                     {self.interaction_table_time_col},
                 FROM {self.interaction_table}
-            ),
+            ),  
             entity_interaction_ranks AS (
                 SELECT
                     {self.entity_col},
@@ -135,8 +144,12 @@ class ShipTypeNthPositionTask(EntityTask):
         """
 
         df=con.execute(query).df()
+      
         #Convert shiptypes as binary label 
-        ship_type_dict={'Tanker':1,'Cargo':0}
+        #ship_type_dict={'Tanker':1,'Cargo':0}
+        ship_type_dict={'Cargo/Tanker':1,'Other':0}
+        df = df.dropna()
+        #df["shiptype"] = df["shiptype"].apply(lambda x: 1 if x in ["Cargo", "Tanker"] else 0)
         df['shiptype']=df['shiptype'].map(ship_type_dict)
 
 
@@ -151,7 +164,11 @@ class ShipTypeNthPositionTask(EntityTask):
             raise ValueError("Could not infer split from timestamps")
 
         val_ts = self.dataset.val_timestamp
+        print('Val cutoff',val_ts)
+
         test_ts = self.dataset.test_timestamp
+        print('Test cutoff',test_ts)
+
 
         # Then perform the split and return the associated table
         if split == "train":
@@ -174,6 +191,7 @@ class ShipTypeNthPositionTask(EntityTask):
 if __name__ == "__main__":
     # --- FORCE CLEAR TASK CACHE ---
     cache_dir = f"{get_relbench_cache_dir()}/rel-custom-maritime_shipping_ais/tasks/ship_type_np_task"
+    print('Cache dir',cache_dir)
     shutil.rmtree(cache_dir, ignore_errors=True)
     os.makedirs(cache_dir, exist_ok=True)
     register_dataset("rel-custom-maritime_shipping_ais", MaritimeShippingAISDataset)
