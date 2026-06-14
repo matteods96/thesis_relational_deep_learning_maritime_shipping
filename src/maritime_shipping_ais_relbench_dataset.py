@@ -17,19 +17,39 @@ class MaritimeShippingAISDataset(Dataset):
     ################################################################################
     # Choose the val_timestamp and test_timestamp carefully
     ################################################################################
-    val_timestamp = pd.Timestamp("2025-01-25")
-    test_timestamp = pd.Timestamp("2025-02-14")
+    #val_timestamp = pd.Timestamp("2025-01-25")
+    val_timestamp = pd.Timestamp("2025-04-14")
+    #test_timestamp = pd.Timestamp("2025-02-14")
+    test_timestamp = pd.Timestamp("2025-04-18")
+
+
 
     def make_db(self) -> Database:
-        DB_PATH = "maritime_shipping_ais.db" 
+        #DB_PATH = "maritime_shipping_ais_half_year.db"
+        DB_PATH="maritime_shipping_ais_7_to_20_april.db" 
+        
         con=duckdb.connect(DB_PATH)
+        print(con.execute("SHOW TABLES").df())
 
         #Loading  duckdb database 
 
-        vessels=con.execute("""
-        select * 
-        FROM vessel
-        """).df().drop_duplicates()
+        #vessels=con.execute("""
+        #select * 
+        #FROM vessel
+        #""").df().drop_duplicates()
+        vessels = con.execute("""
+        SELECT
+                mmsi,
+                imo,
+                callsign,
+                shipname,
+                CASE
+                    WHEN shiptype IN ('Cargo', 'Tanker') THEN 'Cargo/Tanker'
+                    ELSE 'Other'
+                END AS shiptype
+            FROM vessel
+        """).df().drop_duplicates(subset=["mmsi"])
+
 
         print("The shape  of the vessel table is",vessels.shape)
         print("The first 5 rows of the vessel table are:")
@@ -39,7 +59,7 @@ class MaritimeShippingAISDataset(Dataset):
         vessels_details=con.execute("""
         select * 
         FROM vessel_details
-        """).df().drop_duplicates()
+        """).df().drop_duplicates(subset=["vessel_details_id"])
         vessels_details['timestamp'] = vessels_details['timestamp'].astype('datetime64[s]')
 
 
@@ -50,7 +70,7 @@ class MaritimeShippingAISDataset(Dataset):
         voyages=con.execute("""
         select *
         FROM voyage;
-        """).df().drop_duplicates()
+        """).df().drop_duplicates(subset=['voyage_id'])
         voyages['timestamp'] = voyages['timestamp'].astype('datetime64[s]')
 
         print("The shape  of the voyage table is",voyages.shape)
@@ -60,7 +80,7 @@ class MaritimeShippingAISDataset(Dataset):
         positions=con.execute("""
         select *
         FROM position;
-        """).df().drop_duplicates()
+        """).df().drop_duplicates(subset=['position_id'])
         positions['timestamp'] = positions['timestamp'].astype('datetime64[s]')
 
         print("The shape  of the position table is",positions.shape)
