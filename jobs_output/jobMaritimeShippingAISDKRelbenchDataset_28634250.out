@@ -1,0 +1,359 @@
+Requirement already satisfied: pip in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (26.1.2)
+Requirement already satisfied: duckdb in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (1.5.0)
+Requirement already satisfied: requests in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (2.32.5)
+Requirement already satisfied: geopandas in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (1.1.3)
+Requirement already satisfied: pyarrow in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (23.0.1)
+Requirement already satisfied: openpyxl in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (3.1.5)
+Requirement already satisfied: relbench in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (2.1.1)
+Requirement already satisfied: charset_normalizer<4,>=2 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from requests) (3.4.6)
+Requirement already satisfied: idna<4,>=2.5 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from requests) (3.11)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from requests) (2.6.3)
+Requirement already satisfied: certifi>=2017.4.17 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from requests) (2026.2.25)
+Requirement already satisfied: numpy>=1.24 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from geopandas) (2.4.3)
+Requirement already satisfied: pyogrio>=0.7.2 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from geopandas) (0.12.1)
+Requirement already satisfied: packaging in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from geopandas) (26.0)
+Requirement already satisfied: pandas>=2.0.0 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from geopandas) (3.0.1)
+Requirement already satisfied: pyproj>=3.5.0 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from geopandas) (3.7.2)
+Requirement already satisfied: shapely>=2.0.0 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from geopandas) (2.1.2)
+Requirement already satisfied: et-xmlfile in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from openpyxl) (2.0.0)
+Requirement already satisfied: pooch in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from relbench) (1.9.0)
+Requirement already satisfied: scikit-learn<=1.6.1 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from relbench) (1.6.1)
+Requirement already satisfied: typing-extensions in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from relbench) (4.15.0)
+Requirement already satisfied: datasets in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from relbench) (4.8.3)
+Requirement already satisfied: scipy>=1.6.0 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from scikit-learn<=1.6.1->relbench) (1.17.1)
+Requirement already satisfied: joblib>=1.2.0 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from scikit-learn<=1.6.1->relbench) (1.5.3)
+Requirement already satisfied: threadpoolctl>=3.1.0 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from scikit-learn<=1.6.1->relbench) (3.6.0)
+Requirement already satisfied: python-dateutil>=2.8.2 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from pandas>=2.0.0->geopandas) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from python-dateutil>=2.8.2->pandas>=2.0.0->geopandas) (1.17.0)
+Requirement already satisfied: filelock in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from datasets->relbench) (3.25.2)
+Requirement already satisfied: dill<0.4.2,>=0.3.0 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from datasets->relbench) (0.4.1)
+Requirement already satisfied: httpx<1.0.0 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from datasets->relbench) (0.28.1)
+Requirement already satisfied: tqdm>=4.66.3 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from datasets->relbench) (4.67.3)
+Requirement already satisfied: xxhash in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from datasets->relbench) (3.6.0)
+Requirement already satisfied: multiprocess<0.70.20 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from datasets->relbench) (0.70.19)
+Requirement already satisfied: fsspec<=2026.2.0,>=2023.1.0 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from fsspec[http]<=2026.2.0,>=2023.1.0->datasets->relbench) (2026.2.0)
+Requirement already satisfied: huggingface-hub<2.0,>=0.25.0 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from datasets->relbench) (1.7.1)
+Requirement already satisfied: pyyaml>=5.1 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from datasets->relbench) (6.0.3)
+Requirement already satisfied: aiohttp!=4.0.0a0,!=4.0.0a1 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from fsspec[http]<=2026.2.0,>=2023.1.0->datasets->relbench) (3.13.3)
+Requirement already satisfied: anyio in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from httpx<1.0.0->datasets->relbench) (4.12.1)
+Requirement already satisfied: httpcore==1.* in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from httpx<1.0.0->datasets->relbench) (1.0.9)
+Requirement already satisfied: h11>=0.16 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from httpcore==1.*->httpx<1.0.0->datasets->relbench) (0.16.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.4.2 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from huggingface-hub<2.0,>=0.25.0->datasets->relbench) (1.4.2)
+Requirement already satisfied: typer in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from huggingface-hub<2.0,>=0.25.0->datasets->relbench) (0.24.1)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->relbench) (2.6.1)
+Requirement already satisfied: aiosignal>=1.4.0 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->relbench) (1.4.0)
+Requirement already satisfied: attrs>=17.3.0 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->relbench) (26.1.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->relbench) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->relbench) (6.7.1)
+Requirement already satisfied: propcache>=0.2.0 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->relbench) (0.4.1)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->relbench) (1.23.0)
+Requirement already satisfied: platformdirs>=2.5.0 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from pooch->relbench) (4.9.4)
+Requirement already satisfied: click>=8.2.1 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from typer->huggingface-hub<2.0,>=0.25.0->datasets->relbench) (8.3.1)
+Requirement already satisfied: shellingham>=1.3.0 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from typer->huggingface-hub<2.0,>=0.25.0->datasets->relbench) (1.5.4)
+Requirement already satisfied: rich>=12.3.0 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from typer->huggingface-hub<2.0,>=0.25.0->datasets->relbench) (14.3.3)
+Requirement already satisfied: annotated-doc>=0.0.2 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from typer->huggingface-hub<2.0,>=0.25.0->datasets->relbench) (0.0.4)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from rich>=12.3.0->typer->huggingface-hub<2.0,>=0.25.0->datasets->relbench) (4.0.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from rich>=12.3.0->typer->huggingface-hub<2.0,>=0.25.0->datasets->relbench) (2.19.2)
+Requirement already satisfied: mdurl~=0.1 in /dtu/blackhole/08/213928/venv/lib/python3.11/site-packages (from markdown-it-py>=2.2.0->rich>=12.3.0->typer->huggingface-hub<2.0,>=0.25.0->datasets->relbench) (0.1.2)
+MaritimeShippingAISDataset()
+             name
+0         ais_raw
+1            port
+2        position
+3          vessel
+4  vessel_details
+5          voyage
+The shape  of the vessel table is (1280, 5)
+The first 5 rows of the vessel table are:
+        mmsi      imo callsign            shipname      shiptype
+0  211190000  9151539     DMLM  SCHLESWIG-HOLSTEIN         Other
+1  305733000  9534303    V2FN6           NIKLAS G.  Cargo/Tanker
+2  564368000  9393101    9VNH8      HAFNIA ZAMBESI  Cargo/Tanker
+3  255915769  9520572   CQ2227         FAIRPLAY-27         Other
+4  304688000  9123324    V2HF2          BF PHILIPP  Cargo/Tanker
+The shape  of the vessel details table is (18617379, 7)
+The first 5 rows of the vessel details table are:
+          vessel_details_id       mmsi  ... to_port  to_starboard
+0  205168000_20250411211538  205168000  ...      10             3
+1  205168000_20250411211627  205168000  ...      10             3
+2  205168000_20250411211648  205168000  ...      10             3
+3  205168000_20250411211827  205168000  ...      10             3
+4  205168000_20250411211928  205168000  ...      10             3
+
+[5 rows x 7 columns]
+The shape  of the voyage table is (18735862, 9)
+The first 5 rows of the voyage table are:
+                  voyage_id       mmsi           timestamp  ...  day hour  minute
+0  205168000_20250411211538  205168000 2025-04-11 21:15:38  ...   12   18       0
+1  205168000_20250411211627  205168000 2025-04-11 21:16:27  ...   12   18       0
+2  205168000_20250411211648  205168000 2025-04-11 21:16:48  ...   12   18       0
+3  205168000_20250411211827  205168000 2025-04-11 21:18:27  ...   12   18       0
+4  205168000_20250411211928  205168000 2025-04-11 21:19:28  ...   12   18       0
+
+[5 rows x 9 columns]
+The shape  of the position table is (18742902, 10)
+The first 5 rows of the position table are:
+                position_id       mmsi  ... course heading
+0  205168000_20250411211538  205168000  ...    141     140
+1  205168000_20250411211627  205168000  ...    131     130
+2  205168000_20250411211648  205168000  ...    131     131
+3  205168000_20250411211827  205168000  ...    121     119
+4  205168000_20250411211928  205168000  ...    117     115
+
+[5 rows x 10 columns]
+The shape  of the port table is (4603, 6)
+The first 5 rows of the port table are:
+   port_id  ...                                            polygon
+0        1  ...  POLYGON((14.36551956036558 40.62293319691949,1...
+1        2  ...  POLYGON((-74.21789190130377 40.6195602995403,-...
+2        3  ...  POLYGON((113.6094220882453 22.919427035693488,...
+3        4  ...  POLYGON((120.1972949838888 23.8274792640885,12...
+4        5  ...  POLYGON((124.71211466585837 8.529538655332956,...
+
+[5 rows x 6 columns]
+Country name:  Cambodia
+Country name:  Lebanon
+Country name:  Hungary
+Country name:  Guatemala
+Country name:  Algeria
+Country name:  Maldives
+Country name:  Nigeria
+Country name:  Poland
+Country name:  Saudi Arabia
+Country name:  Martinique
+Country name:  Cape Verde
+Country name:  Colombia
+Country name:  Saint Kitts and Nevis
+Country name:  French Guiana
+Country name:  Norway
+Country name:  Tonga
+Country name:  Vanuatu
+Country name:  Monaco
+Country name:  Brazil
+Country name:  Anguilla
+Country name:  Marshall Islands (the)
+Country name:  Nauru
+Country name:  Ukraine
+Country name:  Saint Pierre and Miquelon
+Country name:  Thailand
+Country name:  Niue
+Country name:  China
+Country name:  Venezuela (Bolivarian Republic of)
+Country name:  Paraguay
+Country name:  Saint Lucia
+Country name:  Slovenia
+Country name:  Svalbard and Jan Mayen
+Country name:  Dominican Republic
+Country name:  Montserrat
+Country name:  United Arab Emirates (the)
+Country name:  South Georgia and the South Sandwich Islands
+Country name:  Chile
+Country name:  Guyana
+Country name:  United States of America (the)
+Country name:  Palau
+Country name:  Tuvalu
+Country name:  Nicaragua
+Country name:  Curaçao
+Country name:  Macao
+Country name:  Portugal
+Country name:  Mexico
+Country name:  Ghana
+Country name:  Aruba
+Country name:  Saint Vincent and the Grenadines
+Country name:  Australia
+Country name:  Bahamas
+Country name:  Singapore
+Country name:  Northern Mariana Islands (the)
+Country name:  Egypt
+Country name:  Haiti
+Country name:  Gabon
+Country name:  Montenegro
+Country name:  Fiji
+Country name:  Antarctica
+Country name:  Belgium
+Country name:  Croatia
+Country name:  Iraq
+Country name:  Guinea
+Country name:  Guinea-Bissau
+Country name:  Djibouti
+Country name:  Virgin Islands (British)
+Country name:  Turkmenistan
+Country name:  Falkland Islands (Malvinas)
+Country name:  Belarus
+Country name:  Solomon Islands
+Country name:  Pakistan
+Country name:  Brunei Darussalam
+Country name:  Mayotte
+Country name:  Western Sahara
+Country name:  Uruguay
+Country name:  Jamaica
+Country name:  Sierra Leone
+Country name:  Estonia
+Country name:  Suriname
+Country name:  Costa Rica
+Country name:  Israel
+Country name:  Lithuania
+Country name:  Cameroon
+Country name:  Philippines (the)
+Country name:  Bulgaria
+Country name:  Latvia
+Country name:  Ethiopia
+Country name:  Romania
+Country name:  Cuba
+Country name:  Puerto Rico
+Country name:  Libya
+Country name:  Senegal
+Country name:  Gambia
+Country name:  Togo
+Country name:  Eritrea
+Country name:  Kuwait
+Country name:  Kenya
+Country name:  Sudan (the)
+Country name:  Madagascar
+Country name:  Panama
+Country name:  Ireland
+Country name:  Seychelles
+Country name:  Sint Maarten (Dutch Part)
+Country name:  Syrian Arab Republic (the)
+Country name:  Honduras
+Country name:  South Africa
+Country name:  Virgin Islands (U.S.)
+Country name:  Indonesia
+Country name:  Tunisia
+Country name:  Qatar
+Country name:  Switzerland
+Country name:  Oman
+Country name:  Germany
+Country name:  Peru
+Country name:  Faroe Islands
+Country name:  Georgia
+Country name:  Austria
+Country name:  Turks and Caicos Islands (the)
+Country name:  Spain
+Country name:  Timor-Leste
+Country name:  Malta
+Country name:  Sri Lanka
+Country name:  El Salvador
+Country name:  Tokelau
+Country name:  Côte d'Ivoire
+Country name:  Cyprus
+Country name:  India
+Country name:  Argentina
+Country name:  Greenland
+Country name:  Italy
+Country name:  Comoros
+Country name:  Kazakhstan
+Country name:  Japan
+Country name:  Bosnia and Herzegovina
+Country name:  Dominica
+Country name:  Kiribati
+Country name:  Liberia
+Country name:  Christmas Island
+Country name:  French Polynesia
+Country name:  Bahrain
+Country name:  Bangladesh
+Country name:  United States Minor Outlying Islands
+Country name:  Guam
+Country name:  Yemen
+Country name:  Myanmar
+Country name:  Guadeloupe
+Country name:  France
+Country name:  Hong Kong 
+Country name:  Central African Republic
+Country name:  Sao Tome and Principe
+Country name:  Mauritania
+Country name:  Netherlands
+Country name:  Samoa
+Country name:  Malaysia
+Country name:  Papua New Guinea
+Country name:  Greece
+Country name:  New Caledonia
+Country name:  Mozambique
+Country name:  Jordan
+Country name:  Canada
+Country name:  Denmark
+Country name:  Equatorial Guinea
+Country name:  Finland
+Country name:  Cayman Islands
+Country name:  Sweden
+Country name:  Taiwan (Province of China)
+Country name:  Grenada
+Country name:  nan
+Country name:  American Samoa
+Country name:  Belize
+Country name:  New Zealand
+Country name:  Türkiye
+Country name:  Viet Nam
+Country name:  Barbados
+Country name:  Benin
+Country name:  Ecuador
+Country name:  Niger
+Country name:  Antigua and Barbuda
+Country name:  Gibraltar
+Country name:  Azerbaijan
+Country name:  Trinidad and Tobago
+Country name:  United Kingdom
+Country name:  Réunion
+Country name:  Czechia
+Country name:  Somalia
+Country name:  Bermuda
+Country name:  Angola
+Country name:  Slovakia
+Country name:  Russian Federation (the)
+Country name:  Mauritius
+Country name:  Albania
+Country name:  Morocco
+Country name:  Congo
+Country name:  Iceland
+
+vessel table - Column : Type : Na
+--------------------------------------------------
+mmsi : int32 : 0
+imo : Int32 : 23
+callsign : str : 0
+shipname : str : 0
+shiptype : str : 0
+
+vessel_details table - Column : Type : Na
+--------------------------------------------------
+vessel_details_id : str : 0
+mmsi : int32 : 0
+timestamp : datetime64[s] : 0
+to_bow : Int32 : 43320
+to_stern : Int32 : 34853
+to_port : Int32 : 77205
+to_starboard : Int32 : 11574
+
+voyage table - Column : Type : Na
+--------------------------------------------------
+voyage_id : str : 0
+mmsi : int32 : 0
+timestamp : datetime64[s] : 0
+draught : int32 : 0
+destination : str : 0
+month : Int32 : 218125
+day : Int32 : 218125
+hour : Int32 : 218125
+minute : Int32 : 218125
+
+position table - Column : Type : Na
+--------------------------------------------------
+position_id : str : 0
+mmsi : int32 : 0
+timestamp : datetime64[s] : 0
+status : str : 0
+turn : Int32 : 1227583
+speed : Int32 : 135333
+lon : int32 : 0
+lat : int32 : 0
+course : Int32 : 170450
+heading : Int32 : 70824
+
+port table - Column : Type : Na
+--------------------------------------------------
+port_id : int32 : 0
+port_code : str : 0
+port_name : str : 0
+country_code : str : 0
+country_name : str : 60
+polygon : str : 0
