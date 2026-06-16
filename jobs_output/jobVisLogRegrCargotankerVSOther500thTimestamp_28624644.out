@@ -1,0 +1,15 @@
+
+TRAIN
+total: 125822825
+cargo/tanker: 99665075 (79.21%)
+other:        26157750 (20.79%)
+
+VALIDATION
+total: 12547623
+cargo/tanker: 11800951 (94.05%)
+other:        746672 (5.95%)
+
+TEST
+total: 8984059
+cargo/tanker: 7596722 (84.56%)
+other:        1387337 (15.44%)
