@@ -1,0 +1,26 @@
+Loaded dependency [python3/3.11.13]: sqlite3/3.50.1
+Loaded dependency [python3/3.11.13]: gcc/14.3.0-binutils-2.44
+Loaded module: python3/3.11.13
+
+Loading python3/3.11.13
+  Loading requirement: sqlite3/3.50.1 gcc/14.3.0-binutils-2.44
+Loaded module: cuda/11.7
+No Nvidia-GPUs found in this machine, please use a GPU-node
+
+
+
+Loading cuda/11.7
+  ERROR: Module evaluation aborted
+Traceback (most recent call last):
+  File "/dtu/blackhole/08/213928/storage/maritime_shipping_ais_relbench_tasks_new.py", line 20, in <module>
+    from maritime_shipping_ais_relbench_dataset_new import MaritimeShippingAISDatasetNew
+  File "/dtu/blackhole/08/213928/storage/maritime_shipping_ais_relbench_dataset_new.py", line 114, in <module>
+    db = maritime_dataset.make_db()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dtu/blackhole/08/213928/storage/maritime_shipping_ais_relbench_dataset_new.py", line 58, in make_db
+    """).df().drop_duplicates(subset=["voyage_id"])
+         ^^^^
+  File "/dtu/blackhole/08/213928/venv/lib/python3.11/site-packages/numpy/ma/core.py", line 2872, in __new__
+    def __new__(cls, data=None, mask=nomask, dtype=None, copy=False,
+
+KeyboardInterrupt
