@@ -56,7 +56,7 @@ TRAINING_CONFIG={'epochs':200,
 MODEL_CONFIG = {
     "temporal_strategy": "last",
     "num_neighbors": [128 for _ in range(2)],
-    "num_layers": 2,
+    "num_layers": 6,#it was 2  and 1 before for untuned model
     "channels": 128,
     "aggr": "mean",
     "temporal_encoding": False,
