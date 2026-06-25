@@ -1,0 +1,1 @@
+{"num_neighbors": [64, 32], "channels": 256, "num_layers": 2}
