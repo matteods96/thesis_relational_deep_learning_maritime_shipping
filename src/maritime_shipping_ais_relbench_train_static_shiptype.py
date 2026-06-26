@@ -1,12 +1,12 @@
 #Importing libraries needed
 import numpy as np
 import matplotlib.pyplot as plt
+import json
 from torch.nn import BCEWithLogitsLoss, L1Loss, MSELoss
 from relbench.tasks import get_task, get_task_names, register_task
 from relbench.datasets import get_dataset, get_dataset_names, register_dataset
 import os
 import math
-import numpy as np
 from tqdm import tqdm
 import torch
 from typing import List, Optional, Dict
@@ -43,32 +43,30 @@ from maritime_shipping_ais_relbench_dataset import MaritimeShippingAISDataset
 
 from maritime_shipping_ais_relbench_tasks import ShipTypeNthPositionTask
 
-#Importing variables 
+#Loading model and training parameters
 
-adv_compute_train_stats='True'
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-#Defining parameters for training
 TRAINING_CONFIG={'epochs':200,
                  'learning_rate':1e-5,
                  'step_size':1000,
                  'gamma':0.5,
-                 'batch_size':128}
-#Defining parameters for the model
-MODEL_CONFIG={'temporal_strategy':'last',
-              'num_neighbors':[128 for i in range(2)],
-              'num_layers':2,
-              'channels':128,
-              'aggr':'mean',
-              'temporal_encoding':False,
-              'hgt_heads': 16,
-              'loader_type':'neighbor',
-              'model_type': 'graphsage',
-              'weight_decay':1e-2}
+                 'batch_size':128,
+	         'weight_decay': 1e-2}
 
+MODEL_CONFIG = {
+    "temporal_strategy": "last",
+    "num_neighbors": [128 for _ in range(2)],
+    "num_layers": 6,#it was 2  and 1 before for untuned model
+    "channels": 128,
+    "aggr": "mean",
+    "temporal_encoding": False,
+    "hgt_heads": 16,
+    "loader_type": "neighbor",
+    "model_type": "graphsage"}
 
-    
+#adv_compute_train_stats = True 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 #Implementing a function to display the training hyperparameters
 def print_training_hyperparams(configuration):
     print("Training Hyperparameters:")
@@ -78,6 +76,7 @@ def print_training_hyperparams(configuration):
     print(f"Step Size: {configuration['step_size']}")
     print(f"Gamma: {configuration['gamma']}")
     print(f"Batch Size: {configuration['batch_size']}")
+    print(f"Weight Decay: {configuration['weight_decay']}")
     print()
 #Implementing a function to display the model GNN hyperparameters
 def print_model_params(configuration):
@@ -85,7 +84,6 @@ def print_model_params(configuration):
     print(f"Num Neighbours: {configuration['num_neighbors']}")
     print(f"Channels: {configuration['channels']}")
     print(f"Layers: {configuration['num_layers']}")
-    print(f"Weight Decay: {configuration['weight_decay']}")
     print()
 
 
@@ -213,7 +211,8 @@ def build_graph_from_db(dataset,task,db_full,stype_dict_to_use,text_embedder_cfg
         cache_dir=os.path.join(root_dir, f"{dataset}_{task}_train_cache")            
         )
     
-    if adv_compute_train_stats and dataset == 'rel-custom-maritime_shipping_ais': 
+    
+    """if adv_compute_train_stats and dataset == 'rel-custom-maritime_shipping_ais': 
         # Special inductive train stats for static tables
         # If using this overwrite the simple train_col_stats_dict obtained above
         # Get the col_stats_dict for the training data (used for normalisation)
@@ -225,10 +224,9 @@ def build_graph_from_db(dataset,task,db_full,stype_dict_to_use,text_embedder_cfg
             col_to_stype_dict=stype_dict_to_use,
             text_embedder_cfg=text_embedder_cfg,  # our chosen text encoder
             cache_dir=os.path.join(root_dir, f"{dataset}_{task}_train_cache")
-        )
-        print('Computing load train column stats done')
-        print('train_cols_stats dict',train_col_stats_dict)
-
+        )"""
+    print('Computing load train column stats done')
+    print('train_cols_stats dict',train_col_stats_dict)
     return data_full,data_train,train_col_stats_dict
 
 
@@ -338,7 +336,6 @@ def test(loader,model,task) -> np.ndarray:
         pred = pred.view(-1) if pred.size(1) == 1 else pred
         pred_list.append(pred.detach().cpu())
     return torch.cat(pred_list, dim=0).numpy()
-
 
 def run_train_and_evaluate(model,task,loader_train,loader_inference,loss_fn,optimizer,scheduler,tune_metric,higher_is_better,num_epochs):
     tasktype=task.task_type.value
@@ -509,16 +506,12 @@ def save_results_to_csv(output_dir,tasktype,test_table,target_col_name,test_pred
     print(f"Saved test targets to {targets_path}")
     print(f"Saved test predictions to {preds_path}")
         
+
+
 def plot_learning_curves_from_csv(output_dir):
     train_loss = pd.read_csv(os.path.join(output_dir, "train_loss.csv"))["train_loss"]
     val_loss = pd.read_csv(os.path.join(output_dir, "val_loss.csv"))["val_loss"]
     test_loss = pd.read_csv(os.path.join(output_dir, "test_loss.csv"))["test_loss"]
-
-    #val_metrics = pd.read_csv(os.path.join(output_dir, "val_metrics.csv"))
-    #test_metrics = pd.read_csv(os.path.join(output_dir, "test_metrics.csv"))
-
-    #val_roc = val_metrics["roc_auc"]
-    #test_roc = test_metrics["roc_auc"]
 
     epochs = range(1, len(train_loss) + 1)
 
@@ -570,21 +563,29 @@ def plot_roc_auc_curves_from_csv(output_dir):
 
 
 
-
 def main():
     seed_everything(42)
 
     # dataset and task
     dataset, task = register_dataset_and_task()
     train_table, val_table, test_table = load_train_val_test_tables(task)
+    print('Train table',train_table)
+    print('Validation table',val_table)
+    print('Testing table',test_table)
+
     tasktype = task.task_type.value
     target_col_name = task.target_col
     task_name = "ship_type_np_task"
 
     # remove leakage columns
     remove_columns = get_remove_columns(task)
+    print('Remove columns')
+    print(remove_columns)
 
     # database and stypes
+
+
+    
     db_full, col_to_stype_dict = prepare_db_full(dataset)
 
     if len(remove_columns) > 0:
@@ -592,21 +593,71 @@ def main():
             table_name: {
                 col: col_type
                 for col, col_type in cols.items()
-                if not (table_name == task.entity_table and col in remove_columns)
+                if not  (col in remove_columns)
             }
-            for table_name, cols in col_to_stype_dict.items()
+            for table_name, cols in col_to_stype_dict.items()#removing columns to be excluded by the model
         }
+    print('Cols type')
+    print(col_to_stype_dict)
+    print('End cols type')
 
     # text embedder
     text_embedder_cfg = TextEmbedderConfig(
         text_embedder=GloveTextEmbedding(device=device),
         batch_size=256,
     )
-
+    print('Col to stype:',col_to_stype_dict)
     # graphs
     data_full, data_train, train_col_stats_dict = build_graph_from_db(
         dataset, task, db_full, col_to_stype_dict, text_embedder_cfg
-    )
+    )#havr all feature
+    # vessels
+    print("vessels keys:")
+    print(data_full['vessels'].keys())
+
+    print("vessels tf:")
+    print(data_full['vessels'].tf)
+
+
+    # vessels_details
+    print("vessels_details keys:")
+    print(data_full['vessels_details'].keys())
+
+    print("vessels_details tf:")
+    print(data_full['vessels_details'].tf)
+
+
+    # positions
+    print("positions keys:")
+    print(data_full['positions'].keys())
+
+    print("positions tf:")
+    print(data_full['positions'].tf)
+
+
+    # voyages
+    print("voyages keys:")
+    print(data_full['voyages'].keys())
+
+    print("voyages tf:")
+    print(data_full['voyages'].tf)
+
+
+    # ports
+    print("ports keys:")
+    print(data_full['ports'].keys())
+
+    print("ports tf:")
+    print(data_full['ports'].tf)
+
+
+    print('Data train')
+    print(data_train)
+
+    
+
+    #remove feature after building graph
+
 
     # normalize timestamps
     normalize_split_times(train_table, val_table, test_table)
@@ -629,7 +680,7 @@ def main():
     optimizer = torch.optim.AdamW(
         model.parameters(),
         lr=TRAINING_CONFIG["learning_rate"],
-        weight_decay=MODEL_CONFIG["weight_decay"],
+        weight_decay=TRAINING_CONFIG["weight_decay"],
     )
     scheduler = lr_scheduler.StepLR(
         optimizer,
@@ -661,10 +712,8 @@ def main():
         higher_is_better=higher_is_better,
         num_epochs=TRAINING_CONFIG["epochs"],
     )
-
     # save results
-    output_dir = "ship type prediction/heterogenuos graph_sage_without_tuning_or_ablation"
-
+    output_dir = "ship type prediction/heterogenuos graph_sage_untuned_db"
     save_results_to_csv(
         output_dir=output_dir,
         tasktype=tasktype,
@@ -682,16 +731,9 @@ def main():
     # plot curves
     plot_learning_curves_from_csv(output_dir)
     plot_roc_auc_curves_from_csv(output_dir)
-
-    print("Results saved in directory")
-    print('Prediction of the heterogenuos graph sage without tuning and without ablation')
+     
+    print('Prediction of the heterogenuos graph sage untuned based on entire db ')
 
     
-
-
-
-
-
-
 if __name__=="__main__":
     main()
