@@ -1,0 +1,18 @@
+/zhome/64/c/213928/.lsbatch/1780850252.28608218.shell: line 17: nvidia-smi: command not found
+Loaded dependency [python3/3.11.13]: sqlite3/3.50.1
+Loaded dependency [python3/3.11.13]: gcc/14.3.0-binutils-2.44
+Loaded module: python3/3.11.13
+
+Loading python3/3.11.13
+  Loading requirement: sqlite3/3.50.1 gcc/14.3.0-binutils-2.44
+Loaded module: cuda/11.7
+No Nvidia-GPUs found in this machine, please use a GPU-node
+
+
+
+Loading cuda/11.7
+  ERROR: Module evaluation aborted
+/dtu/blackhole/08/213928/storage/visual_classification_cargotanker_vs_other_30thtimestamp_with_subsampling.py:212: UserWarning: Creating legend with loc="best" can be slow with large amounts of data.
+  plt.tight_layout()
+/dtu/blackhole/08/213928/storage/visual_classification_cargotanker_vs_other_30thtimestamp_with_subsampling.py:213: UserWarning: Creating legend with loc="best" can be slow with large amounts of data.
+  plt.savefig(os.path.join(output_dir, "FIG1_scatter_binary.png"), dpi=300)

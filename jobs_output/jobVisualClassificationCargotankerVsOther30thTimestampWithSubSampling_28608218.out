@@ -1,0 +1,39 @@
+shape of the full data in our experiments is 170.739079 million rows
+earliest date 2025-03-01 00:16:31
+latest date 2025-03-30 22:15:14
+training period: 2025-03-01 - 2025-03-15
+validation period: 2025-03-16 - 2025-03-23
+test period: 2025-03-24 - 2025-03-30
+
+train (original)
+total: 147677745
+cargo/tanker: 120761677 (81.77%)
+other:        26916068 (18.23%)
+
+validation (original)
+total: 15321863
+cargo/tanker: 13053847 (85.20%)
+other:        2268016 (14.80%)
+
+test (original)
+total: 7739471
+cargo/tanker: 6821456 (88.14%)
+other:        918015 (11.86%)
+
+train (downsampled)
+total: 75220739
+cargo/tanker: 48304671 (64.22%)
+other:        26916068 (35.78%)
+
+validation (downsampled)
+total: 7489555
+cargo/tanker: 5221539 (69.72%)
+other:        2268016 (30.28%)
+
+test (downsampled)
+total: 3646597
+cargo/tanker: 2728582 (74.83%)
+other:        918015 (25.17%)
+distinct ships for training: 1164
+distinct ships for validation: 298
+distinct ships for testing: 184

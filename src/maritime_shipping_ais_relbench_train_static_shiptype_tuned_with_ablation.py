@@ -75,7 +75,7 @@ MODEL_CONFIG = {
 }
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-adv_compute_train_stats = True
+#adv_compute_train_stats = True
 
 
 
@@ -223,7 +223,7 @@ def build_graph_from_db(dataset,task,db_full,stype_dict_to_use,text_embedder_cfg
         cache_dir=os.path.join(root_dir, f"{dataset}_{task}_train_cache")            
         )
     
-    if adv_compute_train_stats and dataset == 'rel-custom-maritime_shipping_ais': 
+    """if adv_compute_train_stats and dataset == 'rel-custom-maritime_shipping_ais': 
         # Special inductive train stats for static tables
         # If using this overwrite the simple train_col_stats_dict obtained above
         # Get the col_stats_dict for the training data (used for normalisation)
@@ -235,7 +235,7 @@ def build_graph_from_db(dataset,task,db_full,stype_dict_to_use,text_embedder_cfg
             col_to_stype_dict=stype_dict_to_use,
             text_embedder_cfg=text_embedder_cfg,  # our chosen text encoder
             cache_dir=os.path.join(root_dir, f"{dataset}_{task}_train_cache")
-        )
+        )"""
         print('Computing load train column stats done')
         print('train_cols_stats dict',train_col_stats_dict)
 
@@ -599,21 +599,69 @@ def main():
             table_name: {
                 col: col_type
                 for col, col_type in cols.items()
-                if not (table_name == task.entity_table and col in remove_columns)
+                if not (col in remove_columns)
             }
             for table_name, cols in col_to_stype_dict.items()
         }
+    print('Cols type')
+    print(col_to_stype_dict)
+    print('End cols type')
 
     # text embedder
     text_embedder_cfg = TextEmbedderConfig(
         text_embedder=GloveTextEmbedding(device=device),
         batch_size=256,
     )
+    print('Col to stype:',col_to_stype_dict)
+
 
     # graphs
     data_full, data_train, train_col_stats_dict = build_graph_from_db(
         dataset, task, db_full, col_to_stype_dict, text_embedder_cfg
     )
+    # vessels
+    print("vessels keys:")
+    print(data_full['vessels'].keys())
+
+    print("vessels tf:")
+    print(data_full['vessels'].tf)
+
+
+    # vessels_details
+    print("vessels_details keys:")
+    print(data_full['vessels_details'].keys())
+
+    print("vessels_details tf:")
+    print(data_full['vessels_details'].tf)
+
+
+    # positions
+    print("positions keys:")
+    print(data_full['positions'].keys())
+
+    print("positions tf:")
+    print(data_full['positions'].tf)
+
+
+    # voyages
+    print("voyages keys:")
+    print(data_full['voyages'].keys())
+
+    print("voyages tf:")
+    print(data_full['voyages'].tf)
+
+
+    # ports
+    print("ports keys:")
+    print(data_full['ports'].keys())
+
+    print("ports tf:")
+    print(data_full['ports'].tf)
+
+
+    print('Data train')
+    print(data_train)
+ 
 
     # normalize timestamps
     normalize_split_times(train_table, val_table, test_table)

@@ -148,7 +148,7 @@ class ShipTypeNthPositionTask(EntityTask):
         #Convert shiptypes as binary label 
         #ship_type_dict={'Tanker':1,'Cargo':0}
         ship_type_dict={'Cargo/Tanker':1,'Other':0}
-        df = df.dropna()
+        #df = df.dropna()
         #df["shiptype"] = df["shiptype"].apply(lambda x: 1 if x in ["Cargo", "Tanker"] else 0)
         df['shiptype']=df['shiptype'].map(ship_type_dict)
 
