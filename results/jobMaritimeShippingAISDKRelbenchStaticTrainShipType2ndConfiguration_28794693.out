@@ -1,0 +1,1200 @@
+Sat Jun 27 14:32:50 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 595.71.05              Driver Version: 595.71.05      CUDA Version: 13.2     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          On  |   00000000:86:00.0 Off |                    0 |
+| N/A   29C    P0             39W /  250W |       0MiB /  40960MiB |      0%   E. Process |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+MaritimeShippingAISDataset()
+             name
+0         ais_raw
+1            port
+2        position
+3          vessel
+4  vessel_details
+5          voyage
+The shape  of the vessel table is (1387, 5)
+The first 5 rows of the vessel table are:
+        mmsi      imo callsign       shipname      shiptype
+0  311053100  9530955    C6ZD5         ANGY R  Cargo/Tanker
+1  245943000  9518232     PEHA       GEULBORG  Cargo/Tanker
+2  245720000  9917672     PDFY         CELTIC  Cargo/Tanker
+3  255915793  9815331   CQ2251       TREVILLE         Other
+4  538011575  9742895  V7A3149  NORDIC GALAXY  Cargo/Tanker
+The shape  of the vessel details table is (21136959, 7)
+The first 5 rows of the vessel details table are:
+          vessel_details_id       mmsi  ... to_port  to_starboard
+0  205168000_20250411211538  205168000  ...      10             3
+1  205168000_20250411211627  205168000  ...      10             3
+2  205168000_20250411211648  205168000  ...      10             3
+3  205168000_20250411211827  205168000  ...      10             3
+4  205168000_20250411211928  205168000  ...      10             3
+
+[5 rows x 7 columns]
+The shape  of the voyage table is (21226444, 9)
+The first 5 rows of the voyage table are:
+                  voyage_id       mmsi           timestamp  ...  day hour  minute
+0  205168000_20250411211538  205168000 2025-04-11 21:15:38  ...   12   18       0
+1  205168000_20250411211627  205168000 2025-04-11 21:16:27  ...   12   18       0
+2  205168000_20250411211648  205168000 2025-04-11 21:16:48  ...   12   18       0
+3  205168000_20250411211827  205168000 2025-04-11 21:18:27  ...   12   18       0
+4  205168000_20250411211928  205168000 2025-04-11 21:19:28  ...   12   18       0
+
+[5 rows x 9 columns]
+The shape  of the position table is (21279933, 10)
+The first 5 rows of the position table are:
+                position_id       mmsi  ... course heading
+0  205168000_20250411211538  205168000  ...    141     140
+1  205168000_20250411211627  205168000  ...    131     130
+2  205168000_20250411211648  205168000  ...    131     131
+3  205168000_20250411211827  205168000  ...    121     119
+4  205168000_20250411211928  205168000  ...    117     115
+
+[5 rows x 10 columns]
+The shape  of the port table is (4603, 6)
+The first 5 rows of the port table are:
+   port_id  ...                                            polygon
+0        1  ...  POLYGON((14.36551956036558 40.62293319691949,1...
+1        2  ...  POLYGON((-74.21789190130377 40.6195602995403,-...
+2        3  ...  POLYGON((113.6094220882453 22.919427035693488,...
+3        4  ...  POLYGON((120.1972949838888 23.8274792640885,12...
+4        5  ...  POLYGON((124.71211466585837 8.529538655332956,...
+
+[5 rows x 6 columns]
+Country name:  Israel
+Country name:  Togo
+Country name:  Algeria
+Country name:  Philippines (the)
+Country name:  Virgin Islands (U.S.)
+Country name:  Gabon
+Country name:  Oman
+Country name:  Pakistan
+Country name:  Latvia
+Country name:  Ethiopia
+Country name:  Belarus
+Country name:  Grenada
+Country name:  Morocco
+Country name:  Italy
+Country name:  American Samoa
+Country name:  Cyprus
+Country name:  Vanuatu
+Country name:  Malta
+Country name:  Kuwait
+Country name:  Antarctica
+Country name:  Guadeloupe
+Country name:  Monaco
+Country name:  Niue
+Country name:  New Caledonia
+Country name:  Portugal
+Country name:  Croatia
+Country name:  Denmark
+Country name:  Slovenia
+Country name:  United States of America (the)
+Country name:  Solomon Islands
+Country name:  Kiribati
+Country name:  Uruguay
+Country name:  Sao Tome and Principe
+Country name:  Côte d'Ivoire
+Country name:  Kazakhstan
+Country name:  Tunisia
+Country name:  Central African Republic
+Country name:  Sri Lanka
+Country name:  Madagascar
+Country name:  South Georgia and the South Sandwich Islands
+Country name:  Timor-Leste
+Country name:  nan
+Country name:  Syrian Arab Republic (the)
+Country name:  Christmas Island
+Country name:  Curaçao
+Country name:  Cameroon
+Country name:  Hungary
+Country name:  Thailand
+Country name:  Bahamas
+Country name:  Romania
+Country name:  Djibouti
+Country name:  Austria
+Country name:  Faroe Islands
+Country name:  Virgin Islands (British)
+Country name:  Saint Pierre and Miquelon
+Country name:  Benin
+Country name:  Spain
+Country name:  Puerto Rico
+Country name:  Bangladesh
+Country name:  Palau
+Country name:  Bosnia and Herzegovina
+Country name:  Seychelles
+Country name:  Mayotte
+Country name:  Antigua and Barbuda
+Country name:  Ireland
+Country name:  Comoros
+Country name:  Congo
+Country name:  Sudan (the)
+Country name:  Maldives
+Country name:  Montenegro
+Country name:  China
+Country name:  Colombia
+Country name:  Viet Nam
+Country name:  Guatemala
+Country name:  Barbados
+Country name:  Jamaica
+Country name:  Canada
+Country name:  Jordan
+Country name:  Senegal
+Country name:  Lebanon
+Country name:  Guinea
+Country name:  Mozambique
+Country name:  Sierra Leone
+Country name:  Netherlands
+Country name:  Chile
+Country name:  Costa Rica
+Country name:  Macao
+Country name:  Niger
+Country name:  United States Minor Outlying Islands
+Country name:  Poland
+Country name:  Taiwan (Province of China)
+Country name:  Cayman Islands
+Country name:  Norway
+Country name:  Dominican Republic
+Country name:  Martinique
+Country name:  France
+Country name:  Belize
+Country name:  Germany
+Country name:  Guyana
+Country name:  United Arab Emirates (the)
+Country name:  Cambodia
+Country name:  Estonia
+Country name:  Australia
+Country name:  Bermuda
+Country name:  Ukraine
+Country name:  Turks and Caicos Islands (the)
+Country name:  Greenland
+Country name:  Equatorial Guinea
+Country name:  Turkmenistan
+Country name:  Liberia
+Country name:  Bahrain
+Country name:  South Africa
+Country name:  Hong Kong 
+Country name:  Fiji
+Country name:  Gambia
+Country name:  Bulgaria
+Country name:  Albania
+Country name:  Réunion
+Country name:  Somalia
+Country name:  Saint Vincent and the Grenadines
+Country name:  Guam
+Country name:  Singapore
+Country name:  Saudi Arabia
+Country name:  Finland
+Country name:  Cape Verde
+Country name:  Haiti
+Country name:  Russian Federation (the)
+Country name:  Gibraltar
+Country name:  Tuvalu
+Country name:  Saint Lucia
+Country name:  Libya
+Country name:  Qatar
+Country name:  Japan
+Country name:  Montserrat
+Country name:  Brunei Darussalam
+Country name:  Nigeria
+Country name:  Samoa
+Country name:  Papua New Guinea
+Country name:  Nicaragua
+Country name:  Switzerland
+Country name:  United Kingdom
+Country name:  Mexico
+Country name:  Egypt
+Country name:  Mauritania
+Country name:  Brazil
+Country name:  Sweden
+Country name:  Aruba
+Country name:  Venezuela (Bolivarian Republic of)
+Country name:  Dominica
+Country name:  Saint Kitts and Nevis
+Country name:  Northern Mariana Islands (the)
+Country name:  Ghana
+Country name:  Paraguay
+Country name:  Iceland
+Country name:  India
+Country name:  Türkiye
+Country name:  Kenya
+Country name:  Slovakia
+Country name:  Nauru
+Country name:  Sint Maarten (Dutch Part)
+Country name:  Lithuania
+Country name:  Argentina
+Country name:  Angola
+Country name:  Czechia
+Country name:  Anguilla
+Country name:  Eritrea
+Country name:  Suriname
+Country name:  Ecuador
+Country name:  Western Sahara
+Country name:  Trinidad and Tobago
+Country name:  Azerbaijan
+Country name:  Georgia
+Country name:  El Salvador
+Country name:  Guinea-Bissau
+Country name:  Peru
+Country name:  Mauritius
+Country name:  Tonga
+Country name:  Svalbard and Jan Mayen
+Country name:  Belgium
+Country name:  Indonesia
+Country name:  Cuba
+Country name:  Malaysia
+Country name:  Tokelau
+Country name:  French Polynesia
+Country name:  Panama
+Country name:  Myanmar
+Country name:  Greece
+Country name:  Iraq
+Country name:  New Zealand
+Country name:  Marshall Islands (the)
+Country name:  Honduras
+Country name:  Yemen
+Country name:  Falkland Islands (Malvinas)
+Country name:  French Guiana
+
+vessel table - Column : Type : Na
+--------------------------------------------------
+mmsi : int32 : 0
+imo : Int32 : 24
+callsign : str : 0
+shipname : str : 0
+shiptype : str : 0
+
+vessel_details table - Column : Type : Na
+--------------------------------------------------
+vessel_details_id : str : 0
+mmsi : int32 : 0
+timestamp : datetime64[s] : 0
+to_bow : Int32 : 56472
+to_stern : Int32 : 44664
+to_port : Int32 : 92011
+to_starboard : Int32 : 12343
+
+voyage table - Column : Type : Na
+--------------------------------------------------
+voyage_id : str : 0
+mmsi : int32 : 0
+timestamp : datetime64[s] : 0
+draught : int32 : 0
+destination : str : 0
+month : Int32 : 282289
+day : Int32 : 282289
+hour : Int32 : 282289
+minute : Int32 : 282289
+
+position table - Column : Type : Na
+--------------------------------------------------
+position_id : str : 0
+mmsi : int32 : 0
+timestamp : datetime64[s] : 0
+status : str : 0
+turn : Int32 : 1366425
+speed : Int32 : 152886
+lon : int32 : 0
+lat : int32 : 0
+course : Int32 : 191950
+heading : Int32 : 61744
+
+port table - Column : Type : Na
+--------------------------------------------------
+port_id : int32 : 0
+port_code : str : 0
+port_name : str : 0
+country_code : str : 0
+country_name : str : 60
+polygon : str : 0
+Columns removed are:  ['shiptype']
+Task created: ShipTypeNthPositionTask(dataset=MaritimeShippingAISDataset())
+Task registered
+Loading Database object from /zhome/64/c/213928/.cache/relbench/rel-custom-maritime_shipping_ais/db...
+Done in 11.30 seconds.
+
+=== DEBUG: DB TIMESTAMPS ===
+db min/max: 2025-04-07 00:00:00 2025-04-17 23:59:58
+
+=== DEBUG: RAW QUERY OUTPUT ===
+Rows returned: 1028
+Columns: ['mmsi', 'nth_time', 'shiptype']
+   mmsi            nth_time      shiptype
+0     5 2025-04-07 00:40:48         Other
+1  1029 2025-04-07 00:43:10  Cargo/Tanker
+2   401 2025-04-07 00:49:34  Cargo/Tanker
+3  1027 2025-04-07 00:50:13         Other
+4   795 2025-04-07 00:50:15  Cargo/Tanker
+5   479 2025-04-07 00:51:00  Cargo/Tanker
+6  1117 2025-04-07 00:51:20  Cargo/Tanker
+7  1119 2025-04-07 00:51:54  Cargo/Tanker
+8   624 2025-04-07 00:52:21  Cargo/Tanker
+9   352 2025-04-07 00:52:35  Cargo/Tanker
+
+=== DEBUG: shiptype BEFORE mapping ===
+Null shiptype count: 0
+
+=== DEBUG: shiptype AFTER mapping ===
+Null shiptype count: 0
+
+=== DEBUG: SPLIT INFO ===
+Split: train
+Val cutoff: 2025-04-14 00:00:00
+Test cutoff: 2025-04-18 00:00:00
+
+=== DEBUG FINAL SPLIT: TRAIN ===
+Rows: 851
+Columns: ['mmsi', 'nth_time', 'shiptype']
+Missing shiptype: 0
+   mmsi            nth_time  shiptype
+0     5 2025-04-07 00:40:48         0
+1  1029 2025-04-07 00:43:10         1
+2   401 2025-04-07 00:49:34         1
+3  1027 2025-04-07 00:50:13         0
+4   795 2025-04-07 00:50:15         1
+5   479 2025-04-07 00:51:00         1
+6  1117 2025-04-07 00:51:20         1
+7  1119 2025-04-07 00:51:54         1
+8   624 2025-04-07 00:52:21         1
+9   352 2025-04-07 00:52:35         1
+Loading Database object from /zhome/64/c/213928/.cache/relbench/rel-custom-maritime_shipping_ais/db...
+Done in 6.17 seconds.
+
+=== DEBUG: DB TIMESTAMPS ===
+db min/max: 2025-04-07 00:00:00 2025-04-17 23:59:58
+
+=== DEBUG: RAW QUERY OUTPUT ===
+Rows returned: 1028
+Columns: ['mmsi', 'nth_time', 'shiptype']
+   mmsi            nth_time      shiptype
+0     5 2025-04-07 00:40:48         Other
+1  1029 2025-04-07 00:43:10  Cargo/Tanker
+2   401 2025-04-07 00:49:34  Cargo/Tanker
+3  1027 2025-04-07 00:50:13         Other
+4   795 2025-04-07 00:50:15  Cargo/Tanker
+5   479 2025-04-07 00:51:00  Cargo/Tanker
+6  1117 2025-04-07 00:51:20  Cargo/Tanker
+7  1119 2025-04-07 00:51:54  Cargo/Tanker
+8   624 2025-04-07 00:52:21  Cargo/Tanker
+9   352 2025-04-07 00:52:35  Cargo/Tanker
+
+=== DEBUG: shiptype BEFORE mapping ===
+Null shiptype count: 0
+
+=== DEBUG: shiptype AFTER mapping ===
+Null shiptype count: 0
+
+=== DEBUG: SPLIT INFO ===
+Split: val
+Val cutoff: 2025-04-14 00:00:00
+Test cutoff: 2025-04-18 00:00:00
+
+=== DEBUG FINAL SPLIT: VAL ===
+Rows: 177
+Columns: ['mmsi', 'nth_time', 'shiptype']
+Missing shiptype: 0
+   mmsi            nth_time  shiptype
+0  1247 2025-04-14 00:11:08         1
+1   911 2025-04-14 00:43:15         1
+2   672 2025-04-14 00:54:22         1
+3  1091 2025-04-14 01:20:18         1
+4   591 2025-04-14 01:47:29         1
+5   595 2025-04-14 01:48:06         1
+6   830 2025-04-14 02:15:38         1
+7   498 2025-04-14 04:06:50         1
+8   508 2025-04-14 04:09:43         1
+9   983 2025-04-14 04:35:59         1
+Loading Database object from /zhome/64/c/213928/.cache/relbench/rel-custom-maritime_shipping_ais/db...
+Done in 6.14 seconds.
+
+=== DEBUG: DB TIMESTAMPS ===
+db min/max: 2025-04-07 00:00:00 2025-04-20 23:59:58
+
+=== DEBUG: RAW QUERY OUTPUT ===
+Rows returned: 1151
+Columns: ['mmsi', 'nth_time', 'shiptype']
+   mmsi            nth_time      shiptype
+0     5 2025-04-07 00:40:48         Other
+1  1029 2025-04-07 00:43:10  Cargo/Tanker
+2   401 2025-04-07 00:49:34  Cargo/Tanker
+3  1027 2025-04-07 00:50:13         Other
+4   795 2025-04-07 00:50:15  Cargo/Tanker
+5   479 2025-04-07 00:51:00  Cargo/Tanker
+6  1117 2025-04-07 00:51:20  Cargo/Tanker
+7  1119 2025-04-07 00:51:54  Cargo/Tanker
+8   624 2025-04-07 00:52:21  Cargo/Tanker
+9   352 2025-04-07 00:52:35  Cargo/Tanker
+
+=== DEBUG: shiptype BEFORE mapping ===
+Null shiptype count: 0
+
+=== DEBUG: shiptype AFTER mapping ===
+Null shiptype count: 0
+
+=== DEBUG: SPLIT INFO ===
+Split: test
+Val cutoff: 2025-04-14 00:00:00
+Test cutoff: 2025-04-18 00:00:00
+
+=== DEBUG FINAL SPLIT: TEST ===
+Rows: 123
+Columns: ['mmsi', 'nth_time', 'shiptype']
+Missing shiptype: 0
+   mmsi            nth_time  shiptype
+0  1170 2025-04-18 00:38:28         1
+1   598 2025-04-18 02:25:38         1
+2  1261 2025-04-18 02:42:17         1
+3   514 2025-04-18 04:10:33         1
+4   125 2025-04-18 05:36:26         1
+5   992 2025-04-18 06:22:40         1
+6   127 2025-04-18 06:23:11         1
+7  1229 2025-04-18 07:42:22         0
+8   294 2025-04-18 07:45:56         1
+9   143 2025-04-18 07:46:23         1
+Train table Table(df=
+     mmsi            nth_time  shiptype
+0       5 2025-04-07 00:40:48         0
+1    1029 2025-04-07 00:43:10         1
+2     401 2025-04-07 00:49:34         1
+3    1027 2025-04-07 00:50:13         0
+4     795 2025-04-07 00:50:15         1
+..    ...                 ...       ...
+846   803 2025-04-13 22:36:39         0
+847  1269 2025-04-13 22:41:21         1
+848   607 2025-04-13 23:07:48         1
+849   617 2025-04-13 23:47:31         1
+850   442 2025-04-13 23:58:43         1
+
+[851 rows x 3 columns],
+  fkey_col_to_pkey_table={'mmsi': 'vessels'},
+  pkey_col=mmsi,
+  time_col=nth_time)
+Validation table Table(df=
+     mmsi            nth_time  shiptype
+0    1247 2025-04-14 00:11:08         1
+1     911 2025-04-14 00:43:15         1
+2     672 2025-04-14 00:54:22         1
+3    1091 2025-04-14 01:20:18         1
+4     591 2025-04-14 01:47:29         1
+..    ...                 ...       ...
+172   390 2025-04-17 18:45:56         1
+173  1259 2025-04-17 19:37:57         1
+174   839 2025-04-17 20:26:17         1
+175   213 2025-04-17 22:34:40         1
+176   292 2025-04-17 23:52:41         0
+
+[177 rows x 3 columns],
+  fkey_col_to_pkey_table={'mmsi': 'vessels'},
+  pkey_col=mmsi,
+  time_col=nth_time)
+Testing table Table(df=
+     mmsi            nth_time  shiptype
+0    1170 2025-04-18 00:38:28         1
+1     598 2025-04-18 02:25:38         1
+2    1261 2025-04-18 02:42:17         1
+3     514 2025-04-18 04:10:33         1
+4     125 2025-04-18 05:36:26         1
+..    ...                 ...       ...
+118  1107 2025-04-20 20:16:18         1
+119   138 2025-04-20 20:20:05         1
+120    64 2025-04-20 21:03:49         0
+121   685 2025-04-20 22:39:08         1
+122   686 2025-04-20 23:20:24         1
+
+[123 rows x 3 columns],
+  fkey_col_to_pkey_table={'mmsi': 'vessels'},
+  pkey_col=mmsi,
+  time_col=nth_time)
+
+Note: This is a special node property task that requires removing columns ['shiptype'] from the input data to avoid leakage.
+Remove columns
+['shiptype']
+=== Column type proposal ===
+ports
+  port_id: numerical
+  port_code: numerical
+  port_name: text_embedded
+  country_code: text_embedded
+  country_name: text_embedded
+  polygon: text_embedded
+vessels_details
+  vessel_details_id: numerical
+  mmsi: numerical
+  timestamp: timestamp
+  to_bow: numerical
+  to_stern: numerical
+  to_port: numerical
+  to_starboard: numerical
+vessels
+  mmsi: numerical
+  imo: numerical
+  callsign: text_embedded
+  shipname: text_embedded
+  shiptype: categorical
+voyages
+  voyage_id: numerical
+  mmsi: numerical
+  timestamp: timestamp
+  draught: categorical
+  destination: numerical
+  month: numerical
+  day: numerical
+  hour: categorical
+  minute: numerical
+positions
+  position_id: numerical
+  mmsi: numerical
+  timestamp: timestamp
+  status: text_embedded
+  turn: numerical
+  speed: numerical
+  lon: numerical
+  lat: numerical
+  course: numerical
+  heading: numerical
+Cleaning text-embedded columns...
+Cleaning ports.port_name
+Cleaning ports.country_code
+Cleaning ports.country_name
+Cleaning ports.polygon
+Cleaning vessels.callsign
+Cleaning vessels.shipname
+Cleaning positions.status
+Finished cleaning text columns.
+Table: vessels_details, column: timestamp, dtype: datetime64[s]
+Table: voyages, column: timestamp, dtype: datetime64[s]
+Table: positions, column: timestamp, dtype: datetime64[s]
+Cols type
+{'ports': {'port_id': <stype.numerical: 'numerical'>, 'port_code': <stype.numerical: 'numerical'>, 'port_name': <stype.text_embedded: 'text_embedded'>, 'country_code': <stype.text_embedded: 'text_embedded'>, 'country_name': <stype.text_embedded: 'text_embedded'>, 'polygon': <stype.text_embedded: 'text_embedded'>}, 'vessels_details': {'vessel_details_id': <stype.numerical: 'numerical'>, 'mmsi': <stype.numerical: 'numerical'>, 'timestamp': <stype.timestamp: 'timestamp'>, 'to_bow': <stype.numerical: 'numerical'>, 'to_stern': <stype.numerical: 'numerical'>, 'to_port': <stype.numerical: 'numerical'>, 'to_starboard': <stype.numerical: 'numerical'>}, 'vessels': {'mmsi': <stype.numerical: 'numerical'>, 'imo': <stype.numerical: 'numerical'>, 'callsign': <stype.text_embedded: 'text_embedded'>, 'shipname': <stype.text_embedded: 'text_embedded'>}, 'voyages': {'voyage_id': <stype.numerical: 'numerical'>, 'mmsi': <stype.numerical: 'numerical'>, 'timestamp': <stype.timestamp: 'timestamp'>, 'draught': <stype.categorical: 'categorical'>, 'destination': <stype.numerical: 'numerical'>, 'month': <stype.numerical: 'numerical'>, 'day': <stype.numerical: 'numerical'>, 'hour': <stype.categorical: 'categorical'>, 'minute': <stype.numerical: 'numerical'>}, 'positions': {'position_id': <stype.numerical: 'numerical'>, 'mmsi': <stype.numerical: 'numerical'>, 'timestamp': <stype.timestamp: 'timestamp'>, 'status': <stype.text_embedded: 'text_embedded'>, 'turn': <stype.numerical: 'numerical'>, 'speed': <stype.numerical: 'numerical'>, 'lon': <stype.numerical: 'numerical'>, 'lat': <stype.numerical: 'numerical'>, 'course': <stype.numerical: 'numerical'>, 'heading': <stype.numerical: 'numerical'>}}
+End cols type
+Col to stype: {'ports': {'port_id': <stype.numerical: 'numerical'>, 'port_code': <stype.numerical: 'numerical'>, 'port_name': <stype.text_embedded: 'text_embedded'>, 'country_code': <stype.text_embedded: 'text_embedded'>, 'country_name': <stype.text_embedded: 'text_embedded'>, 'polygon': <stype.text_embedded: 'text_embedded'>}, 'vessels_details': {'vessel_details_id': <stype.numerical: 'numerical'>, 'mmsi': <stype.numerical: 'numerical'>, 'timestamp': <stype.timestamp: 'timestamp'>, 'to_bow': <stype.numerical: 'numerical'>, 'to_stern': <stype.numerical: 'numerical'>, 'to_port': <stype.numerical: 'numerical'>, 'to_starboard': <stype.numerical: 'numerical'>}, 'vessels': {'mmsi': <stype.numerical: 'numerical'>, 'imo': <stype.numerical: 'numerical'>, 'callsign': <stype.text_embedded: 'text_embedded'>, 'shipname': <stype.text_embedded: 'text_embedded'>}, 'voyages': {'voyage_id': <stype.numerical: 'numerical'>, 'mmsi': <stype.numerical: 'numerical'>, 'timestamp': <stype.timestamp: 'timestamp'>, 'draught': <stype.categorical: 'categorical'>, 'destination': <stype.numerical: 'numerical'>, 'month': <stype.numerical: 'numerical'>, 'day': <stype.numerical: 'numerical'>, 'hour': <stype.categorical: 'categorical'>, 'minute': <stype.numerical: 'numerical'>}, 'positions': {'position_id': <stype.numerical: 'numerical'>, 'mmsi': <stype.numerical: 'numerical'>, 'timestamp': <stype.timestamp: 'timestamp'>, 'status': <stype.text_embedded: 'text_embedded'>, 'turn': <stype.numerical: 'numerical'>, 'speed': <stype.numerical: 'numerical'>, 'lon': <stype.numerical: 'numerical'>, 'lat': <stype.numerical: 'numerical'>, 'course': <stype.numerical: 'numerical'>, 'heading': <stype.numerical: 'numerical'>}}
+Building or Loading Train Graph and Train Col Stats
+Computing load train column stats done
+train_cols_stats dict {'ports': {'port_id': {<StatType.MEAN: 'MEAN'>: 2302.0, <StatType.STD: 'STD'>: 1328.7716131826417, <StatType.QUANTILES: 'QUANTILES'>: [1.0, 1151.5, 2302.0, 3452.5, 4603.0]}, 'port_name': {<StatType.EMB_DIM: 'EMB_DIM'>: 300}, 'country_code': {<StatType.EMB_DIM: 'EMB_DIM'>: 300}, 'country_name': {<StatType.EMB_DIM: 'EMB_DIM'>: 300}, 'polygon': {<StatType.EMB_DIM: 'EMB_DIM'>: 300}}, 'vessels_details': {'timestamp': {<StatType.YEAR_RANGE: 'YEAR_RANGE'>: [np.int32(2025), np.int32(2025)], <StatType.NEWEST_TIME: 'NEWEST_TIME'>: tensor([2025,    3,   12,    6,   23,   59,   58]), <StatType.OLDEST_TIME: 'OLDEST_TIME'>: tensor([2025,    3,    6,    0,    0,    0,    0]), <StatType.MEDIAN_TIME: 'MEDIAN_TIME'>: tensor([2025,    3,    9,    3,   13,   10,   52])}, 'to_bow': {<StatType.MEAN: 'MEAN'>: 95.36457006737493, <StatType.STD: 'STD'>: 55.619309165590266, <StatType.QUANTILES: 'QUANTILES'>: [1.0, 65.0, 86.0, 135.0, 280.0]}, 'to_stern': {<StatType.MEAN: 'MEAN'>: 38.10093539459269, <StatType.STD: 'STD'>: 50.56074026702873, <StatType.QUANTILES: 'QUANTILES'>: [2.0, 12.0, 18.0, 33.0, 335.0]}, 'to_port': {<StatType.MEAN: 'MEAN'>: 10.701087891252103, <StatType.STD: 'STD'>: 6.479276843463899, <StatType.QUANTILES: 'QUANTILES'>: [1.0, 6.0, 9.0, 14.0, 52.0]}, 'to_starboard': {<StatType.MEAN: 'MEAN'>: 10.262176213926, <StatType.STD: 'STD'>: 6.307113517428657, <StatType.QUANTILES: 'QUANTILES'>: [1.0, 6.0, 9.0, 13.0, 51.0]}}, 'vessels': {'imo': {<StatType.MEAN: 'MEAN'>: 12314346.858392999, <StatType.STD: 'STD'>: 52599455.93209746, <StatType.QUANTILES: 'QUANTILES'>: [732424.0, 9202558.0, 9375850.0, 9618305.0, 970536600.0]}, 'callsign': {<StatType.EMB_DIM: 'EMB_DIM'>: 300}, 'shipname': {<StatType.EMB_DIM: 'EMB_DIM'>: 300}}, 'voyages': {'timestamp': {<StatType.YEAR_RANGE: 'YEAR_RANGE'>: [np.int32(2025), np.int32(2025)], <StatType.NEWEST_TIME: 'NEWEST_TIME'>: tensor([2025,    3,   12,    6,   23,   59,   58]), <StatType.OLDEST_TIME: 'OLDEST_TIME'>: tensor([2025,    3,    6,    0,    0,    0,    0]), <StatType.MEDIAN_TIME: 'MEDIAN_TIME'>: tensor([2025,    3,    9,    3,   13,   10,   50])}, 'draught': {<StatType.COUNT: 'COUNT'>: ([6, 5, 4, 7, 8, 3, 9, 10, 11, 2, 12, 13, 15, 14, 1, 26], [2257919, 1359655, 1268522, 1244616, 841946, 599756, 565975, 470067, 258287, 227660, 194371, 155021, 128688, 102588, 31834, 5])}, 'month': {<StatType.MEAN: 'MEAN'>: 4.097764816381024, <StatType.STD: 'STD'>: 0.9477841054913692, <StatType.QUANTILES: 'QUANTILES'>: [1.0, 4.0, 4.0, 4.0, 12.0]}, 'day': {<StatType.MEAN: 'MEAN'>: 11.712982862284568, <StatType.STD: 'STD'>: 4.556550302081596, <StatType.QUANTILES: 'QUANTILES'>: [1.0, 9.0, 11.0, 13.0, 31.0]}, 'hour': {<StatType.COUNT: 'COUNT'>: ([6, 8, 12, 4, 16, 5, 10, 7, 18, 9, 15, 20, 14, 22, 23, 13, 2, 11, 19, 1, 17, 21, 3, 0], [716339, 646184, 609310, 543745, 491285, 481483, 478474, 473153, 436116, 411591, 390987, 387216, 374623, 348715, 328859, 295069, 291934, 290815, 279485, 275535, 265522, 264791, 254775, 248352])}, 'minute': {<StatType.MEAN: 'MEAN'>: 3.814121300560768, <StatType.STD: 'STD'>: 10.296156146211919, <StatType.QUANTILES: 'QUANTILES'>: [0.0, 0.0, 0.0, 0.0, 59.0]}}, 'positions': {'timestamp': {<StatType.YEAR_RANGE: 'YEAR_RANGE'>: [np.int32(2025), np.int32(2025)], <StatType.NEWEST_TIME: 'NEWEST_TIME'>: tensor([2025,    3,   12,    6,   23,   59,   58]), <StatType.OLDEST_TIME: 'OLDEST_TIME'>: tensor([2025,    3,    6,    0,    0,    0,    0]), <StatType.MEDIAN_TIME: 'MEDIAN_TIME'>: tensor([2025,    3,    9,    3,   13,   10,   46])}, 'status': {<StatType.EMB_DIM: 'EMB_DIM'>: 300}, 'turn': {<StatType.MEAN: 'MEAN'>: 0.012236231750353262, <StatType.STD: 'STD'>: 3.1882150285610424, <StatType.QUANTILES: 'QUANTILES'>: [-709.0, 0.0, 0.0, 0.0, 709.0]}, 'speed': {<StatType.MEAN: 'MEAN'>: 9.979979769182787, <StatType.STD: 'STD'>: 5.076495454175447, <StatType.QUANTILES: 'QUANTILES'>: [0.0, 8.0, 10.0, 13.0, 102.0]}, 'lon': {<StatType.MEAN: 'MEAN'>: 11.07432620003468, <StatType.STD: 'STD'>: 2.5640826634739646, <StatType.QUANTILES: 'QUANTILES'>: [-10.0, 10.0, 11.0, 13.0, 31.0]}, 'lat': {<StatType.MEAN: 'MEAN'>: 56.025613089287944, <StatType.STD: 'STD'>: 1.5654968116578163, <StatType.QUANTILES: 'QUANTILES'>: [0.0, 55.0, 56.0, 57.0, 91.0]}, 'course': {<StatType.MEAN: 'MEAN'>: 172.64714397672526, <StatType.STD: 'STD'>: 103.12249562292041, <StatType.QUANTILES: 'QUANTILES'>: [0.0, 75.0, 178.0, 252.0, 360.0]}, 'heading': {<StatType.MEAN: 'MEAN'>: 174.1791404690261, <StatType.STD: 'STD'>: 103.30275710260072, <StatType.QUANTILES: 'QUANTILES'>: [0.0, 75.0, 180.0, 256.0, 359.0]}}}
+vessels keys:
+KeysView({'tf': TensorFrame(
+  num_cols=3,
+  num_rows=1280,
+  numerical (1): ['imo'],
+  embedding (2): ['callsign', 'shipname'],
+  has_target=False,
+  device='cpu',
+)})
+vessels tf:
+TensorFrame(
+  num_cols=3,
+  num_rows=1280,
+  numerical (1): ['imo'],
+  embedding (2): ['callsign', 'shipname'],
+  has_target=False,
+  device='cpu',
+)
+vessels_details keys:
+KeysView({'tf': TensorFrame(
+  num_cols=5,
+  num_rows=18617379,
+  timestamp (1): ['timestamp'],
+  numerical (4): ['to_bow', 'to_port', 'to_starboard', 'to_stern'],
+  has_target=False,
+  device='cpu',
+), 'time': tensor([1, 1, 1,  ..., 1, 1, 1])})
+vessels_details tf:
+TensorFrame(
+  num_cols=5,
+  num_rows=18617379,
+  timestamp (1): ['timestamp'],
+  numerical (4): ['to_bow', 'to_port', 'to_starboard', 'to_stern'],
+  has_target=False,
+  device='cpu',
+)
+positions keys:
+KeysView({'tf': TensorFrame(
+  num_cols=8,
+  num_rows=18742902,
+  timestamp (1): ['timestamp'],
+  numerical (6): ['course', 'heading', 'lat', 'lon', 'speed', 'turn'],
+  embedding (1): ['status'],
+  has_target=False,
+  device='cpu',
+), 'time': tensor([1, 1, 1,  ..., 1, 1, 1])})
+positions tf:
+TensorFrame(
+  num_cols=8,
+  num_rows=18742902,
+  timestamp (1): ['timestamp'],
+  numerical (6): ['course', 'heading', 'lat', 'lon', 'speed', 'turn'],
+  embedding (1): ['status'],
+  has_target=False,
+  device='cpu',
+)
+voyages keys:
+KeysView({'tf': TensorFrame(
+  num_cols=6,
+  num_rows=18735862,
+  timestamp (1): ['timestamp'],
+  categorical (2): ['draught', 'hour'],
+  numerical (3): ['day', 'minute', 'month'],
+  has_target=False,
+  device='cpu',
+), 'time': tensor([1, 1, 1,  ..., 1, 1, 1])})
+voyages tf:
+TensorFrame(
+  num_cols=6,
+  num_rows=18735862,
+  timestamp (1): ['timestamp'],
+  categorical (2): ['draught', 'hour'],
+  numerical (3): ['day', 'minute', 'month'],
+  has_target=False,
+  device='cpu',
+)
+ports keys:
+KeysView({'tf': TensorFrame(
+  num_cols=5,
+  num_rows=4603,
+  numerical (1): ['port_id'],
+  embedding (4): ['country_code', 'country_name', 'polygon', 'port_name'],
+  has_target=False,
+  device='cpu',
+)})
+ports tf:
+TensorFrame(
+  num_cols=5,
+  num_rows=4603,
+  numerical (1): ['port_id'],
+  embedding (4): ['country_code', 'country_name', 'polygon', 'port_name'],
+  has_target=False,
+  device='cpu',
+)
+Data train
+HeteroData(
+  ports={ tf=TensorFrame([4603, 5]) },
+  vessels_details={
+    tf=TensorFrame([9647519, 5]),
+    time=[9647519],
+  },
+  vessels={ tf=TensorFrame([1280, 3]) },
+  voyages={
+    tf=TensorFrame([9706910, 6]),
+    time=[9706910],
+  },
+  positions={
+    tf=TensorFrame([9711636, 8]),
+    time=[9711636],
+  },
+  (vessels_details, f2p_mmsi, vessels)={ edge_index=[2, 9647519] },
+  (vessels, rev_f2p_mmsi, vessels_details)={ edge_index=[2, 9647519] },
+  (voyages, f2p_mmsi, vessels)={ edge_index=[2, 9706910] },
+  (vessels, rev_f2p_mmsi, voyages)={ edge_index=[2, 9706910] },
+  (voyages, f2p_destination, ports)={ edge_index=[2, 9706910] },
+  (ports, rev_f2p_destination, voyages)={ edge_index=[2, 9706910] },
+  (positions, f2p_mmsi, vessels)={ edge_index=[2, 9711636] },
+  (vessels, rev_f2p_mmsi, positions)={ edge_index=[2, 9711636] }
+)
+Normalizing timestamps inside train/val/test tables...
+train.nth_time dtype -> datetime64[s]
+val.nth_time dtype -> datetime64[s]
+test.nth_time dtype -> datetime64[s]
+
+=== DEBUG: DB TIMESTAMPS ===
+db min/max: 2025-04-07 00:00:00 2025-04-17 23:59:58
+
+=== DEBUG: RAW QUERY OUTPUT ===
+Rows returned: 1028
+Columns: ['mmsi', 'nth_time', 'shiptype']
+   mmsi            nth_time      shiptype
+0     5 2025-04-07 00:40:48         Other
+1  1029 2025-04-07 00:43:10  Cargo/Tanker
+2   401 2025-04-07 00:49:34  Cargo/Tanker
+3  1027 2025-04-07 00:50:13         Other
+4   795 2025-04-07 00:50:15  Cargo/Tanker
+5   479 2025-04-07 00:51:00  Cargo/Tanker
+6  1117 2025-04-07 00:51:20  Cargo/Tanker
+7  1119 2025-04-07 00:51:54  Cargo/Tanker
+8   624 2025-04-07 00:52:21  Cargo/Tanker
+9   352 2025-04-07 00:52:35  Cargo/Tanker
+
+=== DEBUG: shiptype BEFORE mapping ===
+Null shiptype count: 0
+
+=== DEBUG: shiptype AFTER mapping ===
+Null shiptype count: 0
+
+=== DEBUG: SPLIT INFO ===
+Split: train
+Val cutoff: 2025-04-14 00:00:00
+Test cutoff: 2025-04-18 00:00:00
+
+=== DEBUG FINAL SPLIT: TRAIN ===
+Rows: 851
+Columns: ['mmsi', 'nth_time', 'shiptype']
+Missing shiptype: 0
+   mmsi            nth_time  shiptype
+0     5 2025-04-07 00:40:48         0
+1  1029 2025-04-07 00:43:10         1
+2   401 2025-04-07 00:49:34         1
+3  1027 2025-04-07 00:50:13         0
+4   795 2025-04-07 00:50:15         1
+5   479 2025-04-07 00:51:00         1
+6  1117 2025-04-07 00:51:20         1
+7  1119 2025-04-07 00:51:54         1
+8   624 2025-04-07 00:52:21         1
+9   352 2025-04-07 00:52:35         1
+
+=== DEBUG: DB TIMESTAMPS ===
+db min/max: 2025-04-07 00:00:00 2025-04-17 23:59:58
+
+=== DEBUG: RAW QUERY OUTPUT ===
+Rows returned: 1028
+Columns: ['mmsi', 'nth_time', 'shiptype']
+   mmsi            nth_time      shiptype
+0     5 2025-04-07 00:40:48         Other
+1  1029 2025-04-07 00:43:10  Cargo/Tanker
+2   401 2025-04-07 00:49:34  Cargo/Tanker
+3  1027 2025-04-07 00:50:13         Other
+4   795 2025-04-07 00:50:15  Cargo/Tanker
+5   479 2025-04-07 00:51:00  Cargo/Tanker
+6  1117 2025-04-07 00:51:20  Cargo/Tanker
+7  1119 2025-04-07 00:51:54  Cargo/Tanker
+8   624 2025-04-07 00:52:21  Cargo/Tanker
+9   352 2025-04-07 00:52:35  Cargo/Tanker
+
+=== DEBUG: shiptype BEFORE mapping ===
+Null shiptype count: 0
+
+=== DEBUG: shiptype AFTER mapping ===
+Null shiptype count: 0
+
+=== DEBUG: SPLIT INFO ===
+Split: val
+Val cutoff: 2025-04-14 00:00:00
+Test cutoff: 2025-04-18 00:00:00
+
+=== DEBUG FINAL SPLIT: VAL ===
+Rows: 177
+Columns: ['mmsi', 'nth_time', 'shiptype']
+Missing shiptype: 0
+   mmsi            nth_time  shiptype
+0  1247 2025-04-14 00:11:08         1
+1   911 2025-04-14 00:43:15         1
+2   672 2025-04-14 00:54:22         1
+3  1091 2025-04-14 01:20:18         1
+4   591 2025-04-14 01:47:29         1
+5   595 2025-04-14 01:48:06         1
+6   830 2025-04-14 02:15:38         1
+7   498 2025-04-14 04:06:50         1
+8   508 2025-04-14 04:09:43         1
+9   983 2025-04-14 04:35:59         1
+
+=== DEBUG: DB TIMESTAMPS ===
+db min/max: 2025-04-07 00:00:00 2025-04-20 23:59:58
+
+=== DEBUG: RAW QUERY OUTPUT ===
+Rows returned: 1151
+Columns: ['mmsi', 'nth_time', 'shiptype']
+   mmsi            nth_time      shiptype
+0     5 2025-04-07 00:40:48         Other
+1  1029 2025-04-07 00:43:10  Cargo/Tanker
+2   401 2025-04-07 00:49:34  Cargo/Tanker
+3  1027 2025-04-07 00:50:13         Other
+4   795 2025-04-07 00:50:15  Cargo/Tanker
+5   479 2025-04-07 00:51:00  Cargo/Tanker
+6  1117 2025-04-07 00:51:20  Cargo/Tanker
+7  1119 2025-04-07 00:51:54  Cargo/Tanker
+8   624 2025-04-07 00:52:21  Cargo/Tanker
+9   352 2025-04-07 00:52:35  Cargo/Tanker
+
+=== DEBUG: shiptype BEFORE mapping ===
+Null shiptype count: 0
+
+=== DEBUG: shiptype AFTER mapping ===
+Null shiptype count: 0
+
+=== DEBUG: SPLIT INFO ===
+Split: test
+Val cutoff: 2025-04-14 00:00:00
+Test cutoff: 2025-04-18 00:00:00
+
+=== DEBUG FINAL SPLIT: TEST ===
+Rows: 123
+Columns: ['mmsi', 'nth_time', 'shiptype']
+Missing shiptype: 0
+   mmsi            nth_time  shiptype
+0  1170 2025-04-18 00:38:28         1
+1   598 2025-04-18 02:25:38         1
+2  1261 2025-04-18 02:42:17         1
+3   514 2025-04-18 04:10:33         1
+4   125 2025-04-18 05:36:26         1
+5   992 2025-04-18 06:22:40         1
+6   127 2025-04-18 06:23:11         1
+7  1229 2025-04-18 07:42:22         0
+8   294 2025-04-18 07:45:56         1
+9   143 2025-04-18 07:46:23         1
+Training Hyperparameters:
+
+Epochs: 200
+Learning Rate: 0.0001
+Step Size: 1000
+Gamma: 0.5
+Batch Size: 128
+Weight Decay: 0.01
+
+Model Parameters:
+Num Neighbours: [64, 64]
+Channels: 16
+Layers: 4
+
+
+=== DEBUG: DB TIMESTAMPS ===
+db min/max: 2025-04-07 00:00:00 2025-04-17 23:59:58
+
+=== DEBUG: RAW QUERY OUTPUT ===
+Rows returned: 1028
+Columns: ['mmsi', 'nth_time', 'shiptype']
+   mmsi            nth_time      shiptype
+0     5 2025-04-07 00:40:48         Other
+1  1029 2025-04-07 00:43:10  Cargo/Tanker
+2   401 2025-04-07 00:49:34  Cargo/Tanker
+3  1027 2025-04-07 00:50:13         Other
+4   795 2025-04-07 00:50:15  Cargo/Tanker
+5   479 2025-04-07 00:51:00  Cargo/Tanker
+6  1117 2025-04-07 00:51:20  Cargo/Tanker
+7  1119 2025-04-07 00:51:54  Cargo/Tanker
+8   624 2025-04-07 00:52:21  Cargo/Tanker
+9   352 2025-04-07 00:52:35  Cargo/Tanker
+
+=== DEBUG: shiptype BEFORE mapping ===
+Null shiptype count: 0
+
+=== DEBUG: shiptype AFTER mapping ===
+Null shiptype count: 0
+
+=== DEBUG: SPLIT INFO ===
+Split: train
+Val cutoff: 2025-04-14 00:00:00
+Test cutoff: 2025-04-18 00:00:00
+
+=== DEBUG FINAL SPLIT: TRAIN ===
+Rows: 851
+Columns: ['mmsi', 'nth_time', 'shiptype']
+Missing shiptype: 0
+   mmsi            nth_time  shiptype
+0     5 2025-04-07 00:40:48         0
+1  1029 2025-04-07 00:43:10         1
+2   401 2025-04-07 00:49:34         1
+3  1027 2025-04-07 00:50:13         0
+4   795 2025-04-07 00:50:15         1
+5   479 2025-04-07 00:51:00         1
+6  1117 2025-04-07 00:51:20         1
+7  1119 2025-04-07 00:51:54         1
+8   624 2025-04-07 00:52:21         1
+9   352 2025-04-07 00:52:35         1
+
+=== DEBUG: DB TIMESTAMPS ===
+db min/max: 2025-04-07 00:00:00 2025-04-17 23:59:58
+
+=== DEBUG: RAW QUERY OUTPUT ===
+Rows returned: 1028
+Columns: ['mmsi', 'nth_time', 'shiptype']
+   mmsi            nth_time      shiptype
+0     5 2025-04-07 00:40:48         Other
+1  1029 2025-04-07 00:43:10  Cargo/Tanker
+2   401 2025-04-07 00:49:34  Cargo/Tanker
+3  1027 2025-04-07 00:50:13         Other
+4   795 2025-04-07 00:50:15  Cargo/Tanker
+5   479 2025-04-07 00:51:00  Cargo/Tanker
+6  1117 2025-04-07 00:51:20  Cargo/Tanker
+7  1119 2025-04-07 00:51:54  Cargo/Tanker
+8   624 2025-04-07 00:52:21  Cargo/Tanker
+9   352 2025-04-07 00:52:35  Cargo/Tanker
+
+=== DEBUG: shiptype BEFORE mapping ===
+Null shiptype count: 0
+
+=== DEBUG: shiptype AFTER mapping ===
+Null shiptype count: 0
+
+=== DEBUG: SPLIT INFO ===
+Split: val
+Val cutoff: 2025-04-14 00:00:00
+Test cutoff: 2025-04-18 00:00:00
+
+=== DEBUG FINAL SPLIT: VAL ===
+Rows: 177
+Columns: ['mmsi', 'nth_time', 'shiptype']
+Missing shiptype: 0
+   mmsi            nth_time  shiptype
+0  1247 2025-04-14 00:11:08         1
+1   911 2025-04-14 00:43:15         1
+2   672 2025-04-14 00:54:22         1
+3  1091 2025-04-14 01:20:18         1
+4   591 2025-04-14 01:47:29         1
+5   595 2025-04-14 01:48:06         1
+6   830 2025-04-14 02:15:38         1
+7   498 2025-04-14 04:06:50         1
+8   508 2025-04-14 04:09:43         1
+9   983 2025-04-14 04:35:59         1
+
+=== DEBUG: DB TIMESTAMPS ===
+db min/max: 2025-04-07 00:00:00 2025-04-20 23:59:58
+
+=== DEBUG: RAW QUERY OUTPUT ===
+Rows returned: 1151
+Columns: ['mmsi', 'nth_time', 'shiptype']
+   mmsi            nth_time      shiptype
+0     5 2025-04-07 00:40:48         Other
+1  1029 2025-04-07 00:43:10  Cargo/Tanker
+2   401 2025-04-07 00:49:34  Cargo/Tanker
+3  1027 2025-04-07 00:50:13         Other
+4   795 2025-04-07 00:50:15  Cargo/Tanker
+5   479 2025-04-07 00:51:00  Cargo/Tanker
+6  1117 2025-04-07 00:51:20  Cargo/Tanker
+7  1119 2025-04-07 00:51:54  Cargo/Tanker
+8   624 2025-04-07 00:52:21  Cargo/Tanker
+9   352 2025-04-07 00:52:35  Cargo/Tanker
+
+=== DEBUG: shiptype BEFORE mapping ===
+Null shiptype count: 0
+
+=== DEBUG: shiptype AFTER mapping ===
+Null shiptype count: 0
+
+=== DEBUG: SPLIT INFO ===
+Split: test
+Val cutoff: 2025-04-14 00:00:00
+Test cutoff: 2025-04-18 00:00:00
+
+=== DEBUG FINAL SPLIT: TEST ===
+Rows: 123
+Columns: ['mmsi', 'nth_time', 'shiptype']
+Missing shiptype: 0
+   mmsi            nth_time  shiptype
+0  1170 2025-04-18 00:38:28         1
+1   598 2025-04-18 02:25:38         1
+2  1261 2025-04-18 02:42:17         1
+3   514 2025-04-18 04:10:33         1
+4   125 2025-04-18 05:36:26         1
+5   992 2025-04-18 06:22:40         1
+6   127 2025-04-18 06:23:11         1
+7  1229 2025-04-18 07:42:22         0
+8   294 2025-04-18 07:45:56         1
+9   143 2025-04-18 07:46:23         1
+Epoch 001 | Train Loss: 0.5995 | Val Loss: 0.4870 | Test Loss: 0.4963 | Val Metric (roc_auc): 0.4710
+Epoch 002 | Train Loss: 0.5181 | Val Loss: 0.4495 | Test Loss: 0.4631 | Val Metric (roc_auc): 0.5765
+Epoch 003 | Train Loss: 0.4911 | Val Loss: 0.4349 | Test Loss: 0.4518 | Val Metric (roc_auc): 0.4043
+Epoch 004 | Train Loss: 0.4813 | Val Loss: 0.4273 | Test Loss: 0.4450 | Val Metric (roc_auc): 0.4249
+Epoch 005 | Train Loss: 0.4759 | Val Loss: 0.4215 | Test Loss: 0.4397 | Val Metric (roc_auc): 0.4727
+Epoch 006 | Train Loss: 0.4718 | Val Loss: 0.4174 | Test Loss: 0.4363 | Val Metric (roc_auc): 0.5653
+Epoch 007 | Train Loss: 0.4693 | Val Loss: 0.4144 | Test Loss: 0.4336 | Val Metric (roc_auc): 0.6464
+Epoch 008 | Train Loss: 0.4666 | Val Loss: 0.4121 | Test Loss: 0.4313 | Val Metric (roc_auc): 0.6827
+Epoch 009 | Train Loss: 0.4652 | Val Loss: 0.4101 | Test Loss: 0.4297 | Val Metric (roc_auc): 0.6817
+Epoch 010 | Train Loss: 0.4637 | Val Loss: 0.4085 | Test Loss: 0.4282 | Val Metric (roc_auc): 0.7044
+Epoch 011 | Train Loss: 0.4623 | Val Loss: 0.4070 | Test Loss: 0.4266 | Val Metric (roc_auc): 0.7110
+Epoch 012 | Train Loss: 0.4608 | Val Loss: 0.4058 | Test Loss: 0.4254 | Val Metric (roc_auc): 0.7519
+Epoch 013 | Train Loss: 0.4596 | Val Loss: 0.4046 | Test Loss: 0.4242 | Val Metric (roc_auc): 0.7617
+Epoch 014 | Train Loss: 0.4584 | Val Loss: 0.4034 | Test Loss: 0.4227 | Val Metric (roc_auc): 0.7666
+Epoch 015 | Train Loss: 0.4568 | Val Loss: 0.4022 | Test Loss: 0.4216 | Val Metric (roc_auc): 0.7711
+Epoch 016 | Train Loss: 0.4552 | Val Loss: 0.4012 | Test Loss: 0.4202 | Val Metric (roc_auc): 0.7746
+Epoch 017 | Train Loss: 0.4537 | Val Loss: 0.4005 | Test Loss: 0.4189 | Val Metric (roc_auc): 0.7617
+Epoch 018 | Train Loss: 0.4520 | Val Loss: 0.3997 | Test Loss: 0.4176 | Val Metric (roc_auc): 0.7708
+Epoch 019 | Train Loss: 0.4497 | Val Loss: 0.3987 | Test Loss: 0.4163 | Val Metric (roc_auc): 0.7949
+Epoch 020 | Train Loss: 0.4479 | Val Loss: 0.3978 | Test Loss: 0.4149 | Val Metric (roc_auc): 0.8040
+Epoch 021 | Train Loss: 0.4454 | Val Loss: 0.3972 | Test Loss: 0.4144 | Val Metric (roc_auc): 0.8162
+Epoch 022 | Train Loss: 0.4421 | Val Loss: 0.3963 | Test Loss: 0.4125 | Val Metric (roc_auc): 0.8305
+Epoch 023 | Train Loss: 0.4383 | Val Loss: 0.3939 | Test Loss: 0.4120 | Val Metric (roc_auc): 0.8491
+Epoch 024 | Train Loss: 0.4357 | Val Loss: 0.3938 | Test Loss: 0.4110 | Val Metric (roc_auc): 0.8452
+Epoch 025 | Train Loss: 0.4310 | Val Loss: 0.3927 | Test Loss: 0.4113 | Val Metric (roc_auc): 0.8532
+Epoch 026 | Train Loss: 0.4251 | Val Loss: 0.3890 | Test Loss: 0.4107 | Val Metric (roc_auc): 0.8512
+Epoch 027 | Train Loss: 0.4218 | Val Loss: 0.3888 | Test Loss: 0.4077 | Val Metric (roc_auc): 0.8588
+Epoch 028 | Train Loss: 0.4173 | Val Loss: 0.3827 | Test Loss: 0.4120 | Val Metric (roc_auc): 0.8634
+Epoch 029 | Train Loss: 0.4105 | Val Loss: 0.3820 | Test Loss: 0.4126 | Val Metric (roc_auc): 0.8763
+Epoch 030 | Train Loss: 0.4068 | Val Loss: 0.3772 | Test Loss: 0.4079 | Val Metric (roc_auc): 0.9140
+Epoch 031 | Train Loss: 0.3962 | Val Loss: 0.3749 | Test Loss: 0.4123 | Val Metric (roc_auc): 0.9099
+Epoch 032 | Train Loss: 0.3890 | Val Loss: 0.3731 | Test Loss: 0.4027 | Val Metric (roc_auc): 0.8906
+Epoch 033 | Train Loss: 0.3858 | Val Loss: 0.3745 | Test Loss: 0.4099 | Val Metric (roc_auc): 0.8892
+Epoch 034 | Train Loss: 0.3776 | Val Loss: 0.3691 | Test Loss: 0.4004 | Val Metric (roc_auc): 0.8917
+Epoch 035 | Train Loss: 0.3726 | Val Loss: 0.3694 | Test Loss: 0.4047 | Val Metric (roc_auc): 0.8802
+Epoch 036 | Train Loss: 0.3673 | Val Loss: 0.3660 | Test Loss: 0.4007 | Val Metric (roc_auc): 0.8683
+Epoch 037 | Train Loss: 0.3638 | Val Loss: 0.3624 | Test Loss: 0.3983 | Val Metric (roc_auc): 0.8592
+Epoch 038 | Train Loss: 0.3572 | Val Loss: 0.3631 | Test Loss: 0.3980 | Val Metric (roc_auc): 0.8581
+Epoch 039 | Train Loss: 0.3536 | Val Loss: 0.3605 | Test Loss: 0.3929 | Val Metric (roc_auc): 0.8578
+Epoch 040 | Train Loss: 0.3502 | Val Loss: 0.3664 | Test Loss: 0.3998 | Val Metric (roc_auc): 0.8686
+Epoch 041 | Train Loss: 0.3440 | Val Loss: 0.3667 | Test Loss: 0.4027 | Val Metric (roc_auc): 0.8361
+Epoch 042 | Train Loss: 0.3374 | Val Loss: 0.3607 | Test Loss: 0.3943 | Val Metric (roc_auc): 0.8487
+Epoch 043 | Train Loss: 0.3322 | Val Loss: 0.3639 | Test Loss: 0.3977 | Val Metric (roc_auc): 0.8312
+Epoch 044 | Train Loss: 0.3285 | Val Loss: 0.3690 | Test Loss: 0.3942 | Val Metric (roc_auc): 0.8564
+Epoch 045 | Train Loss: 0.3230 | Val Loss: 0.3751 | Test Loss: 0.4022 | Val Metric (roc_auc): 0.8365
+Epoch 046 | Train Loss: 0.3210 | Val Loss: 0.3619 | Test Loss: 0.3882 | Val Metric (roc_auc): 0.8816
+Epoch 047 | Train Loss: 0.3128 | Val Loss: 0.3668 | Test Loss: 0.3888 | Val Metric (roc_auc): 0.8410
+Epoch 048 | Train Loss: 0.3124 | Val Loss: 0.3717 | Test Loss: 0.3893 | Val Metric (roc_auc): 0.8494
+Epoch 049 | Train Loss: 0.3059 | Val Loss: 0.3714 | Test Loss: 0.3843 | Val Metric (roc_auc): 0.8295
+Epoch 050 | Train Loss: 0.3008 | Val Loss: 0.3673 | Test Loss: 0.3851 | Val Metric (roc_auc): 0.8145
+Epoch 051 | Train Loss: 0.3004 | Val Loss: 0.3774 | Test Loss: 0.3904 | Val Metric (roc_auc): 0.8302
+Epoch 052 | Train Loss: 0.2926 | Val Loss: 0.3767 | Test Loss: 0.3968 | Val Metric (roc_auc): 0.8459
+Epoch 053 | Train Loss: 0.2909 | Val Loss: 0.3906 | Test Loss: 0.4053 | Val Metric (roc_auc): 0.8470
+Epoch 054 | Train Loss: 0.2835 | Val Loss: 0.3584 | Test Loss: 0.3707 | Val Metric (roc_auc): 0.8270
+Epoch 055 | Train Loss: 0.2800 | Val Loss: 0.3634 | Test Loss: 0.3855 | Val Metric (roc_auc): 0.8585
+Epoch 056 | Train Loss: 0.2793 | Val Loss: 0.3688 | Test Loss: 0.3766 | Val Metric (roc_auc): 0.8459
+Epoch 057 | Train Loss: 0.2731 | Val Loss: 0.3687 | Test Loss: 0.3665 | Val Metric (roc_auc): 0.8522
+Epoch 058 | Train Loss: 0.2728 | Val Loss: 0.3654 | Test Loss: 0.3758 | Val Metric (roc_auc): 0.8812
+Epoch 059 | Train Loss: 0.2698 | Val Loss: 0.3471 | Test Loss: 0.3677 | Val Metric (roc_auc): 0.8491
+Epoch 060 | Train Loss: 0.2677 | Val Loss: 0.3564 | Test Loss: 0.3827 | Val Metric (roc_auc): 0.8791
+Epoch 061 | Train Loss: 0.2651 | Val Loss: 0.3599 | Test Loss: 0.3756 | Val Metric (roc_auc): 0.8927
+Epoch 062 | Train Loss: 0.2624 | Val Loss: 0.3614 | Test Loss: 0.3664 | Val Metric (roc_auc): 0.8728
+Epoch 063 | Train Loss: 0.2628 | Val Loss: 0.3690 | Test Loss: 0.3741 | Val Metric (roc_auc): 0.8428
+Epoch 064 | Train Loss: 0.2594 | Val Loss: 0.3603 | Test Loss: 0.3588 | Val Metric (roc_auc): 0.8456
+Epoch 065 | Train Loss: 0.2599 | Val Loss: 0.3748 | Test Loss: 0.3880 | Val Metric (roc_auc): 0.8176
+Epoch 066 | Train Loss: 0.2564 | Val Loss: 0.3563 | Test Loss: 0.3681 | Val Metric (roc_auc): 0.8690
+Epoch 067 | Train Loss: 0.2538 | Val Loss: 0.3689 | Test Loss: 0.4053 | Val Metric (roc_auc): 0.7980
+Epoch 068 | Train Loss: 0.2553 | Val Loss: 0.3534 | Test Loss: 0.3594 | Val Metric (roc_auc): 0.8728
+Epoch 069 | Train Loss: 0.2511 | Val Loss: 0.3850 | Test Loss: 0.3920 | Val Metric (roc_auc): 0.8574
+Epoch 070 | Train Loss: 0.2476 | Val Loss: 0.3496 | Test Loss: 0.3514 | Val Metric (roc_auc): 0.8204
+Epoch 071 | Train Loss: 0.2468 | Val Loss: 0.3594 | Test Loss: 0.3603 | Val Metric (roc_auc): 0.8763
+Epoch 072 | Train Loss: 0.2451 | Val Loss: 0.3513 | Test Loss: 0.3497 | Val Metric (roc_auc): 0.8400
+Epoch 073 | Train Loss: 0.2422 | Val Loss: 0.3550 | Test Loss: 0.3555 | Val Metric (roc_auc): 0.8442
+Epoch 074 | Train Loss: 0.2399 | Val Loss: 0.3601 | Test Loss: 0.3684 | Val Metric (roc_auc): 0.8749
+Epoch 075 | Train Loss: 0.2395 | Val Loss: 0.3488 | Test Loss: 0.3524 | Val Metric (roc_auc): 0.8515
+Epoch 076 | Train Loss: 0.2368 | Val Loss: 0.3622 | Test Loss: 0.3617 | Val Metric (roc_auc): 0.8239
+Epoch 077 | Train Loss: 0.2352 | Val Loss: 0.3637 | Test Loss: 0.3636 | Val Metric (roc_auc): 0.8211
+Epoch 078 | Train Loss: 0.2335 | Val Loss: 0.3593 | Test Loss: 0.3602 | Val Metric (roc_auc): 0.8386
+Epoch 079 | Train Loss: 0.2322 | Val Loss: 0.3572 | Test Loss: 0.3609 | Val Metric (roc_auc): 0.8354
+Epoch 080 | Train Loss: 0.2311 | Val Loss: 0.3495 | Test Loss: 0.3576 | Val Metric (roc_auc): 0.8403
+Epoch 081 | Train Loss: 0.2295 | Val Loss: 0.3493 | Test Loss: 0.3571 | Val Metric (roc_auc): 0.8368
+Epoch 082 | Train Loss: 0.2282 | Val Loss: 0.3505 | Test Loss: 0.3607 | Val Metric (roc_auc): 0.8316
+Epoch 083 | Train Loss: 0.2271 | Val Loss: 0.3445 | Test Loss: 0.3525 | Val Metric (roc_auc): 0.8505
+Epoch 084 | Train Loss: 0.2263 | Val Loss: 0.3468 | Test Loss: 0.3510 | Val Metric (roc_auc): 0.8260
+Epoch 085 | Train Loss: 0.2254 | Val Loss: 0.3467 | Test Loss: 0.3485 | Val Metric (roc_auc): 0.8323
+Epoch 086 | Train Loss: 0.2240 | Val Loss: 0.3435 | Test Loss: 0.3475 | Val Metric (roc_auc): 0.8477
+Epoch 087 | Train Loss: 0.2222 | Val Loss: 0.3434 | Test Loss: 0.3497 | Val Metric (roc_auc): 0.8498
+Epoch 088 | Train Loss: 0.2207 | Val Loss: 0.3489 | Test Loss: 0.3523 | Val Metric (roc_auc): 0.8323
+Epoch 089 | Train Loss: 0.2195 | Val Loss: 0.3470 | Test Loss: 0.3506 | Val Metric (roc_auc): 0.8319
+Epoch 090 | Train Loss: 0.2187 | Val Loss: 0.3460 | Test Loss: 0.3500 | Val Metric (roc_auc): 0.8372
+Epoch 091 | Train Loss: 0.2188 | Val Loss: 0.3440 | Test Loss: 0.3514 | Val Metric (roc_auc): 0.8326
+Epoch 092 | Train Loss: 0.2164 | Val Loss: 0.3503 | Test Loss: 0.3612 | Val Metric (roc_auc): 0.8120
+Epoch 093 | Train Loss: 0.2160 | Val Loss: 0.3664 | Test Loss: 0.3773 | Val Metric (roc_auc): 0.7949
+Epoch 094 | Train Loss: 0.2153 | Val Loss: 0.3638 | Test Loss: 0.3682 | Val Metric (roc_auc): 0.8180
+Epoch 095 | Train Loss: 0.2144 | Val Loss: 0.3602 | Test Loss: 0.3568 | Val Metric (roc_auc): 0.8480
+Epoch 096 | Train Loss: 0.2126 | Val Loss: 0.3667 | Test Loss: 0.3743 | Val Metric (roc_auc): 0.8417
+Epoch 097 | Train Loss: 0.2117 | Val Loss: 0.3540 | Test Loss: 0.3532 | Val Metric (roc_auc): 0.8651
+Epoch 098 | Train Loss: 0.2110 | Val Loss: 0.3662 | Test Loss: 0.3671 | Val Metric (roc_auc): 0.8456
+Epoch 099 | Train Loss: 0.2102 | Val Loss: 0.3509 | Test Loss: 0.3442 | Val Metric (roc_auc): 0.8438
+Epoch 100 | Train Loss: 0.2088 | Val Loss: 0.3451 | Test Loss: 0.3521 | Val Metric (roc_auc): 0.8623
+Epoch 101 | Train Loss: 0.2087 | Val Loss: 0.3497 | Test Loss: 0.3524 | Val Metric (roc_auc): 0.8662
+Epoch 102 | Train Loss: 0.2085 | Val Loss: 0.3660 | Test Loss: 0.3715 | Val Metric (roc_auc): 0.8644
+Epoch 103 | Train Loss: 0.2057 | Val Loss: 0.3576 | Test Loss: 0.3706 | Val Metric (roc_auc): 0.8470
+Epoch 104 | Train Loss: 0.2044 | Val Loss: 0.3580 | Test Loss: 0.3732 | Val Metric (roc_auc): 0.8421
+Epoch 105 | Train Loss: 0.2034 | Val Loss: 0.3665 | Test Loss: 0.3845 | Val Metric (roc_auc): 0.8739
+Epoch 106 | Train Loss: 0.2026 | Val Loss: 0.3536 | Test Loss: 0.3704 | Val Metric (roc_auc): 0.8571
+Epoch 107 | Train Loss: 0.2012 | Val Loss: 0.3553 | Test Loss: 0.3688 | Val Metric (roc_auc): 0.8466
+Epoch 108 | Train Loss: 0.2012 | Val Loss: 0.3515 | Test Loss: 0.3576 | Val Metric (roc_auc): 0.8484
+Epoch 109 | Train Loss: 0.1994 | Val Loss: 0.3270 | Test Loss: 0.3404 | Val Metric (roc_auc): 0.8627
+Epoch 110 | Train Loss: 0.1983 | Val Loss: 0.3332 | Test Loss: 0.3489 | Val Metric (roc_auc): 0.8889
+Epoch 111 | Train Loss: 0.1973 | Val Loss: 0.3268 | Test Loss: 0.3437 | Val Metric (roc_auc): 0.8889
+Epoch 112 | Train Loss: 0.1961 | Val Loss: 0.3221 | Test Loss: 0.3369 | Val Metric (roc_auc): 0.8885
+Epoch 113 | Train Loss: 0.1956 | Val Loss: 0.3367 | Test Loss: 0.3436 | Val Metric (roc_auc): 0.8966
+Epoch 114 | Train Loss: 0.1944 | Val Loss: 0.3430 | Test Loss: 0.3438 | Val Metric (roc_auc): 0.8945
+Epoch 115 | Train Loss: 0.1937 | Val Loss: 0.3476 | Test Loss: 0.3345 | Val Metric (roc_auc): 0.8913
+Epoch 116 | Train Loss: 0.1924 | Val Loss: 0.3569 | Test Loss: 0.3350 | Val Metric (roc_auc): 0.9008
+Epoch 117 | Train Loss: 0.1924 | Val Loss: 0.3419 | Test Loss: 0.3262 | Val Metric (roc_auc): 0.8840
+Epoch 118 | Train Loss: 0.1909 | Val Loss: 0.3403 | Test Loss: 0.3184 | Val Metric (roc_auc): 0.8574
+Epoch 119 | Train Loss: 0.1897 | Val Loss: 0.3486 | Test Loss: 0.3301 | Val Metric (roc_auc): 0.8480
+Epoch 120 | Train Loss: 0.1893 | Val Loss: 0.3450 | Test Loss: 0.3218 | Val Metric (roc_auc): 0.8552
+Epoch 121 | Train Loss: 0.1908 | Val Loss: 0.3449 | Test Loss: 0.3379 | Val Metric (roc_auc): 0.8641
+Epoch 122 | Train Loss: 0.1900 | Val Loss: 0.3636 | Test Loss: 0.3545 | Val Metric (roc_auc): 0.8697
+Epoch 123 | Train Loss: 0.1889 | Val Loss: 0.3335 | Test Loss: 0.3190 | Val Metric (roc_auc): 0.8519
+Epoch 124 | Train Loss: 0.1894 | Val Loss: 0.3560 | Test Loss: 0.3488 | Val Metric (roc_auc): 0.8864
+Epoch 125 | Train Loss: 0.1884 | Val Loss: 0.3267 | Test Loss: 0.3263 | Val Metric (roc_auc): 0.8456
+Epoch 126 | Train Loss: 0.1854 | Val Loss: 0.3783 | Test Loss: 0.3770 | Val Metric (roc_auc): 0.8256
+Epoch 127 | Train Loss: 0.1850 | Val Loss: 0.3288 | Test Loss: 0.3162 | Val Metric (roc_auc): 0.8515
+Epoch 128 | Train Loss: 0.1863 | Val Loss: 0.3850 | Test Loss: 0.3798 | Val Metric (roc_auc): 0.8693
+Epoch 129 | Train Loss: 0.1845 | Val Loss: 0.3189 | Test Loss: 0.3276 | Val Metric (roc_auc): 0.8816
+Epoch 130 | Train Loss: 0.1825 | Val Loss: 0.3496 | Test Loss: 0.3465 | Val Metric (roc_auc): 0.8840
+Epoch 131 | Train Loss: 0.1804 | Val Loss: 0.3613 | Test Loss: 0.3563 | Val Metric (roc_auc): 0.8795
+Epoch 132 | Train Loss: 0.1799 | Val Loss: 0.3087 | Test Loss: 0.3341 | Val Metric (roc_auc): 0.8889
+Epoch 133 | Train Loss: 0.1820 | Val Loss: 0.3469 | Test Loss: 0.3659 | Val Metric (roc_auc): 0.8641
+Epoch 134 | Train Loss: 0.1772 | Val Loss: 0.3231 | Test Loss: 0.3394 | Val Metric (roc_auc): 0.8679
+Epoch 135 | Train Loss: 0.1759 | Val Loss: 0.3355 | Test Loss: 0.3391 | Val Metric (roc_auc): 0.8658
+Epoch 136 | Train Loss: 0.1744 | Val Loss: 0.3406 | Test Loss: 0.3372 | Val Metric (roc_auc): 0.8536
+Epoch 137 | Train Loss: 0.1741 | Val Loss: 0.3378 | Test Loss: 0.3311 | Val Metric (roc_auc): 0.8595
+Epoch 138 | Train Loss: 0.1730 | Val Loss: 0.3340 | Test Loss: 0.3290 | Val Metric (roc_auc): 0.8637
+Epoch 139 | Train Loss: 0.1730 | Val Loss: 0.3109 | Test Loss: 0.3168 | Val Metric (roc_auc): 0.8655
+Epoch 140 | Train Loss: 0.1714 | Val Loss: 0.3137 | Test Loss: 0.3328 | Val Metric (roc_auc): 0.8560
+Epoch 141 | Train Loss: 0.1705 | Val Loss: 0.3237 | Test Loss: 0.3466 | Val Metric (roc_auc): 0.8543
+Epoch 142 | Train Loss: 0.1699 | Val Loss: 0.3212 | Test Loss: 0.3397 | Val Metric (roc_auc): 0.8620
+Epoch 143 | Train Loss: 0.1690 | Val Loss: 0.3220 | Test Loss: 0.3377 | Val Metric (roc_auc): 0.8686
+Epoch 144 | Train Loss: 0.1683 | Val Loss: 0.3243 | Test Loss: 0.3411 | Val Metric (roc_auc): 0.8602
+Epoch 145 | Train Loss: 0.1672 | Val Loss: 0.3263 | Test Loss: 0.3427 | Val Metric (roc_auc): 0.8553
+Epoch 146 | Train Loss: 0.1665 | Val Loss: 0.3219 | Test Loss: 0.3324 | Val Metric (roc_auc): 0.8606
+Epoch 147 | Train Loss: 0.1657 | Val Loss: 0.3194 | Test Loss: 0.3247 | Val Metric (roc_auc): 0.8648
+Epoch 148 | Train Loss: 0.1649 | Val Loss: 0.3203 | Test Loss: 0.3230 | Val Metric (roc_auc): 0.8616
+Epoch 149 | Train Loss: 0.1642 | Val Loss: 0.3231 | Test Loss: 0.3252 | Val Metric (roc_auc): 0.8602
+Epoch 150 | Train Loss: 0.1636 | Val Loss: 0.3269 | Test Loss: 0.3311 | Val Metric (roc_auc): 0.8567
+Epoch 151 | Train Loss: 0.1631 | Val Loss: 0.3248 | Test Loss: 0.3299 | Val Metric (roc_auc): 0.8588
+Epoch 152 | Train Loss: 0.1622 | Val Loss: 0.3157 | Test Loss: 0.3223 | Val Metric (roc_auc): 0.8690
+Epoch 153 | Train Loss: 0.1615 | Val Loss: 0.3124 | Test Loss: 0.3214 | Val Metric (roc_auc): 0.8763
+Epoch 154 | Train Loss: 0.1607 | Val Loss: 0.3146 | Test Loss: 0.3215 | Val Metric (roc_auc): 0.8662
+Epoch 155 | Train Loss: 0.1600 | Val Loss: 0.3164 | Test Loss: 0.3214 | Val Metric (roc_auc): 0.8595
+Epoch 156 | Train Loss: 0.1593 | Val Loss: 0.3168 | Test Loss: 0.3197 | Val Metric (roc_auc): 0.8627
+Epoch 157 | Train Loss: 0.1586 | Val Loss: 0.3172 | Test Loss: 0.3181 | Val Metric (roc_auc): 0.8630
+Epoch 158 | Train Loss: 0.1579 | Val Loss: 0.3191 | Test Loss: 0.3174 | Val Metric (roc_auc): 0.8615
+Epoch 159 | Train Loss: 0.1572 | Val Loss: 0.3210 | Test Loss: 0.3174 | Val Metric (roc_auc): 0.8606
+Epoch 160 | Train Loss: 0.1566 | Val Loss: 0.3262 | Test Loss: 0.3188 | Val Metric (roc_auc): 0.8585
+Epoch 161 | Train Loss: 0.1560 | Val Loss: 0.3213 | Test Loss: 0.3138 | Val Metric (roc_auc): 0.8550
+Epoch 162 | Train Loss: 0.1552 | Val Loss: 0.3166 | Test Loss: 0.3129 | Val Metric (roc_auc): 0.8505
+Epoch 163 | Train Loss: 0.1547 | Val Loss: 0.3150 | Test Loss: 0.3126 | Val Metric (roc_auc): 0.8505
+Epoch 164 | Train Loss: 0.1539 | Val Loss: 0.3143 | Test Loss: 0.3123 | Val Metric (roc_auc): 0.8508
+Epoch 165 | Train Loss: 0.1533 | Val Loss: 0.3147 | Test Loss: 0.3126 | Val Metric (roc_auc): 0.8501
+Epoch 166 | Train Loss: 0.1527 | Val Loss: 0.3149 | Test Loss: 0.3125 | Val Metric (roc_auc): 0.8519
+Epoch 167 | Train Loss: 0.1526 | Val Loss: 0.3249 | Test Loss: 0.3268 | Val Metric (roc_auc): 0.8470
+Epoch 168 | Train Loss: 0.1516 | Val Loss: 0.3265 | Test Loss: 0.3287 | Val Metric (roc_auc): 0.8494
+Epoch 169 | Train Loss: 0.1508 | Val Loss: 0.3240 | Test Loss: 0.3216 | Val Metric (roc_auc): 0.8466
+Epoch 170 | Train Loss: 0.1502 | Val Loss: 0.3217 | Test Loss: 0.3168 | Val Metric (roc_auc): 0.8449
+Epoch 171 | Train Loss: 0.1496 | Val Loss: 0.3189 | Test Loss: 0.3110 | Val Metric (roc_auc): 0.8442
+Epoch 172 | Train Loss: 0.1490 | Val Loss: 0.3199 | Test Loss: 0.3095 | Val Metric (roc_auc): 0.8396
+Epoch 173 | Train Loss: 0.1484 | Val Loss: 0.3224 | Test Loss: 0.3096 | Val Metric (roc_auc): 0.8438
+Epoch 174 | Train Loss: 0.1484 | Val Loss: 0.3415 | Test Loss: 0.3414 | Val Metric (roc_auc): 0.8372
+Epoch 175 | Train Loss: 0.1485 | Val Loss: 0.2837 | Test Loss: 0.3102 | Val Metric (roc_auc): 0.8501
+Epoch 176 | Train Loss: 0.1477 | Val Loss: 0.2699 | Test Loss: 0.3128 | Val Metric (roc_auc): 0.8501
+Epoch 177 | Train Loss: 0.1467 | Val Loss: 0.3072 | Test Loss: 0.3735 | Val Metric (roc_auc): 0.8333
+Epoch 178 | Train Loss: 0.1465 | Val Loss: 0.2740 | Test Loss: 0.3245 | Val Metric (roc_auc): 0.8438
+Epoch 179 | Train Loss: 0.1479 | Val Loss: 0.2976 | Test Loss: 0.3263 | Val Metric (roc_auc): 0.8470
+Epoch 180 | Train Loss: 0.1446 | Val Loss: 0.3282 | Test Loss: 0.3392 | Val Metric (roc_auc): 0.8550
+Epoch 181 | Train Loss: 0.1439 | Val Loss: 0.3222 | Test Loss: 0.3371 | Val Metric (roc_auc): 0.8546
+Epoch 182 | Train Loss: 0.1434 | Val Loss: 0.3093 | Test Loss: 0.3323 | Val Metric (roc_auc): 0.8623
+Epoch 183 | Train Loss: 0.1427 | Val Loss: 0.3032 | Test Loss: 0.3299 | Val Metric (roc_auc): 0.8641
+Epoch 184 | Train Loss: 0.1421 | Val Loss: 0.3164 | Test Loss: 0.3335 | Val Metric (roc_auc): 0.8651
+Epoch 185 | Train Loss: 0.1417 | Val Loss: 0.3283 | Test Loss: 0.3397 | Val Metric (roc_auc): 0.8690
+Epoch 186 | Train Loss: 0.1409 | Val Loss: 0.3282 | Test Loss: 0.3409 | Val Metric (roc_auc): 0.8686
+Epoch 187 | Train Loss: 0.1404 | Val Loss: 0.3255 | Test Loss: 0.3409 | Val Metric (roc_auc): 0.8714
+Epoch 188 | Train Loss: 0.1405 | Val Loss: 0.2962 | Test Loss: 0.3307 | Val Metric (roc_auc): 0.8697
+Epoch 189 | Train Loss: 0.1394 | Val Loss: 0.2963 | Test Loss: 0.3319 | Val Metric (roc_auc): 0.8648
+Epoch 190 | Train Loss: 0.1388 | Val Loss: 0.3003 | Test Loss: 0.3345 | Val Metric (roc_auc): 0.8662
+Epoch 191 | Train Loss: 0.1384 | Val Loss: 0.3071 | Test Loss: 0.3383 | Val Metric (roc_auc): 0.8683
+Epoch 192 | Train Loss: 0.1378 | Val Loss: 0.3076 | Test Loss: 0.3399 | Val Metric (roc_auc): 0.8665
+Epoch 193 | Train Loss: 0.1373 | Val Loss: 0.3058 | Test Loss: 0.3403 | Val Metric (roc_auc): 0.8630
+Epoch 194 | Train Loss: 0.1369 | Val Loss: 0.3131 | Test Loss: 0.3445 | Val Metric (roc_auc): 0.8665
+Epoch 195 | Train Loss: 0.1362 | Val Loss: 0.3076 | Test Loss: 0.3407 | Val Metric (roc_auc): 0.8679
+Epoch 196 | Train Loss: 0.1357 | Val Loss: 0.3047 | Test Loss: 0.3389 | Val Metric (roc_auc): 0.8679
+Epoch 197 | Train Loss: 0.1351 | Val Loss: 0.3051 | Test Loss: 0.3388 | Val Metric (roc_auc): 0.8697
+Epoch 198 | Train Loss: 0.1347 | Val Loss: 0.3117 | Test Loss: 0.3413 | Val Metric (roc_auc): 0.8697
+Epoch 199 | Train Loss: 0.1342 | Val Loss: 0.3076 | Test Loss: 0.3393 | Val Metric (roc_auc): 0.8711
+Epoch 200 | Train Loss: 0.1337 | Val Loss: 0.3121 | Test Loss: 0.3405 | Val Metric (roc_auc): 0.8700
+Best Val metrics: {'average_precision': np.float64(0.9896883428272938), 'accuracy': 0.9152542372881356, 'f1': 0.9538461538461539, 'roc_auc': np.float64(0.9140461215932913)}
+Best test metrics: {'average_precision': np.float64(0.9209109964044226), 'accuracy': 0.8861788617886179, 'f1': 0.9375, 'roc_auc': np.float64(0.7024691358024692)}
+Saved test targets to ship type prediction/heterogenuos graph_sage_untuned_db_2ndconfiguration/test_targets.csv
+Saved test predictions to ship type prediction/heterogenuos graph_sage_untuned_db_2ndconfiguration/test_predictions.csv
+Saved learning curves
+Saved ROC-AUC curves to ship type prediction/heterogenuos graph_sage_untuned_db_2ndconfiguration/roc_auc_curves.png
+Prediction of the heterogenuos graph sage untuned based on entire db with a second configuration 
