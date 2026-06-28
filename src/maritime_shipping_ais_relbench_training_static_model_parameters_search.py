@@ -1,430 +1,223 @@
-import json
-import math
-import torch
-import torch.optim.lr_scheduler as lr_scheduler
-from utils import RelBenchModel, get_loaders
-import numpy as np
-from torch.nn import BCEWithLogitsLoss, L1Loss, MSELoss
-from relbench.tasks import get_task, get_task_names, register_task
-from relbench.datasets import get_dataset, get_dataset_names, register_dataset
+# MODEL PARAMETER SEARCH USING VALIDATION LOSS AFTER CONVERGENCE
+
 import os
 import math
-import numpy as np
-from tqdm import tqdm
-import torch
-from typing import List, Optional, Dict
-from torch import Tensor
-from torch_frame.config.text_embedder import TextEmbedderConfig
-from relbench.modeling.graph import make_pkey_fkey_graph
-from torch_geometric.seed import seed_everything
-from relbench.modeling.graph import get_node_train_table_input, make_pkey_fkey_graph
-from torch_geometric.loader import NeighborLoader
-from relbench.modeling.utils import get_stype_proposal
-from torch.nn import BCEWithLogitsLoss
-from torch.nn import CrossEntropyLoss
-from torch_frame import stype 
 import json
-import pickle
-import json
-import numpy as np
-from torch.nn import BCEWithLogitsLoss, L1Loss, MSELoss
-from relbench.tasks import get_task, get_task_names, register_task
-from relbench.datasets import get_dataset, get_dataset_names, register_dataset
-import os
-import math
-import numpy as np
-from tqdm import tqdm
-import torch
-from typing import List, Optional, Dict
-from torch import Tensor
-from torch_frame.config.text_embedder import TextEmbedderConfig
-from relbench.modeling.graph import make_pkey_fkey_graph
-from torch_geometric.seed import seed_everything
-from relbench.modeling.graph import get_node_train_table_input, make_pkey_fkey_graph
-from torch_geometric.loader import NeighborLoader
-from relbench.modeling.utils import get_stype_proposal
-from torch.nn import BCEWithLogitsLoss
-from torch.nn import CrossEntropyLoss
-from torch_frame import stype 
-import json
-import pickle
-import json
-
-
-# for model
 import copy
-from typing import Any, Dict, List
-from torch import Tensor
-from torch_frame.data.stats import StatType
-from torch_geometric.data import HeteroData
-from torch_geometric.nn import MLP
-from torch_geometric.typing import NodeType
-import torch.optim.lr_scheduler as lr_scheduler
+import pickle
+import numpy as np
 import pandas as pd
+import torch
+
+from tqdm import tqdm
+from typing import Any, Dict, List, Optional
+from torch import Tensor
+
+from torch.nn import (
+    BCEWithLogitsLoss,
+    L1Loss,
+    MSELoss,
+    CrossEntropyLoss
+)
+
+from relbench.datasets import register_dataset, get_dataset
+from relbench.tasks import register_task
+from relbench.base import AutoCompleteTask
+
+from relbench.modeling.utils import get_stype_proposal
+from relbench.modeling.graph import make_pkey_fkey_graph
+
+from torch_frame import stype
+from torch_frame.config.text_embedder import TextEmbedderConfig
+
+from torch_geometric.seed import seed_everything
+import torch.optim.lr_scheduler as lr_scheduler
 
 from utils import RelBenchModel, get_loaders, GloveTextEmbedding, make_col_stats
 
-from relbench.base import AutoCompleteTask
-
 from maritime_shipping_ais_relbench_dataset import MaritimeShippingAISDataset
-
 from maritime_shipping_ais_relbench_tasks import ShipTypeNthPositionTask
 
 
+# 
+# DATASET + TASK
+# 
 
+def register_dataset_and_task():
+    register_dataset("rel-custom-maritime_shipping_ais", MaritimeShippingAISDataset)
+    dataset = get_dataset("rel-custom-maritime_shipping_ais", download=False)
 
-#Registering the Danish AIS dataset into Relbench
-register_dataset("rel-custom-maritime_shipping_ais", MaritimeShippingAISDataset)
-ais_dataset = get_dataset("rel-custom-maritime_shipping_ais", download=False)
-#Defining a task for our prediction
-task = ShipTypeNthPositionTask(
-        ais_dataset,
+    task = ShipTypeNthPositionTask(
+        dataset,
         cache_dir="./cache/ship_type_np_task"
     )
-print("Task created:", task)
-#Registering the task for a given dataset in Relbench
-register_task("rel-custom-maritime_shipping_ais", "ship_type_np_task", ShipTypeNthPositionTask)
-print('Task registered')
+    register_task("rel-custom-maritime_shipping_ais", "ship_type_np_task", ShipTypeNthPositionTask)
+    return dataset, task
 
 
-# Setting a model confguration by default, despite later a search  of optimized values of num_layers,channels and num_neighbors is carried out. 
-
-MODEL_CONFIG = {
-    "temporal_strategy": "last",
-    "num_neighbors": [128 for _ in range(2)],
-    "num_layers": 2,
-    "channels": 128,
-    "aggr": "mean",
-    "temporal_encoding": False,
-    "hgt_heads": 16,
-    "loader_type": "neighbor",
-    "model_type": "graphsage",
-    "weight_decay": 1e-2,
-}
-
-
-
-
-
-# Task param
-data_name='rel-custom-maritime_shipping_ais'
-task_name='ship_type_np_task'
-
-
-# Advanced inductive temporal method for computing train statistics that also tracks non-time-stamped-nodes related to time-stamped-nodes. Currently only available for rel-hm dataset.
-# if False then train stats are computed using all time-stamped nodes present in the training data, and ALL non-time-stamped nodes. 
-adv_compute_train_stats = True  
-
-# Print more info. Advised for debugging
-verbose = True 
-
-
-dataset = get_dataset(data_name, download=False) 
-task = get_task(data_name, task_name, download=False)
-
-# Using _get_table for uncached
-train_table = task._get_table("train") 
-val_table = task._get_table("val")
-test_table = task._get_table("test")
-
-target_col_table_name = task.entity_table
-target_col_name = task.target_col
-tasktype = task.task_type.value
-
-print('Training table')
-print(train_table)
-print('Validation table')
-print(val_table)
-print('Testing table')
-print(test_table)
-print('target_col_table_name: ',target_col_table_name)
-print('target_col_name: ',target_col_name)
-print('tasktype :',tasktype )
-
-# Print what we are working on
-print(f'\nWorking on task {task_name} ({tasktype}) for dataset {data_name}...')
-
-
-# Check wether the task requires removing columns from the input features.
-# If so, add the column names to remove_columns
-if getattr(task, 'time_independent_node_task', False):
-    remove_columns = task.remove_columns
-elif isinstance(task, AutoCompleteTask):
-    remove_columns = task.remove_columns
-    remove_columns.append(task.target_col) # For autocompletetask manually add the target col to remove_columns
-else:
-    remove_columns = []
-if len(remove_columns) > 0:
-    print(f'\nNote: This is a special node property task that requires removing columns {remove_columns} from the input data to avoid leakage.')
-
-
-if tasktype == 'regression':
-    loss_fn = L1Loss()
-    #loss_fn = MSELoss()    
-    tune_metric = "mae"
-    higher_is_better = False
-    out_channels = 1    
-
-if tasktype == 'binary_classification':
-    out_channels = 1
-    loss_fn = BCEWithLogitsLoss()
-    tune_metric = "roc_auc"
-    higher_is_better = True
-
-if tasktype == 'multiclass_classification':
-    out_channels = task.num_labels
-    loss_fn = CrossEntropyLoss()
-    tune_metric = "accuracy" 
-    higher_is_better = True
-
-# Some book keeping
-seed_everything(42)
-
-
-train_table = task._get_table("train") 
-val_table = task._get_table("val")
-test_table = task._get_table("test")
-
-
-print('Training table')
-print(train_table)
-print('Validation table')
-print(val_table)
-print('Testing table')
-print(test_table)
-
-
-if verbose == True:
-    print('\n\nTraining table view:')
-    print(train_table.df)
-    print('\nVal table shape:')
-    print(val_table.df.shape)
-    print('\nTest table shape:')
-    print(test_table.df)
-if verbose == True and tasktype == 'multiclass_classification' or tasktype == 'binary_classification':
-    print('training target distribution (head 10)')
-    print(train_table.df[target_col_name].value_counts().head(10))
-    print('val target distribution (head 10)')
-    print(val_table.df[target_col_name].value_counts().head(10))
-    print('test target distribution (head 10)')
-    print(test_table.df[target_col_name].value_counts().head(10))
-    print('unique labels train')
-    print(train_table.df[target_col_name].unique())
-    print('unique labels val')
-    print(val_table.df[target_col_name].unique())
-    print('unique labels test')
-    print(test_table.df[target_col_name].unique())
-if verbose == True and tasktype == 'regression':
-    print("Train targets: min, max, mean, std:", train_table.df[target_col_name].min(),
-    train_table.df[target_col_name].max(), train_table.df[target_col_name].mean(),
-    train_table.df[target_col_name].std())
-    print("Value counts (top 5):")
-    print(train_table.df[target_col_name].value_counts().head(5))
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-if verbose == True:
-    print('device',device)  
-root_dir = "./data"
-
-text_embedder_cfg = TextEmbedderConfig(
-    text_embedder=GloveTextEmbedding(device=device), batch_size=256
-)
-
-
-
-# Build Graph from Dataset ====================================
-print('Building or Loading Full Graph')
-db_full = dataset.get_db(upto_test_timestamp=False) # Setting upto_test_time = False to get FULL database
-# Make dictionary with column types for full dataset
-col_to_stype_dict = get_stype_proposal(db_full) 
-
-print("=== Column type proposal ===")
-for table, cols in col_to_stype_dict.items():
-    print(table)
-    for col, stype in cols.items():
-        print(f"  {col}: {stype}")
-
-
-print("Cleaning text-embedded columns...")
-for table_name, table in db_full.table_dict.items():
-    df = table.df.copy()
-    for col, s in col_to_stype_dict[table_name].items():
-        if s == stype.text_embedded:   # <-- correct enum comparison
-            print(f"Cleaning {table_name}.{col}")
-            df[col] = df[col].fillna("Unknown").astype(str)
-    table.df = df
-print("Finished cleaning text columns.")
-
-
-for name, table in db_full.table_dict.items():
-    if table.time_col is not None:
-        table.df[table.time_col] = table.df[table.time_col].astype("datetime64[s]")
-        print(f"Table: {name}, column: {table.time_col}, dtype: {table.df[table.time_col].dtype}")
-
-
-
-
-
-
-
-print('Here above result text embedded')
-
-
-
-# If task is task requires removing columns from input data then remove specified input features from the input data to avoid leakage
-# AutoCompleteTask should do this automatically but we double check here that it is actually done.
-if len(remove_columns) > 0:
-    # Make a dictionary of input features where some columns are removed. 
-    # Later use this dictionary when instantiating the graph
-    col_to_stype_dict_clean = {
-        table_name: {
-            col: col_type
-            for col, col_type in cols.items()
-            if not (table_name == target_col_table_name and col in remove_columns)
-        }
-        for table_name, cols in col_to_stype_dict.items()
-    }
-
-    stype_dict_to_use = col_to_stype_dict_clean # The modified data with features removed
-else: # If not a time-independent special task then use full data (note: Autocomplete task will automatically remove the required features from the data)
-    stype_dict_to_use = col_to_stype_dict # The original full data
-
-
-print(stype_dict_to_use)
-# Instantiate the FULL graph to be used for training/validation/testing. The SAMPLER or LOADER will be responsible for not sampling validation or test data during training.
-data_full, full_stats = make_pkey_fkey_graph(
-    db_full,
-    col_to_stype_dict=stype_dict_to_use,  # speficied column types 
-    text_embedder_cfg=text_embedder_cfg,  # our chosen text encoder
-    cache_dir=os.path.join(            # Careful about caching! Make sure we are using the correct version of the graph for modelling 
-        root_dir, f"{data_name}_{task_name}_full_cache" # store materialized graph for convenience
-    ),  
-)
-print('Building or Loading Train Graph and Train Col Stats')
-data_train, train_col_stats_dict = make_pkey_fkey_graph(
-    db_full.upto(dataset.val_timestamp - pd.Timedelta("1ns")),  # only use data up to val timestamp for training statistics
-    col_to_stype_dict=stype_dict_to_use, 
-    text_embedder_cfg=text_embedder_cfg, 
-    cache_dir=os.path.join(root_dir, f"{data_name}_{task_name}_train_cache")            
+def load_train_val_test_tables(task):
+    return (
+        task._get_table("train"),
+        task._get_table("val"),
+        task._get_table("test")
     )
 
 
-if verbose == True:
-    # Optionally manually inspect the entity table with the target value in to verify it includes the input features we expect
-    print(f'Manual inspection of input graph (for table [{target_col_table_name}]):')
-    print('Remove columns required for this task:', remove_columns)
-    print('IF REMOVE COLUMNS IS REQUIRED FOR THIS TASK, THEN DOUBLE CHECK THAT THESE COLUMNS ARE NOT IN THE DATA BELOW!')
-    print(data_full[target_col_table_name].tf)  # shows the TensorFrame of the table containing the target value.
+def get_remove_columns(task):
+    if getattr(task, "time_independent_node_task", False):
+        return task.remove_columns
+    elif isinstance(task, AutoCompleteTask):
+        cols = task.remove_columns
+        cols.append(task.target_col)
+        return cols
+    return []
 
-print('Done')
 
-# ==================================== Compute Train Col Stats ====================================
-if verbose:
-    print('Computing or Loading Train Column Stats')
+def get_task_configuration(task):
+    tasktype = task.task_type.value
 
-if adv_compute_train_stats and data_name == 'rel-custom-maritime_shipping_ais': # Special inductive train stats implemented for H&M dataset currently. If using other dataset make sure to change static_tables and key_map
-    # If using this overwrite the simple train_col_stats_dict obtained above
-    # Get the col_stats_dict for the training data (used for normalisation)
-    train_col_stats_dict = make_col_stats(
-        db=db_full,
-        timestamp=dataset.val_timestamp,  #up_to_timestamp
-        static_tables=["vessels", "ports"],
-        key_map={"vessels": "mmsi", "ports": "port_code"},
+    if tasktype == "regression":
+        return 1, L1Loss(), "mae", False
+
+    if tasktype == "binary_classification":
+        return 1, BCEWithLogitsLoss(), "roc_auc", True
+
+    if tasktype == "multiclass_classification":
+        return task.num_labels, CrossEntropyLoss(), "accuracy", True
+
+
+# 
+# DATABASE + GRAPH
+# 
+
+def prepare_db_full(dataset):
+    db_full = dataset.get_db(upto_test_timestamp=False)
+    col_to_stype_dict = get_stype_proposal(db_full)
+
+    for table_name, table in db_full.table_dict.items():
+        df = table.df.copy()
+        for col, s in col_to_stype_dict[table_name].items():
+            if s == stype.text_embedded:
+                df[col] = df[col].fillna("Unknown").astype(str)
+        table.df = df
+
+    for name, table in db_full.table_dict.items():
+        if table.time_col is not None:
+            table.df[table.time_col] = table.df[table.time_col].astype("datetime64[s]")
+
+    return db_full, col_to_stype_dict
+
+
+def build_graph_from_db(dataset, task, db_full, stype_dict_to_use, text_embedder_cfg):
+    root_dir = "./data"
+
+    data_full, _ = make_pkey_fkey_graph(
+        db_full,
         col_to_stype_dict=stype_dict_to_use,
-        text_embedder_cfg=text_embedder_cfg,  # our chosen text encoder
-        cache_dir=os.path.join(root_dir, f"{data_name}_{task_name}_train_cache")
+        text_embedder_cfg=text_embedder_cfg,
+        cache_dir=os.path.join(root_dir, f"{dataset}_{task}_full_cache")
     )
-    print('Computing load train column stats done')
-    print('train_cols_stats dict',train_col_stats_dict)
-# ================================================================================================
-# ==================================== Get Data Loaders and model ====================================
-# Final timestamp normalization before loader creation
-print("Normalizing timestamps inside train/val/test tables...")
 
-for tbl_name, tbl in {"train": train_table, "val": val_table, "test": test_table}.items():
-    if tbl.time_col is not None:
-        col = tbl.time_col
-        tbl.df[col] = tbl.df[col].astype("datetime64[s]").copy()
-        print(f"{tbl_name}.{col} dtype -> {tbl.df[col].dtype}")
+    data_train, train_col_stats_dict = make_pkey_fkey_graph(
+        db_full.upto(dataset.val_timestamp - pd.Timedelta("1ns")),
+        col_to_stype_dict=stype_dict_to_use,
+        text_embedder_cfg=text_embedder_cfg,
+        cache_dir=os.path.join(root_dir, f"{dataset}_{task}_train_cache")
+    )
+
+    return data_full, data_train, train_col_stats_dict
 
 
-# Search model parameters to be optimized
+def normalize_split_times(train_table, val_table, test_table):
+    for tbl_name, tbl in {"train": train_table, "val": val_table, "test": test_table}.items():
+        if tbl.time_col is not None:
+            col = tbl.time_col
+            tbl.df[col] = tbl.df[col].astype("datetime64[s]").copy()
 
-search_num_neighbors = [[32, 32], [64, 64], [128, 128]]
-search_channels = [64, 128, 256]
-search_num_layers = [2, 4, 6]
 
-# Implementing a function to evaluate model parameters desired
-def evaluate_model_params(num_neighbors, channels, num_layers, train_params):
-    n_epochs = train_params["n_epochs"]
-    learning_rate = train_params["learning_rate"]
-    step_size = train_params["step_size"]
-    gamma = train_params["gamma"]
-    batch_size = train_params["batch_size"]
+# 
+# MODEL PARAMETER SEARCH (CONVERGENCE-BASED)
+# 
 
-    #  Loaders
-    loader_dict_train = get_loaders(
+def evaluate_model_params(
+    num_neighbors,
+    channels,
+    num_layers,
+    train_params,
+    data_train,
+    data_full,
+    train_table,
+    val_table,
+    task,
+    train_col_stats_dict,
+    out_channels,
+    loss_fn,
+    device
+):
+    # Loaders
+    loader_train = get_loaders(
         data=data_train,
         task=task,
         tables={"train": train_table},
         num_neighbors=num_neighbors,
-        batch_size=batch_size,
-        temporal_strategy=MODEL_CONFIG["temporal_strategy"],
-        loader_type=MODEL_CONFIG["loader_type"],
-        num_workers=0,
-    )
+        batch_size=train_params["batch_size"],
+        temporal_strategy="last",
+        loader_type="neighbor",
+        num_workers=0
+    )["train"]
 
-    loader_dict_val = get_loaders(
+    loader_val = get_loaders(
         data=data_full,
         task=task,
         tables={"val": val_table},
         num_neighbors=num_neighbors,
-        batch_size=batch_size,
-        temporal_strategy=MODEL_CONFIG["temporal_strategy"],
-        loader_type=MODEL_CONFIG["loader_type"],
-        num_workers=0,
-    )
+        batch_size=train_params["batch_size"],
+        temporal_strategy="last",
+        loader_type="neighbor",
+        num_workers=0
+    )["val"]
 
-    # Model defined
+    # Model
     model = RelBenchModel(
-        model_type=MODEL_CONFIG["model_type"],
-        loader_type=MODEL_CONFIG["loader_type"],
+        model_type="graphsage",
+        loader_type="neighbor",
         data=data_train,
         col_stats_dict=train_col_stats_dict,
-        num_layers=num_layers,           #  SEARCHED
-        channels=channels,               # SEARCHED
+        num_layers=num_layers,
+        channels=channels,
         out_channels=out_channels,
-        aggr=MODEL_CONFIG["aggr"],
+        aggr="mean",
         norm="batch_norm",
-        hgt_heads=MODEL_CONFIG["hgt_heads"],
-        temporal_encoding=MODEL_CONFIG["temporal_encoding"],
+        hgt_heads=16,
+        temporal_encoding=False
     ).to(device)
 
     optimizer = torch.optim.AdamW(
         model.parameters(),
-        lr=learning_rate,
-        weight_decay=MODEL_CONFIG["weight_decay"],
+        lr=1e-04,
+        weight_decay=1e-2
     )
-    scheduler = lr_scheduler.StepLR(optimizer, step_size=step_size, gamma=gamma)
+    scheduler = lr_scheduler.StepLR(
+        optimizer,
+        step_size=train_params["step_size"],
+        gamma=train_params["gamma"]
+    )
 
-    best_val = -math.inf if higher_is_better else math.inf
+    # === Convergence tracking ===
+    patience = 20
+    epochs_without_improvement = 0
+    best_val_loss = float("inf")
+    best_state = None
 
-  
-    # Training loop
-  
-
-    for epoch in range(1, n_epochs + 1):
+    # === Training loop ===
+    for epoch in range(1, train_params["n_epochs"] + 1):
         model.train()
-        for batch in loader_dict_train["train"]:
+        for batch in loader_train:
             batch = batch.to(device)
             optimizer.zero_grad()
 
-            pred = model(batch, task.entity_table)
-            pred = pred.view(-1) if pred.size(1) == 1 else pred
-
-            if tasktype == "multiclass_classification":
-                target = batch[task.entity_table].y.long()
-            else:
-                target = batch[task.entity_table].y.float()
+            pred = model(batch, task.entity_table).view(-1)
+            target = batch[task.entity_table].y.float()
 
             loss = loss_fn(pred.float(), target)
             loss.backward()
@@ -432,69 +225,120 @@ def evaluate_model_params(num_neighbors, channels, num_layers, train_params):
 
         scheduler.step()
 
-      
-        # Validation
-      
-
+        # === Validation loss ===
         model.eval()
-        preds = []
-        for batch in loader_dict_val["val"]:
-            batch = batch.to(device)
-            p = model(batch, task.entity_table)
-            p = p.view(-1) if p.size(1) == 1 else p
-            preds.append(p.detach().cpu())
+        val_loss_accum = 0.0
+        val_count = 0
 
-        preds = torch.cat(preds, dim=0).numpy()
-        val_metrics = task.evaluate(preds, val_table)
-        metric = val_metrics[tune_metric]
+        with torch.no_grad():
+            for batch in loader_val:
+                batch = batch.to(device)
+                p = model(batch, task.entity_table).view(-1)
+                target = batch[task.entity_table].y.float()
+                vloss = loss_fn(p.float(), target)
+                val_loss_accum += vloss.item() * p.size(0)
+                val_count += p.size(0)
 
-        if (higher_is_better and metric > best_val) or (
-            not higher_is_better and metric < best_val
-        ):
-            best_val = metric
+        val_loss = val_loss_accum / val_count
 
-    return best_val
+        # === Convergence check ===
+        if val_loss < best_val_loss:
+            best_val_loss = val_loss
+            best_state = copy.deepcopy(model.state_dict())
+            epochs_without_improvement = 0
+        else:
+            epochs_without_improvement += 1
 
-# Run grid search
-print("Loading tuned training hyperparameters...")
-with open("best_hyperparameters.txt", "r") as f:
-    train_params = json.load(f)
+        if epochs_without_improvement >= patience:
+            break
 
-best_score = -math.inf if higher_is_better else math.inf
-best_model_params = None
+    # Load best converged model
+    if best_state is not None:
+        model.load_state_dict(best_state)
 
-for neigh in search_num_neighbors:
-    for ch in search_channels:
-        for nl in search_num_layers:
-            print(f"Testing model config: neighbors={neigh}, channels={ch}, num_layers={nl}")
+    return best_val_loss
 
-            score = evaluate_model_params(
-                num_neighbors=neigh,
-                channels=ch,
-                num_layers=nl,
-                train_params=train_params,
-            )
 
-            print("Validation score:", score)
+# 
+# MAIN
+# 
 
-            if (higher_is_better and score > best_score) or (
-                not higher_is_better and score < best_score
-            ):
-                best_score = score
-                best_model_params = {
-                    "num_neighbors": neigh,
-                    "channels": ch,
-                    "num_layers": nl,
-                }
+def main():
+    seed_everything(42)
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# Save best model parameters
+    dataset, task = register_dataset_and_task()
+    train_table, val_table, test_table = load_train_val_test_tables(task)
 
-print("\nBest model parameters found:")
-print(best_model_params)
-print("Best validation score:", best_score)
+    remove_columns = get_remove_columns(task)
+    out_channels, loss_fn, tune_metric, higher_is_better = get_task_configuration(task)
 
-print("\nWriting best model parameters to best_model_parameters.txt")
-with open("best_model_parameters.txt", "w") as f:
-    json.dump(best_model_params, f)
+    db_full, col_to_stype_dict = prepare_db_full(dataset)
 
-print("Done.")
+    if len(remove_columns) > 0:
+        col_to_stype_dict = {
+            t: {c: s for c, s in cols.items() if c not in remove_columns}
+            for t, cols in col_to_stype_dict.items()
+        }
+
+    text_embedder_cfg = TextEmbedderConfig(
+        text_embedder=GloveTextEmbedding(device=device),
+        batch_size=256
+    )
+
+    data_full, data_train, train_col_stats_dict = build_graph_from_db(
+        dataset, task, db_full, col_to_stype_dict, text_embedder_cfg
+    )
+
+    normalize_split_times(train_table, val_table, test_table)
+
+    # Load best training hyperparameters
+    with open("best_hyperparameters.txt", "r") as f:
+        train_params = json.load(f)
+
+    # Model parameter search space
+    search_num_neighbors = [[8,4],[16,8],[32, 16], [64, 32], [64, 64]]
+    search_channels = [4,8, 16, 32]
+    search_num_layers = [2, 4, 6,8]
+
+    best_score = float("inf")
+    best_model_params = None
+
+    # === Grid search ===
+    for neigh in search_num_neighbors:
+        for ch in search_channels:
+            for nl in search_num_layers:
+                print(f"Testing model config: neighbors={neigh}, channels={ch}, num_layers={nl}")
+
+                score = evaluate_model_params(
+                    neigh, ch, nl,
+                    train_params,
+                    data_train, data_full,
+                    train_table, val_table,
+                    task, train_col_stats_dict,
+                    out_channels, loss_fn,
+                    device
+                )
+
+                print("Validation loss after convergence:", score)
+
+                if score < best_score:
+                    best_score = score
+                    best_model_params = {
+                        "num_neighbors": neigh,
+                        "channels": ch,
+                        "num_layers": nl
+                    }
+
+    print("\nBest model parameters found:")
+    print(best_model_params)
+    print("Best validation loss after convergence:", best_score)
+
+    with open("best_model_parameters.txt", "w") as f:
+        json.dump(best_model_params, f)
+
+    print("Saved best model parameters to best_model_parameters.txt")
+
+
+if __name__ == "__main__":
+    main()
