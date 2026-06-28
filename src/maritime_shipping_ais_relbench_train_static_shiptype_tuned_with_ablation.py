@@ -51,10 +51,11 @@ with open("best_hyperparameters.txt", "r") as f:
 
 TRAINING_CONFIG = {
     "epochs": int(best_train["n_epochs"]),
-    "learning_rate": float(best_train["learning_rate"]),
+    "learning_rate":1e-04,                                      #float(best_train["learning_rate"]),
     "step_size": int(best_train["step_size"]),
     "gamma": float(best_train["gamma"]),
     "batch_size": int(best_train["batch_size"]),
+    "weight_decay": 1e-2,
 }
 
 # Load best model parameters (num_neighbors, channels, num_layers)
@@ -71,7 +72,7 @@ MODEL_CONFIG = {
     "hgt_heads": 16,
     "loader_type": "neighbor",
     "model_type": "graphsage",
-    "weight_decay": 1e-2,
+    
 }
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -88,6 +89,7 @@ def print_training_hyperparams(configuration):
     print(f"Step Size: {configuration['step_size']}")
     print(f"Gamma: {configuration['gamma']}")
     print(f"Batch Size: {configuration['batch_size']}")
+    print(f"Weight Decay: {configuration['weight_decay']}")
     print()
 #Implementing a function to display the model GNN hyperparameters
 def print_model_params(configuration):
@@ -95,7 +97,6 @@ def print_model_params(configuration):
     print(f"Num Neighbours: {configuration['num_neighbors']}")
     print(f"Channels: {configuration['channels']}")
     print(f"Layers: {configuration['num_layers']}")
-    print(f"Weight Decay: {configuration['weight_decay']}")
     print()
 
 
@@ -222,23 +223,8 @@ def build_graph_from_db(dataset,task,db_full,stype_dict_to_use,text_embedder_cfg
         text_embedder_cfg=text_embedder_cfg, 
         cache_dir=os.path.join(root_dir, f"{dataset}_{task}_train_cache")            
         )
-    
-    """if adv_compute_train_stats and dataset == 'rel-custom-maritime_shipping_ais': 
-        # Special inductive train stats for static tables
-        # If using this overwrite the simple train_col_stats_dict obtained above
-        # Get the col_stats_dict for the training data (used for normalisation)
-        train_col_stats_dict = make_col_stats(
-            db=db_full,
-            timestamp=dataset.val_timestamp,  #up_to_timestamp
-            static_tables=["vessels", "ports"],
-            key_map={"vessels": "mmsi", "ports": "port_code"},
-            col_to_stype_dict=stype_dict_to_use,
-            text_embedder_cfg=text_embedder_cfg,  # our chosen text encoder
-            cache_dir=os.path.join(root_dir, f"{dataset}_{task}_train_cache")
-        )"""
-        print('Computing load train column stats done')
-        print('train_cols_stats dict',train_col_stats_dict)
-
+    print('Computing load train column stats done')
+    print('train_cols_stats dict',train_col_stats_dict)
     return data_full,data_train,train_col_stats_dict
 
 
@@ -684,7 +670,7 @@ def main():
     optimizer = torch.optim.AdamW(
         model.parameters(),
         lr=TRAINING_CONFIG["learning_rate"],
-        weight_decay=MODEL_CONFIG["weight_decay"],
+        weight_decay=TRAINING_CONFIG["weight_decay"],
     )
     scheduler = lr_scheduler.StepLR(
         optimizer,
@@ -717,7 +703,7 @@ def main():
         num_epochs=TRAINING_CONFIG["epochs"],
     )
     # save results
-    output_dir = "ship type prediction/heterogenuos graph_sage_tuned_with_ablation"
+    output_dir = "ship type prediction/heterogenuos graph_sage_tuned_with_ablation_db"
     save_results_to_csv(
         output_dir=output_dir,
         tasktype=tasktype,
@@ -736,7 +722,7 @@ def main():
     plot_learning_curves_from_csv(output_dir)
     plot_roc_auc_curves_from_csv(output_dir)
      
-    print('Prediction of the heterogenuos graph sage tuned with ablation')
+    print('Prediction of the heterogenuos graph sage tuned with ablation  based on entire db')
 
     
 if __name__=="__main__":
